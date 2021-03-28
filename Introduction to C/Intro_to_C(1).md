@@ -95,7 +95,7 @@ Basic Types:
 
 **ASCII** - American Standard Code for Information Interchange
 
-![ASCII charset](ASCII chart.png)
+![ASCII charset](ASCII_chart.png)
 
 Derived Data Types:
 
