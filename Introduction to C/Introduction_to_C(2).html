@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +12,7 @@
         <h1>Introduction to C - Part 2</h1>
     </center>
 </head>
+
 <body>
 
     <h3>Input:</h3>
@@ -26,8 +28,10 @@
     <ol class="outer">
         <li>Arithmetic</li>
         <li>Relational</li>
-        <li>Assignment</li>
         <li>Logical</li>
+        <li>Bitwise</li>
+        <li>Assignment</li>
+        <li>Miscellaneous Operators</li>
     </ol>
 
     <h4>1. Arithmetic: </h4>
@@ -64,14 +68,14 @@
             <td>2 % 3 = 2</td>
         </tr>
         <tr>
-            <td>+</td>
-            <td>Unary Plus</td>
-            <td>+2</td>
+            <td>++</td>
+            <td>Increment Operator</td>
+            <td>++2 or 2++</td>
         </tr>
         <tr>
-            <td>&#8722;</td>
-            <td>Unary Minus</td>
-            <td>&#8722;3</td>
+            <td>&#8722;&#8722;</td>
+            <td>Decrement Operator</td>
+            <td>&#8722;&#8722;3 or 3&#8722;&#8722;</td>
         </tr>
     </table>
 
@@ -116,7 +120,79 @@
         </tr>
     </table>
 
-    <h4>3. Assignment:</h4>
+    <h4>3. Logical:</h4>
+
+    Perform Logical operations
+
+    <table>
+        <tr>
+            <th>Operator</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>&&</td>
+            <td>Logical Operator AND</td>
+        </tr>
+        <tr>
+            <td>||</td>
+            <td>Logical Operator OR</td>
+        </tr>
+        <tr>
+            <td>!</td>
+            <td>Logical operator NOT</td>
+        </tr>
+    </table>
+
+    <h4>4. Bitwise:</h4>
+
+    Perform bitwise operations <br>
+
+    <table>
+        <tr>
+            <th>Operator</th>
+            <th>Description</th>
+            <th>Syntax</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td>&</td>
+            <td>Bitwise AND</td>
+            <td> x & y </td>
+            <td>101 & 11</td>
+        </tr>
+        <tr>
+            <td> &#124; </td>
+            <td>Bitwise OR</td>
+            <td> x &#124; y</td>
+            <td>101 &#124; 11</td>
+        </tr>
+        <tr>
+            <td>~</td>
+            <td>Bitwise NOT</td>
+            <td>~x</td>
+            <td>~1</td>
+        </tr>
+        <tr>
+            <td>^</td>
+            <td>Bitwise XOR</td>
+            <td>x ^ y</td>
+            <td>1 ^ 1</td>
+        </tr>
+        <tr>
+            <td>&lt;&lt;</td>
+            <td>Shifts y bits in x to the left (Left shift operator)</td>
+            <td> x &lt;&lt; y</td>
+            <td>111001 &lt;&lt; 2</td>
+        </tr>
+        <tr>
+            <td>>></td>
+            <td>Shifts y bits in x to the right (Right Shift Operator)</td>
+            <td> x >> y</td>
+            <td>111001 >> 2</td>
+        </tr>
+    </table>
+
+    <h4>5. Assignment:</h4>
     Assigns value to a Variable
     <table>
         <tr>
@@ -154,15 +230,59 @@
             <td>Get remainder and assign</td>
             <td>a %=b</td>
         </tr>
+        <tr>
+            <td>&lt;&lt;=</td>
+            <td>Left shift and Assign</td>
+            <td>a &lt;&lt;=b</td>
+        </tr>
+        <tr>
+            <td>>>=</td>
+            <td>Right shift and assign</td>
+            <td>a >>=b</td>
+        </tr>
+        <tr>
+            <td>&=</td>
+            <td>Bitwise AND and assign</td>
+            <td>a &=b</td>
+        </tr>
+        <tr>
+            <td>|=</td>
+            <td>Bitwise OR and assign</td>
+            <td>a |=b</td>
+        </tr>
+        <tr>
+            <td>^=</td>
+            <td>Bitwise XOR and assign</td>
+            <td>a ^=b</td>
+        </tr>
     </table>
-    <p>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-    </p>
+
+    <h4>Miscellaneous Operators:</h4>
+
+    Besides the operators discussed above, there are a few other important operators supported by C language <br><br>
+
+    <table>
+        <tr>
+            <th>Operator</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td>&</td>
+            <td>Address Operator (returns Address of a identifier)</td>
+            <td>&a</td>
+        </tr>
+        <tr>
+            <td>*</td>
+            <td>Pointer to a variable</td>
+            <td>*a</td>
+        </tr>
+        <tr>
+            <td>?</td>
+            <td>Ternary Operator</td>
+            <td>condition? a:b</td>
+        </tr>
+    </table>
 </body>
+
 </html>
