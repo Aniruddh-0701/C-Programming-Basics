@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="main.css" />
+
+    <title>Introduction to C</title>
+    <center>
+        <h1>Introduction to C - Part 1</h1>
+    </center>
+</head>
+
+<body>
+    <h3>Introduction:</h3>
+
+    <h5>Program:</h5>
+    <p>A program is a set of instructions written on a computer to perform a specific task.</p>
+
+    <h5>Programming Language:</h5>
+    <p>
+        Simply said, it is a language used to write a program.
+        It is a well defined medium to instruct the computer.
+    </p>
+
+    <h5>Types of Programming Languages:</h5>
+
+    <p>
+        Based on uses, the Programming languages can be classified under 50 types
+        refer <a href=https://en.wikipedia.org/wiki/List_of_programming_languages_by_type>List of Programming Languages
+            by type</a>
+    </p>
+
+    Based on ease of readability:
+    <ol class="outer">
+        <li>Low-level Language - Assembly Language</li>
+        <li>Middle level Language - C, C++, etc.</li>
+        <li>High level Language - Python, java, Perl, etc.</li>
+    </ol>
+
+    Based on execution method:
+    <ol class="outer">
+        <li>Compiled Language</li>
+        <li>Interpreted Language</li>
+    </ol>
+
+    <h3>Basic parts in programming:</h3>
+
+    A few basic instructions that appear in almost all language (by <a
+        href="https://en.wikipedia.org/wiki/Allen_Downey">Allen Downey</a>, in his book <i>How To Think Like A
+        Computer</i>
+    Scientist ):
+
+    <ol class="outer">
+        <li><strong>Input:</strong> Gather data from the keyboard, a file, or some other device.</li>
+        <li> <strong>Output:</strong> Display data on the screen or send data to a file or other device. </li>
+        <li> <strong>Arithmetic:</strong> Perform basic arithmetical operations like addition and multiplication.</li>
+        <li> <strong>Conditional Execution:</strong> Check for certain conditions and execute the appropriate sequence
+            of statements.</li>
+        <li> <strong>Repetition:</strong> Perform some action repeatedly, usually with some variation.</li>
+    </ol>
+
+    <h3>Intoduction to C programming</h3>
+    <p>
+        C is a general-purpose, procedural computer programming language supporting structured programming,
+        with a static type system. <br>
+
+        By design, C provides constructs that map efficiently to typical machine
+        instructions. <br>
+
+        It is generally used to learn basic programming concepts. C language is being used to build other High level
+        programming languages like python.
+    </p>
+
+    <center><img src="Clogo.png" alt="Derivatives of C language" /></center>
+
+    <h3>Basic Structure:</h3>
+    <p class="code">
+        #include&lt;stdio.h&gt;<br><br>
+        int main(){<br>
+        &nbsp;&nbsp;// Declaration and Initalization<br>
+        <br>
+        &nbsp;&nbsp;// Statements<br><br>
+
+        &nbsp;&nbsp;return 0;<br>
+        }
+    </p>
+    <h3>Output handling or Printing out statements/Values to user:</h3>
+
+    <strong>Syntax:</strong>
+
+    <p class='code'>
+        printf("format specifier", identifier);<br>
+        printf("statement");
+    </p>
+
+    <h5>Format Specifiers</h5>
+
+    <ol class="outer">
+        <li>%d - integer (int)</li>
+        <li>%f - float</li>
+        <li>%c - character (char)</li>
+        <li>%s - string (str)</li>
+        <li>%lf - double</li>
+    </ol>
+
+    <strong>Identifiers</strong> - variables or expressions
+
+    <h3>Data Types:</h3>
+
+    <p>
+        Data can be defined as a representation of facts, concepts, or instructions in a formalized manner, which
+        should be suitable for communication, interpretation, or processing by human or electronic machine.
+    </p>
+
+    <p>Data type is an attribute which tells the compiler or interpreter how the programmer intends to use the data </p>
+    Basic Types:
+
+    <ol class="outer">
+        <li>Numeric:</li>
+        <ol class="inner">
+            <li> Integer - 0, 2, 30</li>
+            <li> Float - 3.0, -0.0005 (single precision)</li>
+            <li> Double - 3.0, -0.00003 (double precision)</li>
+        </ol>
+        <li> Boolean - true and false</li>
+        <li> Character - all symbols defined by ASCII</li>
+        <li> Null</li>
+    </ol>
+
+    <strong>ASCII</strong> - American Standard Code for Information Interchange
+
+    <center>
+        <img src="ASCII chart.png" alt="ASCII charset">
+    </center>
+
+    Derived Data Types:
+
+    <ol>
+        <li> Array </li>
+        <li> Strings </li>
+    </ol>
+
+    Additional types in integers (Base):
+    <ol>
+        <li> Binary (base 2) [0,1] </li>
+        <li>Octal (base 8) [0-7]</li>
+        <li>Decimal (base 10) [0-9] Most Common</li>
+        <li>HexaDecimal (base 16) [0-9, A-F] </li>
+    </ol>
+
+    <h3>Literals:</h3>
+    Literals are data that are directly used or processed in a program.<br>
+
+    Types of Identifiers:<br>
+    <ol>
+        <li>Constant - Values that do not change during the execution </li>
+        <li>Variable - Values that change </li>
+    </ol>
+
+
+    There are certain rules to be followed while naming an identifier:
+    <ul>
+        <li>Should start only with an alphabet or underscore ('_') - a1, a2, _name not 1a, 24c</li>
+        <li>Can contain characters defined in ASCII (alphabets and numbers) except ( &#36;, &, \, /, etc.)</li>
+        <li>It should not be keyword</li>
+        <li>No spaces</li>
+        <li>Generally, uppercase alphabets are not used in the beginning of a variable name.</li>
+    </ul>
+
+
+    Naming Conventions: <a href='https://en.wikipedia.org/wiki/Naming_convention_(programming)'>Naming Convention -
+        Wikipedia article</a> <br>
+    For Easy readability:
+    <ul>
+        <li>Function or use as name</li>
+        <li>first letter in lowercase</li>
+        <li>If Name has Multiple words:</li>
+        <ol class="outer">
+            <li>Use underscore for space</li>
+            <li>joint writing with words in Camel Case</li>
+        </ol>
+        <li>Avoid Long names</li>
+    </ul>
+
+    Naming convention for multi word variable names:
+    <ol class="outer">
+        <li>Camel case (abcAbc)</li>
+        <li>Pascal case (AbcAbc)</li>
+        <li>Screaming case (ABC)</li>
+        <li>Lazy case (abc)</li>
+        <li>Kebab case (ab-ab)</li>
+        <li>Snake case(ab_ab)</li>
+    </ol>
+
+    E.g.: age, input_values, firstName, number, prime_num <br>
+    Not: user name, number_to_find_prime<br>
+
+    <h3>Keywords or Identifiers or Reserved words:</h3>
+
+    Words used for a special purpose in program.
+
+    E.g: scanf, print, int, if, for, try, etc.
+
+    <h3>Comments:</h3>
+    Lines that are not executed. It used only for understanding by the programmers or users <br>
+
+    // is used to comment a single line<br>
+
+    /**/ - comment multiple lines<br>
+
+    <p class="code">
+        // single line comment<br>
+        <br>
+        /*<br>
+        This is used to comment multiple lines <br>
+        */<br>
+    </p>
+
+</body>
+
+</html>
