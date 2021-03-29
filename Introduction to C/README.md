@@ -4,7 +4,8 @@ This section contains the notes and some sample programs on Basic concepts of pr
 
 ## Notes
 
-[Part 1](Intro_to_C(1).md)
+[Part 1 - Introduction, `printf` Statement, Data types, Identifiers](Intro_to_C(1).md)  
+[Part 2 - `scanf` Statement, Operators and Precedence, Expressions and Escape Sequences](Intro_to_C(2).md)  
 
 It includes:
 

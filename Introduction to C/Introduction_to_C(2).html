@@ -309,7 +309,7 @@
         </tr>
     </table>
 
-    <h4>Miscellaneous Operators:</h4>
+    <h4>6. Miscellaneous Operators:</h4>
 
     Besides the operators discussed above, there are a few other important operators supported by C language <br><br>
 
@@ -353,12 +353,12 @@
         </tr>
         <tr>
             <td>Postfix</td>
-            <td>() [] -&gt; . ++ - -</td>
+            <td>() [] &#8722;&gt; . ++ &#8722; &#8722;</td>
             <td>Left to right</td>
         </tr>
         <tr>
             <td>Unary</td>
-            <td>+ - ! ~ ++ - - (type)* &amp; sizeof</td>
+            <td>+ &#8722; ! ~ ++ &#8722; &#8722; (type)* &amp; sizeof</td>
             <td>Right to left</td>
         </tr>
         <tr>
@@ -368,7 +368,7 @@
         </tr>
         <tr>
             <td>Additive</td>
-            <td>+ -</td>
+            <td>+ &#8722;</td>
             <td>Left to right</td>
         </tr>
         <tr>
@@ -418,7 +418,7 @@
         </tr>
         <tr>
             <td>Assignment</td>
-            <td>= += -= *= /= %=&gt;&gt;= &lt;&lt;= &amp;= ^= |=</td>
+            <td>= += &#8722;= *= /= %=&gt;&gt;= &lt;&lt;= &amp;= ^= |=</td>
             <td>Right to left</td>
         </tr>
         <tr>
@@ -427,6 +427,74 @@
             <td>Left to right</td>
         </tr>
     </table>
+
+    <h3>Expressions:</h3>
+    <p>A statement that gives a finite value.</p>
+
+    Types: 
+    <ol>
+        <li>
+            Infix expressions - Example: 12 + 23
+        </li>
+        <li>
+            Prefix expressions - Example: + 12 23 
+        </li>
+        <li>
+            Postfix expressions - Example: 12 23 +
+        </li>
+    </ol>
+
+    <h3>Escape Sequences:</h3>
+    Few special characters defined under ASCII for formatting strings/output. The '\' is used to escape the original use
+    of a character.<br><br>
+
+    <table>
+        <thead>
+            <th>Sequence</th>
+            <th>Explanantion</th>
+        </thead>
+        <tr>
+            <td>\\</td>
+            <td>Back slash</td>
+        </tr>
+        <tr>
+            <td>\'</td>
+            <td>Apostrophe or Single quotes</td>
+        </tr>
+        <tr>
+            <td>\n</td>
+            <td>new line or line feed</td>
+        </tr>
+        <tr>
+            <td>\f</td>
+            <td>form feed</td>
+        </tr>
+        <tr>
+            <td>\r</td>
+            <td>carriage return</td>
+        </tr>
+        <tr>
+            <td>\t</td>
+            <td>horizontal tab</td>
+        </tr>
+        <tr>
+            <td>\"</td>
+            <td>Double quotes</td>
+        </tr>
+        <tr>
+            <td>\0</td>
+            <td>Null character</td>
+        </tr>
+        <tr>
+            <td>\a</td>
+            <td>bell</td>
+        </tr>
+        <tr>
+            <td>\v</td>
+            <td>vertical tab</td>
+        </tr>
+    </table>
+
 </body>
 
 </html>
