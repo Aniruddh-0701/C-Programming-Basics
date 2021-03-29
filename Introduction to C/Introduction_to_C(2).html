@@ -6,6 +6,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="main.css" />
+    <style>
+        .code {
+            background-color: #d3d3d3;
+            color: black;
+            border-radius: 2%;
+            padding: 2%;
+            width: max-content;
+        }
+
+        code {
+            background-color: #d3d3d3;
+            color: black;
+            border-radius: 5%;
+            padding: 0.5%;
+        }
+
+        .outer {
+            list-style-type: decimal;
+        }
+
+        .inner {
+            list-style-type: lower-alpha;
+        }
+
+        th {
+            border: 1px solid black;
+            padding: 1%;
+            width: auto;
+            height: auto;
+            text-align: center;
+            border-collapse: collapse;
+            background-color: #ffcd94;
+        }
+
+        td {
+            width: fit-content;
+            padding: 1%;
+            text-align: center;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        table {
+            width: 50%;
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            align-self: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
 
     <title>Introduction to C</title>
     <center>
@@ -281,6 +333,98 @@
             <td>?</td>
             <td>Ternary Operator</td>
             <td>condition? a:b</td>
+        </tr>
+    </table>
+
+    <h2>Operator Precedence:</h2>
+
+    <p>
+        Operator precedence determines the grouping of terms in an expression and decides how an expression is
+        evaluated.
+        Certain operators have higher precedence than others; for example, the multiplication operator has a higher
+        precedence than the addition operator.
+    </p>
+
+    <table>
+        <tr>
+            <th>Category</th>
+            <th>Operator</th>
+            <th>Associativity</th>
+        </tr>
+        <tr>
+            <td>Postfix</td>
+            <td>() [] -&gt; . ++ - -</td>
+            <td>Left to right</td>
+        </tr>
+        <tr>
+            <td>Unary</td>
+            <td>+ - ! ~ ++ - - (type)* &amp; sizeof</td>
+            <td>Right to left</td>
+        </tr>
+        <tr>
+            <td>Multiplicative</td>
+            <td>* / %</td>
+            <td>Left to right</td>
+        </tr>
+        <tr>
+            <td>Additive</td>
+            <td>+ -</td>
+            <td>Left to right</td>
+        </tr>
+        <tr>
+            <td>Shift</td>
+            <td>&lt;&lt; &gt;&gt;</td>
+            <td>Left to right</td>
+        </tr>
+        <tr>
+            <td>Relational</td>
+            <td>&lt; &lt;= &gt; &gt;=</td>
+            <td>Left to right</td>
+        </tr>
+        <tr>
+            <td>Equality</td>
+            <td>== !=</td>
+            <td>Left to right</td>
+        </tr>
+        <tr>
+            <td>Bitwise AND</td>
+            <td>&amp;</td>
+            <td>Left to right</td>
+        </tr>
+        <tr>
+            <td>Bitwise XOR</td>
+            <td>^</td>
+            <td>Left to right</td>
+        </tr>
+        <tr>
+            <td>Bitwise OR</td>
+            <td>|</td>
+            <td>Left to right</td>
+        </tr>
+        <tr>
+            <td>Logical AND</td>
+            <td>&amp;&amp;</td>
+            <td>Left to right</td>
+        </tr>
+        <tr>
+            <td>Logical OR</td>
+            <td>||</td>
+            <td>Left to right</td>
+        </tr>
+        <tr>
+            <td>Conditional</td>
+            <td>?:</td>
+            <td>Right to left</td>
+        </tr>
+        <tr>
+            <td>Assignment</td>
+            <td>= += -= *= /= %=&gt;&gt;= &lt;&lt;= &amp;= ^= |=</td>
+            <td>Right to left</td>
+        </tr>
+        <tr>
+            <td>Comma</td>
+            <td>,</td>
+            <td>Left to right</td>
         </tr>
     </table>
 </body>
