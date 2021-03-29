@@ -149,11 +149,11 @@ Naming convention for multi word variable names:
 E.g.: age, input_values, firstName, number, prime_num  
 Not: user name, number_to_find_prime
 
-## Keywords or Identifiers or Reserved words
+## Keywords or Reserved words
 
 Words used for a special purpose in program.
 
-E.g: `scanf`, `print`, `int`, `if`, `for`, `try`, etc.
+E.g: `scanf`, `printf`, `int`, `if`, `for`, `try`, etc.
 
 ## Comments
 
