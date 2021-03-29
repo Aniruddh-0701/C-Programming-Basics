@@ -25,13 +25,13 @@ Perform arithmetic operations
 
 |**Operator**|**Description**|**Example**|
 |---|---|---|
-|$+$ |Addition|2 $+$ 3 = 5|
-|$-$ |Subtraction|2 $-$ 3 = -1|
-|$ * $ |Multiplication|2 $*$ 3 = 6|
-|$/$ |Division (returns quotient)|2 $/$ 3 = 0|
+|+ |Addition|2 + 3 = 5|
+|- |Subtraction|2 - 3 = -1|
+| *  |Multiplication|2 * 3 = 6|
+|/ |Division (returns quotient)|2 / 3 = 0|
 |%|Modulo (returns remainder)|2 % 3 = 2|
-|$++$|Increment operator|$++2$ or $2++$|
-|$--$|Decrement operator|$--3$ or $3--$|
+|++|Increment operator|++2 or 2++|
+|--|Decrement operator|--3 or 3--|
 
 #### 2. Relational
 
@@ -39,12 +39,12 @@ Relations between two variables
 
 |**Operator**|**Description**|**Example**|
 |---|---|---|
-|$==$|Equal|a $==$ b|
-|$!=$|Not Equal|a $!=$ b|
-|$>$|Greater|a $>$ b|
-|$>=$|Greater or Equal|a $>=$ b|
-|$<$|Lesser|a $<$ b|
-|$<=$|Lesser or Equal|a $<=$ b|
+|==|Equal|a == b|
+|!=|Not Equal|a != b|
+|>|Greater|a > b|
+|>=|Greater or Equal|a >= b|
+|<|Lesser|a < b|
+|<=|Lesser or Equal|a <= b|
 
 #### 3. Logical
 
@@ -75,11 +75,11 @@ Assigns value to a variable
 
 |Operator|Description|Example|
 |---|---|---|
-|$=$|Assign|c $=$ 30|
-|$+=$|Add and assign|a $+=$ b|
-|$-=$|Subtract and assign|a $-=$ b|
-|$ *= $|Multiply and assign|a $ *= $ b|
-|$/=$|Divide and assign|a $/=$ b|
+|=|Assign|c = 30|
+|+=|Add and assign|a += b|
+|-=|Subtract and assign|a -= b|
+| *= |Multiply and assign|a  *=  b|
+|/=|Divide and assign|a /= b|
 |%=|Get remainder and assign|a %= b|
 |<<=|Left Shift and assign|a %= b|
 |>>=|Right Shift and assign|a %= b|
