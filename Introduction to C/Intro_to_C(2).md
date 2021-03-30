@@ -1,4 +1,4 @@
-# Introduction to C - Part 1
+# Introduction to C - Part 2
 
 ## Input
 
@@ -102,8 +102,8 @@ Operator precedence determines the grouping of terms in an expression and decide
 
 |Category|Operator|Associativity|
 |---|---|---|
-|Postfix|() [] −> . ++ − −|Left to right|
-|Unary|+ − ! ~ ++ − − (type)* & sizeof|Right to left|
+|Postfix|() [] −> . ++ −−|Left to right|
+|Unary|+ − ! ~ ++ −− (type)* & sizeof|Right to left|
 |Multiplicative|* / %|Left to right|
 |Additive|+ −|Left to right|
 |Shift|<< >>|Left to right|
@@ -147,3 +147,6 @@ Few special characters defined under ASCII for formatting strings/output. The '\
 |\0|Null character|
 |\a|bell|
 |\v|vertical tab|
+
+[Prev](Intro_to_C(1).md)  
+[Next](Intro_to_C(3).md)  
