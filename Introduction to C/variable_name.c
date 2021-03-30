@@ -8,6 +8,7 @@ int main(int argc, char const *argv[])
     printf("Sum = %d", a+b); // identifier - expression
     int numberToSum; //Camel
     int number_to_sum; //snake
+    int numbertosum; // lazy case
     int printf_val;
     return 0;
 }

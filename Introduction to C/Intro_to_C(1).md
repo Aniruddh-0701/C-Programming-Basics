@@ -77,6 +77,8 @@ printf("statement");
 
 **Identifiers** - variables or expressions
 
+[Writing your first Program - printing "Hello World"](Hello_world.c)  
+
 ## Data Types
 
 Data can be defined as a representation of facts, concepts, or instructions in a formalized manner, which should be suitable for communication, interpretation, or processing by human or electronic machine.  
@@ -148,6 +150,8 @@ Naming convention for multi word variable names:
 
 E.g.: age, input_values, firstName, number, prime_num  
 Not: user name, number_to_find_prime
+
+[Variables (data type), Naming Convention](variable_name.c)  
 
 ## Keywords or Reserved words
 
