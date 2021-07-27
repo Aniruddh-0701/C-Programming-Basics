@@ -9,13 +9,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./static/main.css" />
-
-    <!-- <link rel="stylesheet" href="./static/prettify.css">
-    <script src="./static/prettify.js"></script> -->
     <script>
         window.onload = (function () {
             let tags = document.getElementsByTagName("pre");
-            console.log(tags);
+            let br = document.createElement("br");
             for (var i = 0; i < tags.length; ++i) {
                 tags[i].classList.add("prettyprint");
             }
@@ -32,12 +29,6 @@
 
     <script
         src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autorun=true&amp;lang=c&amp;lang=llvm"></script>
-
-    <!-- <script>
-        window.onload = (function () { PR.prettyPrint(); });
-    </script> -->
-
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script> -->
 
 
     <script>

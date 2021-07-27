@@ -96,10 +96,15 @@ img {
 }
 
 pre {
-  padding: 2%;
   margin: 2%;
-  border-radius: 2%;
-  max-width: 90%;
+  align-content: flex-start;
+  box-sizing: border-box;
+  background-color: #dddddd;
+  box-shadow: 4px 4px 7px 5px #555;
+}
+
+code {
+  font-weight: bold;
 }
 
 @media (prefers-color-scheme: light) {
@@ -115,9 +120,6 @@ pre {
   body {
     background: #2e3331; /*#424b4b; #17202a; #1c2536;*/
     color: #ffffff;
-  }
-  pre {
-    background-color: #dddddd;
   }
   img {
     background: #a0d0a0;
@@ -144,6 +146,9 @@ pre {
   }
   code {
     color: #baf7a6;
+  }
+  pre {
+    box-shadow: 4px 4px 7px 5px #222;
   }
   blockquote {
     border-left: 7.5px solid #baf7a6;
