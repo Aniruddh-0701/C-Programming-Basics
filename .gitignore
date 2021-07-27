@@ -1,3 +1,9 @@
 *.exe
 Basic.c
 .vscode
+markdown_converter.py
+markdown_template.html
+convert_and_move_docs.py
+file_converter.py
+Convert_and _move single.py
+*.py
