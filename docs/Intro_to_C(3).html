@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro to C(3)</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./static/main.css" />
+
+    <!-- <link rel="stylesheet" href="./static/prettify.css">
+    <script src="./static/prettify.js"></script> -->
+    <script>
+        window.onload = (function () {
+            let tags = document.getElementsByTagName("pre");
+            console.log(tags);
+            for (var i = 0; i < tags.length; ++i) {
+                tags[i].classList.add("prettyprint");
+            }
+            tags = document.getElementsByTagName("code");
+            console.log(tags);
+            for (var i = 0; i < tags.length; ++i) {
+                if (tags[i].classList.contains("language-c")) {
+                    tags[i].classList.add("lang-c");
+                    tags[i].classList.remove("language-c");
+                }
+            }
+        })
+    </script>
+
+    <script
+        src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autorun=true&amp;lang=c&amp;lang=llvm"></script>
+
+    <!-- <script>
+        window.onload = (function () { PR.prettyPrint(); });
+    </script> -->
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script> -->
+
+
+    <script>
+        MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Introduction to C - Part 3</h1>
+<h2>Limits and Memory for various Data Types</h2>
+<table>
+<thead>
+<tr>
+<th>Data type</th>
+<th>Minimum</th>
+<th>Maximum</th>
+<th>Memory (in bytes)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>char</td>
+<td>-128</td>
+<td>127</td>
+<td>1</td>
+</tr>
+<tr>
+<td>unsigned char</td>
+<td>0</td>
+<td>255</td>
+<td>1</td>
+</tr>
+<tr>
+<td>int</td>
+<td>-2147483648</td>
+<td>2147483647</td>
+<td>4</td>
+</tr>
+<tr>
+<td>short int</td>
+<td>-32768</td>
+<td>32767</td>
+<td>2</td>
+</tr>
+<tr>
+<td>long int</td>
+<td>-2147483648</td>
+<td>2147483647</td>
+<td>4</td>
+</tr>
+<tr>
+<td>long long int</td>
+<td>-9223372036854775808</td>
+<td>9223372036854775807</td>
+<td>8</td>
+</tr>
+<tr>
+<td>unsigned int</td>
+<td>0</td>
+<td>4294967295</td>
+<td>4</td>
+</tr>
+<tr>
+<td>unsigned short int</td>
+<td>0</td>
+<td>65535</td>
+<td>2</td>
+</tr>
+<tr>
+<td>unsigned long int</td>
+<td>0</td>
+<td>4294967295</td>
+<td>4</td>
+</tr>
+<tr>
+<td>unsigned long long int</td>
+<td>0</td>
+<td>18446744073709551615</td>
+<td>8</td>
+</tr>
+<tr>
+<td>float</td>
+<td>0</td>
+<td>340282346638528860000000000000000000000.000000</td>
+<td>4</td>
+</tr>
+<tr>
+<td>double</td>
+<td>0</td>
+<td>17976931348623157000&hellip;(289 more 0s).000000</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<p><a href="Intro_to_C(2).html">Prev</a></p>
+    </div>
+
+</body>
+
+</html>

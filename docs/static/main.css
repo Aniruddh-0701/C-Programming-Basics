@@ -1,0 +1,61 @@
+.outer {
+  list-style-type: decimal;
+}
+
+.inner {
+  list-style-type: lower-alpha;
+}
+h1 {
+  align-self: center;
+  align-items: center;
+  text-align: center;
+  padding: 1% 1% 1% 1%;
+}
+th,
+thead {
+  border: 1px solid black;
+  padding: 1%;
+  width: max-content;
+  height: auto;
+  text-align: center;
+  border-collapse: collapse;
+  background-color: #ffcd94;
+}
+
+td {
+  padding: 1%;
+  margin: 5%;
+  width: max-content;
+  overflow: auto;
+  text-align: center;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+table {
+  max-width: 100%;
+  width: max-content;
+  table-layout: auto;
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+  align-self: center;
+  padding: 5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 17.5px;
+  border-left: 5px solid #3e3c3c;
+}
+
+blockquote > p {
+  margin-bottom: 0;
+}
+
+.card {
+  padding-left: 0;
+  padding-right: 0;
+}
