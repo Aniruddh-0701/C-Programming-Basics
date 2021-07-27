@@ -12,6 +12,8 @@ Simply said, it is a language used to write a program.
 
 It is a well defined medium to instruct the computer.
 
+---
+
 ### Types of Programming Languages
 
 Based on uses, the Programming languages can be classified under 50 types refer [List of Programming Languages by type](https://en.wikipedia.org/wiki/List_of_programming_languages_by_type)
@@ -27,6 +29,8 @@ Based on execution method:
 1. Compiled Language
 2. Interpreted Language
 
+---
+
 ## Basic parts in programming
 
 A few basic instructions that appear in almost all language (by [Allen Downey](https://en.wikipedia.org/wiki/Allen_Downey), in his book _How To Think Like A Computer Scientist_):
@@ -37,6 +41,8 @@ A few basic instructions that appear in almost all language (by [Allen Downey](h
 4. **Conditional Execution:** Check for certain conditions and execute the appropriate sequence of statements.
 5. **Repetition:** Perform some action repeatedly, usually with some variation.
 
+---
+
 ## Introduction to C programming
 
 C is a general-purpose, procedural computer programming language supporting structured programming, with a static type system.
@@ -45,6 +51,8 @@ By design, C provides constructs that map efficiently to typical machine instruc
 
 It is generally used to learn basic programming concepts. C language is being used to build other High level programming languages like python.  
 ![Derivatives of C language](Clogo.png)
+
+---
 
 ## Basic Structure
 
@@ -57,6 +65,8 @@ int main(){
     return 0;
 }
 ```
+
+---
 
 ## Data Types
 
@@ -78,10 +88,14 @@ Basic Types:
 
 ![ASCII charset](ASCII_chart.png)
 
-Derived Data Types:
+**Derived Data Types:**
 
 1. Array
 2. Strings
+3. Structures
+4. Unions
+5. Enum
+6. Pointers
 
 Additional types in integers (Base):
 
@@ -89,6 +103,10 @@ Additional types in integers (Base):
 2. Octal (base 8) [0-7]
 3. Decimal (base 10) [0-9] Most Common
 4. HexaDecimal (base 16) [0-9, A-F]
+
+> `Derived` or `Non primitive` data types and the `types of integers` will be discussed later
+
+---
 
 ## Literals
 
@@ -127,16 +145,70 @@ Naming convention for multi word variable names:
 5. Kebab case (ab-ab)
 6. Snake case(ab_ab)
 
-E.g.: age, input_values, firstName, number, prime_num  
+E.g.: age, input_values, firstName, number, prime_num
+
 Not: user name, number_to_find_prime
 
 [Variables (data type), Naming Convention](variable_name.c)
+
+---
 
 ## Keywords or Reserved words
 
 Words used for a special purpose in program.
 
 E.g: `scanf`, `printf`, `int`, `if`, `for`, `try`, etc.
+
+---
+
+### Declaration vs Initialization of variables
+
+**Declaration** is the process of defining the variables' or constants' names to be used in the program.
+
+**Syntax:**
+
+```txt
+<type> variableName;
+```
+
+> Multiple variables of same type can be declared on the same line, being separated be comma.
+
+Eg:
+
+```c
+int age, num1;
+char ch;
+```
+
+**Initialization** is the process of assigning values to the variables declared. It is done using assignment operator `=`. (For Details, check Assignment operators in [Part 2](<Intro_to_C(2).md>))
+
+Eg:
+
+```c
+age = 10;
+ch = 'a';
+```
+
+> Both Declaration and Initialization can be done in the same statement, for multiple variables
+
+```c
+int age = 20, num2 = 10;
+char ch = 'z';
+```
+
+---
+
+### Declaration of constants
+
+In `C`, constants are declared and initialized in a single line using the `const` keyword.
+
+**Syntax:**
+
+```c
+const type variable_name = value;
+```
+
+---
 
 ## Output handling or Printing out statements/Values to user
 
@@ -158,6 +230,94 @@ printf("statement");
 **Identifiers** - variables or expressions
 
 [Writing your first Program - printing "Hello World"](Hello_world.c)
+
+---
+
+### Modifiers
+
+Modifiers are key words that modify the default state of `int` and `char` data types. There are 4 modifiers in `C`:
+
+1. short
+2. long
+3. signed
+4. unsigned
+
+**1. `short`:**
+
+It limits user to store small integer values from `-32768` to `32767`. It can be used only on `int` data type.
+
+```c
+short int myShortInt = 10;
+```
+
+**2. `long`:**
+
+It allows storage of large value than default limit for `int`. Tt can be use once or twice to mention the limits.
+
+```c
+long int myLongInt;
+long myLongerInt;
+long long myLongLongInt;
+```
+
+**3. `signed`:**
+
+It is default modifier of `int` and `char` data type if no modifier is specified. It says that user can store negative and positive values.
+
+```c
+int myValue = -289;
+signed int myValues = -544;
+```
+
+**4. `unsigned`:**
+
+When user intends to store only positive values in the given data type (`int` and `char`).
+
+```c
+unsigned int myVal = 10;
+```
+
+To check the limitations of the modifiers, check [Part 3](<Intro_to_c(3).md>)
+
+---
+
+### List of Format specifiers
+
+Having understood the modifiers in C, we can look at the complete list of format specifiers.
+
+| Format Specifier       | Type                          |
+| ---------------------- | ----------------------------- |
+| `%c`                   | Character                     |
+| `%d`                   | Signed integer                |
+| `%e` or `%E`           | Scientific notation of floats |
+| `%f`                   | Float values                  |
+| `%g` or `%G`           | Similar as `%e` or `%E`       |
+| `%hi`                  | Signed integer (`short`)      |
+| `%hu`                  | Unsigned Integer (`short`)    |
+| `%i`                   | Unsigned integer              |
+| `%l` or `%ld` or `%li` | Long or `long int`            |
+| `%lf`                  | Double                        |
+| `%Lf`                  | Long double                   |
+| `%lu`                  | Unsigned int or unsigned long |
+| `%lli` or `%lld`       | Long long                     |
+| `%llu`                 | Unsigned long long            |
+| `%o`                   | Octal representation          |
+| `%p`                   | Pointer                       |
+| `%s`                   | String                        |
+| `%u`                   | Unsigned int                  |
+| `%x` or `%X`           | Hexadecimal representation    |
+| `%n`                   | Prints nothing                |
+| `%%`                   | Prints `%` character          |
+
+These are the basic format specifiers. We can add some other parts with the format specifiers. These are like below −
+
+- A minus symbol (`-`) sign tells left alignment
+
+- A number after `%` specifies the minimum field width. If string is less than the width, it will be filled with spaces
+
+- A period (`.`) is used to separate field width and precision
+
+---
 
 ## Comments
 

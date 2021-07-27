@@ -137,6 +137,150 @@
 </tr>
 </tbody>
 </table>
+<hr>
+<h3>Custom printing and output formatting</h3>
+<p><code>printf</code> is prints out whatever format we provide. This helps us use custom formatting.</p>
+<p>For example, Consider the below code, that gets two numbers and prints their sum.</p>
+<pre><code class="language-c">// Program to find sum of two numbers
+#include&lt;stdio.h&gt;
+
+int main(){
+    int num1, num2, sum;
+
+    printf(&quot;Enter first number &quot;);
+    scanf(&quot;%d&quot;, &amp;num1);
+
+    printf(&quot;Enter second number &quot;);
+    scanf(&quot;%d&quot;, &amp;num2);
+
+    sum = num1 + num2;
+    printf(&quot;Sum of the numbers %d and %d is %d\n&quot;, num1, num2, sum);
+
+    return 0;
+}
+</code></pre>
+<p>What you get in your screen, on execution, providing the input, is:</p>
+<pre><code class="language-txt">Enter first number 10
+Enter second number 20
+Sum of the numbers 10 and 20 is 30
+
+</code></pre>
+<p>Note the last line of output, you have the output formatted so that it is easy to read. This way is the basic output formatting</p>
+<p>You can also format the output of computed values stored in variables. These are done by modifying the format specifier as stated below:</p>
+<ul>
+<li>
+<p>A minus symbol (<code>-</code>) sign tells left alignment</p>
+</li>
+<li>
+<p>A number after <code>%</code> specifies the minimum field width. If string is less than the width, it will be filled with spaces</p>
+</li>
+<li>
+<p>A period (<code>.</code>) is used to separate field width and precision</p>
+</li>
+</ul>
+<p>The below example uses an string (<code>char</code> array) of name str. More details on them will be discussed later.</p>
+<p><strong>1. String Formatting:</strong></p>
+<pre><code class="language-c">// string formatting
+#include &lt;stdio.h&gt;
+
+int main() {
+    char str[] = &quot;Hello World&quot;;
+
+    printf(&quot;%s\n&quot;, str);
+
+    // shift to the right 20 characters including the string
+    printf(&quot;%20s\n&quot;, str);
+
+    printf(&quot;%-20s\n&quot;, str); // left align
+
+    // shift to the right 20 characters including the string, and print string
+    // up to 5 character
+    printf(&quot;%20.5s\n&quot;, str);
+
+    // left align and print string up to 5 character
+    printf(&quot;%-20.5s\n&quot;, str);
+
+    return 0;
+}
+</code></pre>
+<p>Output</p>
+<pre><code class="language-txt">Hello World
+         Hello World
+Hello World
+               Hello
+Hello
+</code></pre>
+<p><strong>2. Float formatting:</strong></p>
+<pre><code class="language-c">// float formatting
+#include &lt;stdio.h&gt;
+
+int main() {
+    float f = 12.666667;
+
+    printf(&quot;%f\n&quot;, f);
+
+    // setting width
+    printf(&quot;%10f\n&quot;, f);
+
+    // setting width and aligning left
+    printf(&quot;%-10f\n&quot;, f);
+
+    // setting width and padding with zeroes
+    printf(&quot;%015f\n&quot;, f);
+
+    // setting precision
+    printf(&quot;%.2f\n&quot;, f);
+
+    // setting width and precision
+    printf(&quot;%10.2f\n&quot;, f);
+
+    // setting width and precision
+    printf(&quot;%10.2f\n&quot;, f);
+
+    // setting width and precision with padding zeroes
+    printf(&quot;%015.7f\n&quot;, f);
+
+    return 0;
+}
+</code></pre>
+<p>Output</p>
+<pre><code class="language-txt">12.666667
+ 12.666667
+12.666667
+00000012.666667
+12.67
+     12.67
+     12.67
+0000012.6666670
+</code></pre>
+<p><strong>3. Integer formatting:</strong></p>
+<pre><code class="language-c">// integer formatting
+#include &lt;stdio.h&gt;
+
+int main() {
+    int a = 126;
+
+    printf(&quot;%d\n&quot;, a);
+
+    // setting width
+    printf(&quot;%5d\n&quot;, a);
+
+    // setting width and aligning to the left
+    printf(&quot;%-5d\n&quot;, a);
+
+    // setting width and padding with zeroes
+    printf(&quot;%05d\n&quot;, a);
+
+    return 0;
+}
+</code></pre>
+<p>Output</p>
+<pre><code class="language-txt">126
+  126
+126
+00126
+</code></pre>
+<hr>
 <p><a href="Intro_to_C(2).html">Prev</a></p>
     </div>
 

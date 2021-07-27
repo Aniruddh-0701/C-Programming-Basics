@@ -8,6 +8,8 @@ scanf("format specifier", &identifier);
 
 The format specifiers are as listed for `printf`. It is to be noted that for all format specifiers except `%c`, the input is taken till the next character < space (in terms ASCII value), mostly `\n` or space (`' '`)
 
+---
+
 ## Operators
 
 Used to perform arithmetic and logical operations.
@@ -25,28 +27,28 @@ Used to perform arithmetic and logical operations.
 
 Perform arithmetic operations
 
-| **Operator** | **Description**             | **Example** |
-| ------------ | --------------------------- | ----------- |
-| +            | Addition                    | 2 + 3 = 5   |
-| -            | Subtraction                 | 2 - 3 = -1  |
-| \*           | Multiplication              | 2 \* 3 = 6  |
-| /            | Division (returns quotient) | 2 / 3 = 0   |
-| %            | Modulo (returns remainder)  | 2 % 3 = 2   |
-| ++           | Increment operator          | ++2 or 2++  |
-| --           | Decrement operator          | --3 or 3--  |
+| Operator | Description                 | Example    |
+| -------- | --------------------------- | ---------- |
+| +        | Addition                    | 2 + 3 = 5  |
+| -        | Subtraction                 | 2 - 3 = -1 |
+| \*       | Multiplication              | 2 \* 3 = 6 |
+| /        | Division (returns quotient) | 2 / 3 = 0  |
+| %        | Modulo (returns remainder)  | 2 % 3 = 2  |
+| ++       | Increment operator          | ++2 or 2++ |
+| --       | Decrement operator          | --3 or 3-- |
 
 #### 2. Relational
 
 Relations between two variables
 
-| **Operator** | **Description**  | **Example** |
-| ------------ | ---------------- | ----------- |
-| ==           | Equal            | a == b      |
-| !=           | Not Equal        | a != b      |
-| >            | Greater          | a > b       |
-| >=           | Greater or Equal | a >= b      |
-| <            | Lesser           | a < b       |
-| <=           | Lesser or Equal  | a <= b      |
+| Operator | Description      | Example |
+| -------- | ---------------- | ------- |
+| ==       | Equal            | a == b  |
+| !=       | Not Equal        | a != b  |
+| >        | Greater          | a > b   |
+| >=       | Greater or Equal | a >= b  |
+| <        | Lesser           | a < b   |
+| <=       | Lesser or Equal  | a <= b  |
 
 #### 3. Logical
 
@@ -99,6 +101,8 @@ Besides the operators discussed above, there are a few other important operators
 | \*       | Pointer to a variable                              | \*a             |
 | ?        | Ternary Operator                                   | condition? a: b |
 
+---
+
 ## Operator Precedence
 
 Operator precedence determines the grouping of terms in an expression and decides how an expression is evaluated. Certain operators have higher precedence than others; for example, the multiplication operator has a higher precedence than the addition operator.
@@ -121,6 +125,8 @@ Operator precedence determines the grouping of terms in an expression and decide
 | Assignment           | = += −= \*= /= %=>>= <<= &= ^= \|= | Right to left |
 | Comma                | ,                                  | Left to right |
 
+---
+
 ## Expressions
 
 A statement that gives a finite value.
@@ -133,6 +139,8 @@ Types:
    Example: + 12 23
 3. Postfix expressions:  
    Example: 12 23 +
+
+---
 
 ## Escape Sequences
 
@@ -151,5 +159,8 @@ Few special characters defined under ASCII for formatting strings/output. The `\
 | \a       | bell                        |
 | \v       | vertical tab                |
 
-[Prev](<Intro_to_C(1).md>)  
+---
+
+[Prev](<Intro_to_C(1).md>)
+
 [Next](<Intro_to_C(3).md>)
