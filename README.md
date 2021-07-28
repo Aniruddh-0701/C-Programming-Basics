@@ -6,7 +6,7 @@
    - [Introduction to C - Part 1](<Introduction to C/Intro_to_C(1).md>)
    - [Introduction to C - Part 2](<Introduction to C/Intro_to_C(2).md>)
    - [Introduction to C - Part 3](<Introduction to C/Intro_to_C(3).md>)
-2. [Condition Statements](<Condition Statements>)
+2. [Condition Statements](<Condition Statements/condition_statements.md>)
 3. Looping Statements
 4. Basics of Functions
 5. Arrays and Strings

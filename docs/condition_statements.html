@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Statements in C</title>
+    <meta name="description" content="Conditional statements">
+    <link rel="shortcut icon" href="C.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./static/main.css" />
+    <script>
+        window.onload = (function () {
+            let tags = document.getElementsByTagName("pre");
+            let br = document.createElement("br");
+            for (var i = 0; i < tags.length; ++i) {
+                tags[i].classList.add("prettyprint");
+            }
+            tags = document.getElementsByTagName("code");
+            console.log(tags);
+            for (var i = 0; i < tags.length; ++i) {
+                if (tags[i].classList.contains("language-c")) {
+                    tags[i].classList.add("lang-c");
+                    tags[i].classList.remove("language-c");
+                }
+            }
+        })
+    </script>
+
+    <script
+        src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autorun=true&amp;lang=c&amp;lang=llvm"></script>
+
+
+    <script>
+        MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Conditional Statements</h1>
+<p><strong>Condition statements</strong> or <strong>Control flow statements</strong> or <strong>Decision Control Statements</strong> are statements that are used to control the flow or execution of a program. The flow is controlled the values of few variables that decide the proceedings of a program.</p>
+<p>The conditions statements have same basic structure in all programming languages. The list of Control statements are:</p>
+<ol>
+<li><code>if</code> statement</li>
+<li><code>if</code> - <code>else</code> statements</li>
+<li><code>if</code> - <code>else if</code> - <code>else</code> statements</li>
+<li>Nested <code>if</code> - <code>else</code> statements</li>
+<li>Conditional check by ternary (<code>?</code>) operator</li>
+</ol>
+<blockquote>
+<p>The result of expression used to make decision should always result in any of the boolean values (<code>true</code> or <code>false</code>)</p>
+</blockquote>
+<h3>1. <code>if</code> statement</h3>
+<p>Executes the statements inside the block only if the condition is satisfied.</p>
+<blockquote>
+<p>A block is a section of code that is enclosed within the curly braces <code>{}</code></p>
+</blockquote>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-c">if (condition)
+{
+    // Statements
+}
+</code></pre>
+<p>Eg:</p>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+
+int main(){
+    int x = 14, y = 18;
+    if (y &gt; x) {
+        printf(&quot;%d&quot;, y);
+    }
+}
+</code></pre>
+<p>The above program will print <code>y</code> as the conditional expression <code>y &gt; x</code> results in <code>true</code></p>
+<h3>2. <code>if - else</code> statement</h3>
+<p>Executes the statements inside the <code>if</code> block only if the condition is satisfied. Otherwise, the <code>else</code> block is executed.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-c">if (condition)
+{
+    // Statements
+}
+else
+{
+    // Statements
+}
+</code></pre>
+<p>Eg:</p>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+
+int main(){
+    int x = 19, y = 18;
+    if (y &gt; x) {
+        printf(&quot;%d&quot;, y);
+    }
+    else
+    {
+        printf(&quot;%d&quot;, x);
+    }
+}
+</code></pre>
+<p>The above program will print <code>x</code> as the conditional expression <code>y &gt; x</code> results in <code>false</code></p>
+<h3>3. <code>if</code> - <code>else if</code> - <code>else</code> statement</h3>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-c">if (condition1)
+{
+    // Statements
+}
+else if (condition2)
+{
+    // Statements
+}
+else
+{
+    // Statements
+}
+</code></pre>
+<p>Eg:</p>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+
+int main(){
+    // Yet to fill the example
+    return 0;
+}
+</code></pre>
+<h3>4. Nested <code>if</code> - <code>else</code> statement</h3>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-c">if (condition1)
+{
+    if (condition2)
+    {
+        // Statements
+    }
+    else
+    {
+        // Statements
+    }
+}
+else
+{
+    if (condition)
+    {
+        // Statements
+    }
+    else
+    {
+        // Statements
+    }
+}
+</code></pre>
+<blockquote>
+<p>The nesting need not be always in both the blocks. One of them may not contain such nesting and nesting may also be to the next level or multiple nesting may be found.</p>
+</blockquote>
+<p>Eg:</p>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+
+int main(){
+    // Yet to fill the example
+    return 0;
+}
+</code></pre>
+<h3>5. Ternary (<code>?</code>) Operator</h3>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-c">condition? statement1: statement2;
+</code></pre>
+<p>Eg:</p>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+
+int main(){
+    // Yet to fill the example
+    return 0;
+}
+</code></pre>
+<blockquote>
+<p>It should be used only for a simple <code>if</code> - <code>else</code> condition.</p>
+</blockquote>
+    </div>
+
+    <div class="foot">
+        
+        <a href="Intro_to_C(3).html" style="margin: 10%;">Prev</a>
+        
+        <a href="./" style="margin: 10%;">Home</a>
+        
+        <a href="http://" target="_blank" rel="noopener noreferrer" style="margin: 10%;"></a>
+        
+        <br>
+    </div>
+
+</body>
+
+</html>
