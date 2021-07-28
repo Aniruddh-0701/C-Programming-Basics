@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intro to C(3)</title>
+    <title>Introduction to C - Part 3</title>
+    <meta name="description" content="Introduction to C -  Part 3/3">
+    <link rel="shortcut icon" href="C.png" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./static/main.css" />
@@ -284,8 +286,8 @@ They precede the type that they modify. We have four different storage classes i
 </ol>
 <p><strong>1. <code>auto</code>:</strong></p>
 <p>The <code>auto</code> storage class is the default storage class for all local variables.</p>
-<pre><code class="language-c">   int mount;
-   auto int month;
+<pre><code class="language-c">int mount;
+auto int month;
 </code></pre>
 <p><strong>2. <code>register</code>:</strong></p>
 <p>The <code>register</code> storage class is used to define local variables that should be stored in a register instead of RAM. This means that the variable has a maximum size equal to the register size (usually one word) and can&rsquo;t have the unary &lsquo;<code>&amp;</code>&lsquo; operator applied to it (as it does not have a memory location).</p>
@@ -309,8 +311,8 @@ int count ;
 extern void write_extern();
 
 void main() {
-count = 5;
-write_extern();
+    count = 5;
+    write_extern();
 }
 </code></pre>
 <p><strong>Second File: <code>support.c</code></strong></p>
@@ -319,7 +321,7 @@ write_extern();
 extern int count;
 
 void write_extern(void) {
-printf(&quot;count is %d\n&quot;, count);
+    printf(&quot;count is %d\n&quot;, count);
 }
 </code></pre>
 <p>Here, extern is being used to declare count in the second file, where as it has its definition in the first file, <em>main.c</em>.</p>

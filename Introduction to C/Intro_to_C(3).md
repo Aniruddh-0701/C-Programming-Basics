@@ -1,3 +1,9 @@
+---
+title: Introduction to C - Part 3
+subtitle: Introduction to C -  Part 3/3
+image: ../C.png
+---
+
 # Introduction to C - Part 3
 
 ## Limits and Memory for various Data Types
@@ -204,8 +210,8 @@ They precede the type that they modify. We have four different storage classes i
 The `auto` storage class is the default storage class for all local variables.
 
 ```c
-   int mount;
-   auto int month;
+int mount;
+auto int month;
 ```
 
 **2. `register`:**
@@ -243,8 +249,8 @@ int count ;
 extern void write_extern();
 
 void main() {
-count = 5;
-write_extern();
+    count = 5;
+    write_extern();
 }
 ```
 
@@ -256,7 +262,7 @@ write_extern();
 extern int count;
 
 void write_extern(void) {
-printf("count is %d\n", count);
+    printf("count is %d\n", count);
 }
 ```
 

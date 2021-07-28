@@ -1,3 +1,9 @@
+---
+title: Introduction to C - Part 2
+subtitle: Introduction to C -  Part 2/3
+image: ../C.png
+---
+
 # Introduction to C - Part 2
 
 ## Input
