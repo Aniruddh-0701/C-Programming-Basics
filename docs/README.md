@@ -1,7 +1,3 @@
-...
-image: C.png
-...
-
 # C Programming Basics
 
 ## Contents
