@@ -128,6 +128,7 @@
 </tr>
 </tbody>
 </table>
+<p>The sizes and value limits for various data types can printed from <code>&lt;ctype.h&gt;</code> header file and it is done in the file <a href="datatypes.c">here</a></p>
 <hr>
 <h3>Custom printing and output formatting</h3>
 <p><code>printf</code> is prints out whatever format we provide. This helps us use custom formatting.</p>
@@ -271,6 +272,57 @@ int main() {
 126
 00126
 </code></pre>
+<hr>
+<h3>Variables - Storage Classes</h3>
+<p>A storage class defines the scope (visibility) and life-time of variables and/or functions within a C Program.
+They precede the type that they modify. We have four different storage classes in a C program −</p>
+<ol>
+<li>auto</li>
+<li>register</li>
+<li>static</li>
+<li>extern</li>
+</ol>
+<p><strong>1. <code>auto</code>:</strong></p>
+<p>The <code>auto</code> storage class is the default storage class for all local variables.</p>
+<pre><code class="language-c">   int mount;
+   auto int month;
+</code></pre>
+<p><strong>2. <code>register</code>:</strong></p>
+<p>The <code>register</code> storage class is used to define local variables that should be stored in a register instead of RAM. This means that the variable has a maximum size equal to the register size (usually one word) and can&rsquo;t have the unary &lsquo;<code>&amp;</code>&lsquo; operator applied to it (as it does not have a memory location).</p>
+<pre><code class="language-c">register int miles
+</code></pre>
+<p><strong>3. <code>static</code>:</strong></p>
+<p>The <code>static</code> storage class instructs the compiler to keep a local variable in existence during the life-time of the program instead of creating and destroying it each time it comes into and goes out of scope. Therefore, making local variables static allows them to maintain their values between function calls.</p>
+<pre><code class="language-c">static int x = 5;
+</code></pre>
+<blockquote>
+<p>The <code>static</code> modifier may also be applied to global variables to restrict the variable&rsquo;s scope to the file in which it is declared.</p>
+</blockquote>
+<p><strong>4. <code>extern</code>:</strong></p>
+<p>The <code>extern</code> storage class is used to give a reference of a global variable or a function that is visible to <code>ALL</code> the program files.</p>
+<p>When &lsquo;<code>extern</code>&lsquo; is used, the variable cannot be initialized however, it points the variable name at a storage location that has been previously defined.</p>
+<p>The extern modifier is most commonly used when there are two or more files sharing the same global variables or functions as explained below.</p>
+<p><strong>First File: <code>main.c</code></strong></p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int count ;
+extern void write_extern();
+
+void main() {
+count = 5;
+write_extern();
+}
+</code></pre>
+<p><strong>Second File: <code>support.c</code></strong></p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+extern int count;
+
+void write_extern(void) {
+printf(&quot;count is %d\n&quot;, count);
+}
+</code></pre>
+<p>Here, extern is being used to declare count in the second file, where as it has its definition in the first file, <em>main.c</em>.</p>
 <hr>
 <p><a href="Intro_to_C(2).html">Prev</a></p>
     </div>

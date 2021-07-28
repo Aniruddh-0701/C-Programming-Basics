@@ -17,6 +17,8 @@
 | float                  | 0                    | 340282346638528860000000000000000000000.000000 | 4                 |
 | double                 | 0                    | 17976931348623157000...(289 more 0s).000000    | 8                 |
 
+The sizes and value limits for various data types can printed from `<ctype.h>` header file and it is done in the file [here](datatypes.c)
+
 ---
 
 ### Custom printing and output formatting
@@ -184,6 +186,81 @@ Output
 126
 00126
 ```
+
+---
+
+### Variables - Storage Classes
+
+A storage class defines the scope (visibility) and life-time of variables and/or functions within a C Program.
+They precede the type that they modify. We have four different storage classes in a C program −
+
+1. auto
+2. register
+3. static
+4. extern
+
+**1. `auto`:**
+
+The `auto` storage class is the default storage class for all local variables.
+
+```c
+   int mount;
+   auto int month;
+```
+
+**2. `register`:**
+
+The `register` storage class is used to define local variables that should be stored in a register instead of RAM. This means that the variable has a maximum size equal to the register size (usually one word) and can't have the unary '`&`' operator applied to it (as it does not have a memory location).
+
+```c
+register int miles
+```
+
+**3. `static`:**
+
+The `static` storage class instructs the compiler to keep a local variable in existence during the life-time of the program instead of creating and destroying it each time it comes into and goes out of scope. Therefore, making local variables static allows them to maintain their values between function calls.
+
+```c
+static int x = 5;
+```
+
+> The `static` modifier may also be applied to global variables to restrict the variable's scope to the file in which it is declared.
+
+**4. `extern`:**
+
+The `extern` storage class is used to give a reference of a global variable or a function that is visible to `ALL` the program files.
+
+When '`extern`' is used, the variable cannot be initialized however, it points the variable name at a storage location that has been previously defined.
+
+The extern modifier is most commonly used when there are two or more files sharing the same global variables or functions as explained below.
+
+**First File: `main.c`**
+
+```c
+#include <stdio.h>
+
+int count ;
+extern void write_extern();
+
+void main() {
+count = 5;
+write_extern();
+}
+```
+
+**Second File: `support.c`**
+
+```c
+#include <stdio.h>
+
+extern int count;
+
+void write_extern(void) {
+printf("count is %d\n", count);
+}
+```
+
+Here, extern is being used to declare count in the second file, where as it has its definition in the first file, _main.c_.
 
 ---
 

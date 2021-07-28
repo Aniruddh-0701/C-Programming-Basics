@@ -22,17 +22,20 @@ ul {
   list-style-type: lower-alpha;
   padding: 10%;
 }
-h1 {
+h1,
+h6 {
   color: #000080;
   align-self: center;
   align-items: center;
   text-align: center;
   padding: 1% 1% 1% 1%;
 }
-h2 {
+h2,
+h4 {
   color: #ff9933;
 }
-h3 {
+h3,
+h5 {
   margin-left: 2%;
   color: #138808;
 }
@@ -79,6 +82,9 @@ blockquote {
 blockquote > p {
   margin-left: -2%;
   margin-bottom: 0;
+  font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
+    sans-serif;
+  font-weight: 200;
 }
 
 .card {
