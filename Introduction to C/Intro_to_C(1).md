@@ -2,6 +2,8 @@
 title: Introduction to C - Part 1
 subtitle: Introduction to C -  Part 1/3
 image: ../C.png
+prev: ""
+next: Intro_to_C(2).html
 ---
 
 # Introduction to C - Part 1
@@ -63,7 +65,14 @@ It is generally used to learn basic programming concepts. C language is being us
 ## Basic Structure
 
 ```c
+/**
+* Basic Structure of a C program.
+* It is the documentation section
+*/
+
 #include<stdio.h>
+
+// definition and global declarations
 
 int main(){
     //Declaration and Initialization
@@ -72,7 +81,17 @@ int main(){
 }
 ```
 
----
+- The first few lines define what is called a documentation. This section contains a multi line comment describing the code. The details on comments are discussed below.
+
+- Next is the link for the compiler to indicate header files that are being used from the library. **Header files** are documents that define the symbols that are used in the program. Here `stdio.h` header file is linked.
+
+- The next section is the area of definition of constants and Global variables
+
+- Below this is the area of code.
+
+> The `main` function is the point of code at which execution of the program starts
+>
+> More details on `functions` will be discussed later.
 
 ## Data Types
 

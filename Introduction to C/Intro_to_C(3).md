@@ -2,6 +2,8 @@
 title: Introduction to C - Part 3
 subtitle: Introduction to C -  Part 3/3
 image: ../C.png
+prev: Intro_to_C(2).html
+next: condition_statements.html
 ---
 
 # Introduction to C - Part 3

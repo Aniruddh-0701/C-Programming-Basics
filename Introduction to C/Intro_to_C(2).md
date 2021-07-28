@@ -2,6 +2,8 @@
 title: Introduction to C - Part 2
 subtitle: Introduction to C -  Part 2/3
 image: ../C.png
+next: Intro_to_C(3).html
+prev: Intro_to_C(1).html
 ---
 
 # Introduction to C - Part 2

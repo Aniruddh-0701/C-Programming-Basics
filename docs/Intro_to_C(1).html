@@ -83,7 +83,14 @@
 <img alt="Derivatives of C language" src="Clogo.png"></p>
 <hr>
 <h2>Basic Structure</h2>
-<pre><code class="language-c">#include&lt;stdio.h&gt;
+<pre><code class="language-c">/**
+* Basic Structure of a C program.
+* It is the documentation section
+*/
+
+#include&lt;stdio.h&gt;
+
+// definition and global declarations
 
 int main(){
     //Declaration and Initialization
@@ -91,7 +98,24 @@ int main(){
     return 0;
 }
 </code></pre>
-<hr>
+<ul>
+<li>
+<p>The first few lines define what is called a documentation. This section contains a multi line comment describing the code. The details on comments are discussed below.</p>
+</li>
+<li>
+<p>Next is the link for the compiler to indicate header files that are being used from the library. <strong>Header files</strong> are documents that define the symbols that are used in the program. Here <code>stdio.h</code> header file is linked.</p>
+</li>
+<li>
+<p>The next section is the area of definition of constants and Global variables</p>
+</li>
+<li>
+<p>Below this is the area of code.</p>
+</li>
+</ul>
+<blockquote>
+<p>The <code>main</code> function is the point of code at which execution of the program starts</p>
+<p>More details on <code>functions</code> will be discussed later.</p>
+</blockquote>
 <h2>Data Types</h2>
 <p>Data can be defined as a representation of facts, concepts, or instructions in a formalized manner, which should be suitable for communication, interpretation, or processing by human or electronic machine.</p>
 <p>Data type is an attribute which tells the compiler or interpreter how the programmer intends to use the data.</p>
@@ -362,7 +386,17 @@ signed int myValues = -544;
 This is used to comment multiple lines
 */
 </code></pre>
-<p><a href="Intro_to_C(2).html">Next</a></p>
+    </div>
+
+    <div class="foot">
+        
+        <a href="./" style="margin: 10%;">Prev</a>
+        
+        <a href="./" style="margin: 10%;">Home</a>
+        
+        <a href=" Intro_to_C(2).html" style="margin: 10%;">Next</a>
+        
+        <br>
     </div>
 
 </body>

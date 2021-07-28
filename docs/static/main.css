@@ -2,7 +2,8 @@ body {
   font-family: "Times New Roman", Times, serif;
 }
 p {
-  text-indent: 5%;
+  text-indent: 4%;
+  padding-left: 5%;
 }
 
 div {
@@ -80,7 +81,7 @@ blockquote {
 }
 
 blockquote > p {
-  margin-left: -2%;
+  text-indent: 0%;
   margin-bottom: 0;
   font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
     sans-serif;
@@ -103,6 +104,7 @@ img {
 
 pre {
   margin: 2%;
+  margin-left: 10%;
   align-content: flex-start;
   box-sizing: border-box;
   background-color: #dddddd;
@@ -111,6 +113,9 @@ pre {
 
 code {
   font-weight: bold;
+}
+.foot {
+  text-align: center;
 }
 
 @media (prefers-color-scheme: light) {
