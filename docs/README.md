@@ -1,5 +1,3 @@
-# C Programming Basics
-
 ## Contents
 
 1. [Introduction to C](<Intro_to_C(1).html>)
