@@ -14,6 +14,16 @@ ol,
 ul {
   margin-left: 5%;
 }
+
+li {
+  margin-left: 5%;
+  padding-left: -5%;
+}
+
+ol > p,
+ul > p {
+  text-indent: 0%;
+}
 .outer {
   list-style-type: decimal;
   padding: 5%;
@@ -114,6 +124,7 @@ pre {
 code {
   font-weight: bold;
 }
+
 .foot {
   text-align: center;
 }
