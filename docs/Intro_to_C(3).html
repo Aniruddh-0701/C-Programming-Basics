@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./static/main.css" />
+    <script
+        src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autorun=false&amp;lang=llvm"></script>
     <script>
         window.onload = (function () {
             let tags = document.getElementsByTagName("pre");
@@ -26,11 +28,10 @@
                     tags[i].classList.remove("language-c");
                 }
             }
+            PR.prettyPrint();
         })
     </script>
 
-    <script
-        src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autorun=true&amp;lang=c&amp;lang=llvm"></script>
 
 
     <script>
@@ -45,98 +46,97 @@
 
     <div class="container">
         <h1>Introduction to C - Part 3</h1>
-        <h2>Limits and Memory for various Data Types</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Data type</th>
-                    <th>Minimum</th>
-                    <th>Maximum</th>
-                    <th>Memory (in bytes)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>char</td>
-                    <td>-128</td>
-                    <td>127</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>unsigned char</td>
-                    <td>0</td>
-                    <td>255</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>int</td>
-                    <td>-2147483648</td>
-                    <td>2147483647</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td>short int</td>
-                    <td>-32768</td>
-                    <td>32767</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>long int</td>
-                    <td>-2147483648</td>
-                    <td>2147483647</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td>long long int</td>
-                    <td>-9223372036854775808</td>
-                    <td>9223372036854775807</td>
-                    <td>8</td>
-                </tr>
-                <tr>
-                    <td>unsigned int</td>
-                    <td>0</td>
-                    <td>4294967295</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td>unsigned short int</td>
-                    <td>0</td>
-                    <td>65535</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>unsigned long int</td>
-                    <td>0</td>
-                    <td>4294967295</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td>unsigned long long int</td>
-                    <td>0</td>
-                    <td>18446744073709551615</td>
-                    <td>8</td>
-                </tr>
-                <tr>
-                    <td>float</td>
-                    <td>0</td>
-                    <td>340282346638528860000000000000000000000.000000</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td>double</td>
-                    <td>0</td>
-                    <td>17976931348623157000&hellip;(289 more 0s).000000</td>
-                    <td>8</td>
-                </tr>
-            </tbody>
-        </table>
-        <p>The sizes and value limits for various data types can printed from <code>&lt;ctype.h&gt;</code> header file
-            and it is done in the file <a href="datatypes.c">here</a></p>
-        <hr>
-        <h3>Custom printing and output formatting</h3>
-        <p><code>printf</code> is prints out whatever format we provide. This helps us use custom formatting.</p>
-        <p>For example, Consider the below code, that gets two numbers and prints their sum.</p>
-        <pre><code class="language-c">// Program to find sum of two numbers
+<h2>Limits and Memory for various Data Types</h2>
+<table>
+<thead>
+<tr>
+<th>Data type</th>
+<th>Minimum</th>
+<th>Maximum</th>
+<th>Memory (in bytes)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>char</td>
+<td>-128</td>
+<td>127</td>
+<td>1</td>
+</tr>
+<tr>
+<td>unsigned char</td>
+<td>0</td>
+<td>255</td>
+<td>1</td>
+</tr>
+<tr>
+<td>int</td>
+<td>-2147483648</td>
+<td>2147483647</td>
+<td>4</td>
+</tr>
+<tr>
+<td>short int</td>
+<td>-32768</td>
+<td>32767</td>
+<td>2</td>
+</tr>
+<tr>
+<td>long int</td>
+<td>-2147483648</td>
+<td>2147483647</td>
+<td>4</td>
+</tr>
+<tr>
+<td>long long int</td>
+<td>-9223372036854775808</td>
+<td>9223372036854775807</td>
+<td>8</td>
+</tr>
+<tr>
+<td>unsigned int</td>
+<td>0</td>
+<td>4294967295</td>
+<td>4</td>
+</tr>
+<tr>
+<td>unsigned short int</td>
+<td>0</td>
+<td>65535</td>
+<td>2</td>
+</tr>
+<tr>
+<td>unsigned long int</td>
+<td>0</td>
+<td>4294967295</td>
+<td>4</td>
+</tr>
+<tr>
+<td>unsigned long long int</td>
+<td>0</td>
+<td>18446744073709551615</td>
+<td>8</td>
+</tr>
+<tr>
+<td>float</td>
+<td>0</td>
+<td>340282346638528860000000000000000000000.000000</td>
+<td>4</td>
+</tr>
+<tr>
+<td>double</td>
+<td>0</td>
+<td>17976931348623157000&hellip;(289 more 0s).000000</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<p>The sizes and value limits for various data types can printed from <code>&lt;ctype.h&gt;</code> header file and it is done in the file <a href="datatypes.c">here</a></p>
+<hr>
+<h3>Custom printing and output formatting</h3>
+<p><code>printf</code> is prints out whatever format we provide. This helps us use custom formatting.</p>
+<p>For example, Consider the below code, that gets two numbers and prints their sum.</p>
+<pre><code class="language-c">// Program to find sum of two numbers
 #include&lt;stdio.h&gt;
 
 int main(){
@@ -154,32 +154,28 @@ int main(){
     return 0;
 }
 </code></pre>
-        <p>What you get in your screen, on execution, providing the input, is:</p>
-        <pre><code class="language-txt">Enter first number 10
+<p>What you get in your screen, on execution, providing the input, is:</p>
+<pre><code class="language-txt">Enter first number 10
 Enter second number 20
 Sum of the numbers 10 and 20 is 30
 
 </code></pre>
-        <p>Note the last line of output, you have the output formatted so that it is easy to read. This way is the basic
-            output formatting</p>
-        <p>You can also format the output of computed values stored in variables. These are done by modifying the format
-            specifier as stated below:</p>
-        <ul>
-            <li>
-                <p>A minus symbol (<code>-</code>) sign tells left alignment</p>
-            </li>
-            <li>
-                <p>A number after <code>%</code> specifies the minimum field width. If string is less than the width, it
-                    will be filled with spaces</p>
-            </li>
-            <li>
-                <p>A period (<code>.</code>) is used to separate field width and precision</p>
-            </li>
-        </ul>
-        <p>The below example uses an string (<code>char</code> array) of name str. More details on them will be
-            discussed later.</p>
-        <p><strong>1. String Formatting:</strong></p>
-        <pre><code class="language-c">// string formatting
+<p>Note the last line of output, you have the output formatted so that it is easy to read. This way is the basic output formatting</p>
+<p>You can also format the output of computed values stored in variables. These are done by modifying the format specifier as stated below:</p>
+<ul>
+<li>
+<p>A minus symbol (<code>-</code>) sign tells left alignment</p>
+</li>
+<li>
+<p>A number after <code>%</code> specifies the minimum field width. If string is less than the width, it will be filled with spaces</p>
+</li>
+<li>
+<p>A period (<code>.</code>) is used to separate field width and precision</p>
+</li>
+</ul>
+<p>The below example uses an string (<code>char</code> array) of name str. More details on them will be discussed later.</p>
+<p><strong>1. String Formatting:</strong></p>
+<pre><code class="language-c">// string formatting
 #include &lt;stdio.h&gt;
 
 int main() {
@@ -202,15 +198,15 @@ int main() {
     return 0;
 }
 </code></pre>
-        <p>Output</p>
-        <pre><code class="language-txt">Hello World
+<p>Output</p>
+<pre><code class="language-txt">Hello World
          Hello World
 Hello World
                Hello
 Hello
 </code></pre>
-        <p><strong>2. Float formatting:</strong></p>
-        <pre><code class="language-c">// float formatting
+<p><strong>2. Float formatting:</strong></p>
+<pre><code class="language-c">// float formatting
 #include &lt;stdio.h&gt;
 
 int main() {
@@ -242,8 +238,8 @@ int main() {
     return 0;
 }
 </code></pre>
-        <p>Output</p>
-        <pre><code class="language-txt">12.666667
+<p>Output</p>
+<pre><code class="language-txt">12.666667
  12.666667
 12.666667
 00000012.666667
@@ -252,8 +248,8 @@ int main() {
      12.67
 0000012.6666670
 </code></pre>
-        <p><strong>3. Integer formatting:</strong></p>
-        <pre><code class="language-c">// integer formatting
+<p><strong>3. Integer formatting:</strong></p>
+<pre><code class="language-c">// integer formatting
 #include &lt;stdio.h&gt;
 
 int main() {
@@ -273,55 +269,44 @@ int main() {
     return 0;
 }
 </code></pre>
-        <p>Output</p>
-        <pre><code class="language-txt">126
+<p>Output</p>
+<pre><code class="language-txt">126
   126
 126
 00126
 </code></pre>
-        <hr>
-        <h3>Variables - Storage Classes</h3>
-        <p>A storage class defines the scope (visibility) and life-time of variables and/or functions within a C
-            Program.
-            They precede the type that they modify. We have four different storage classes in a C program −</p>
-        <ol>
-            <li>auto</li>
-            <li>register</li>
-            <li>static</li>
-            <li>extern</li>
-        </ol>
-        <p><strong>1. <code>auto</code>:</strong></p>
-        <p>The <code>auto</code> storage class is the default storage class for all local variables.</p>
-        <pre><code class="language-c">int mount;
+<hr>
+<h3>Variables - Storage Classes</h3>
+<p>A storage class defines the scope (visibility) and life-time of variables and/or functions within a C Program.
+They precede the type that they modify. We have four different storage classes in a C program −</p>
+<ol>
+<li>auto</li>
+<li>register</li>
+<li>static</li>
+<li>extern</li>
+</ol>
+<p><strong>1. <code>auto</code>:</strong></p>
+<p>The <code>auto</code> storage class is the default storage class for all local variables.</p>
+<pre><code class="language-c">int mount;
 auto int month;
 </code></pre>
-        <p><strong>2. <code>register</code>:</strong></p>
-        <p>The <code>register</code> storage class is used to define local variables that should be stored in a register
-            instead of RAM. This means that the variable has a maximum size equal to the register size (usually one
-            word) and can&rsquo;t have the unary &lsquo;<code>&amp;</code>&lsquo; operator applied to it (as it does not
-            have a memory location).</p>
-        <pre><code class="language-c">register int miles
+<p><strong>2. <code>register</code>:</strong></p>
+<p>The <code>register</code> storage class is used to define local variables that should be stored in a register instead of RAM. This means that the variable has a maximum size equal to the register size (usually one word) and can&rsquo;t have the unary &lsquo;<code>&amp;</code>&lsquo; operator applied to it (as it does not have a memory location).</p>
+<pre><code class="language-c">register int miles
 </code></pre>
-        <p><strong>3. <code>static</code>:</strong></p>
-        <p>The <code>static</code> storage class instructs the compiler to keep a local variable in existence during the
-            life-time of the program instead of creating and destroying it each time it comes into and goes out of
-            scope. Therefore, making local variables static allows them to maintain their values between function calls.
-        </p>
-        <pre><code class="language-c">static int x = 5;
+<p><strong>3. <code>static</code>:</strong></p>
+<p>The <code>static</code> storage class instructs the compiler to keep a local variable in existence during the life-time of the program instead of creating and destroying it each time it comes into and goes out of scope. Therefore, making local variables static allows them to maintain their values between function calls.</p>
+<pre><code class="language-c">static int x = 5;
 </code></pre>
-        <blockquote>
-            <p>The <code>static</code> modifier may also be applied to global variables to restrict the variable&rsquo;s
-                scope to the file in which it is declared.</p>
-        </blockquote>
-        <p><strong>4. <code>extern</code>:</strong></p>
-        <p>The <code>extern</code> storage class is used to give a reference of a global variable or a function that is
-            visible to <code>ALL</code> the program files.</p>
-        <p>When &lsquo;<code>extern</code>&lsquo; is used, the variable cannot be initialized however, it points the
-            variable name at a storage location that has been previously defined.</p>
-        <p>The extern modifier is most commonly used when there are two or more files sharing the same global variables
-            or functions as explained below.</p>
-        <p><strong>First File: <code>main.c</code></strong></p>
-        <pre><code class="language-c">#include &lt;stdio.h&gt;
+<blockquote>
+<p>The <code>static</code> modifier may also be applied to global variables to restrict the variable&rsquo;s scope to the file in which it is declared.</p>
+</blockquote>
+<p><strong>4. <code>extern</code>:</strong></p>
+<p>The <code>extern</code> storage class is used to give a reference of a global variable or a function that is visible to <code>ALL</code> the program files.</p>
+<p>When &lsquo;<code>extern</code>&lsquo; is used, the variable cannot be initialized however, it points the variable name at a storage location that has been previously defined.</p>
+<p>The extern modifier is most commonly used when there are two or more files sharing the same global variables or functions as explained below.</p>
+<p><strong>First File: <code>main.c</code></strong></p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
 
 int count ;
 extern void write_extern();
@@ -331,8 +316,8 @@ void main() {
     write_extern();
 }
 </code></pre>
-        <p><strong>Second File: <code>support.c</code></strong></p>
-        <pre><code class="language-c">#include &lt;stdio.h&gt;
+<p><strong>Second File: <code>support.c</code></strong></p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
 
 extern int count;
 
@@ -340,19 +325,18 @@ void write_extern(void) {
     printf(&quot;count is %d\n&quot;, count);
 }
 </code></pre>
-        <p>Here, extern is being used to declare count in the second file, where as it has its definition in the first
-            file, <em>main.c</em>.</p>
-        <hr>
+<p>Here, extern is being used to declare count in the second file, where as it has its definition in the first file, <em>main.c</em>.</p>
+<hr>
     </div>
 
     <div class="foot">
-
+        
         <a href="Intro_to_C(2).html" style="margin: 10%;">Prev</a>
-
+        
         <a href="./" style="margin: 10%;">Home</a>
-
+        
         <a href=" condition_statements.html" style="margin: 10%;">Next</a>
-
+        
         <br>
     </div>
 

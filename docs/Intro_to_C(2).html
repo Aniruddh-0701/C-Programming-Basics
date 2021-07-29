@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./static/main.css" />
+    <script
+        src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autorun=false&amp;lang=llvm"></script>
     <script>
         window.onload = (function () {
             let tags = document.getElementsByTagName("pre");
@@ -26,11 +28,10 @@
                     tags[i].classList.remove("language-c");
                 }
             }
+            PR.prettyPrint();
         })
     </script>
 
-    <script
-        src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autorun=true&amp;lang=c&amp;lang=llvm"></script>
 
 
     <script>
@@ -45,453 +46,448 @@
 
     <div class="container">
         <h1>Introduction to C - Part 2</h1>
-        <h2>Input</h2>
-        <pre><code class="language-c">scanf(&quot;format specifier&quot;, &amp;identifier);
+<h2>Input</h2>
+<pre><code class="language-c">scanf(&quot;format specifier&quot;, &amp;identifier);
 </code></pre>
-        <p>The format specifiers are as listed for <code>printf</code>. It is to be noted that for all format specifiers
-            except <code>%c</code>, the input is taken till the next character &lt; space (in terms ASCII value), mostly
-            <code>\n</code> or space (<code>' '</code>)</p>
-        <hr>
-        <h2>Operators</h2>
-        <p>Used to perform arithmetic and logical operations.</p>
-        <h3>Types</h3>
-        <ol>
-            <li>Arithmetic</li>
-            <li>Relational</li>
-            <li>Logical</li>
-            <li>Bitwise</li>
-            <li>Assignment</li>
-            <li>Miscellaneous Operators</li>
-        </ol>
-        <h4>1. Arithmetic</h4>
-        <p>Perform arithmetic operations</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Operator</th>
-                    <th>Description</th>
-                    <th>Example</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>+</td>
-                    <td>Addition</td>
-                    <td>2 + 3 = 5</td>
-                </tr>
-                <tr>
-                    <td>-</td>
-                    <td>Subtraction</td>
-                    <td>2 - 3 = -1</td>
-                </tr>
-                <tr>
-                    <td>*</td>
-                    <td>Multiplication</td>
-                    <td>2 * 3 = 6</td>
-                </tr>
-                <tr>
-                    <td>/</td>
-                    <td>Division (returns quotient)</td>
-                    <td>2 / 3 = 0</td>
-                </tr>
-                <tr>
-                    <td>%</td>
-                    <td>Modulo (returns remainder)</td>
-                    <td>2 % 3 = 2</td>
-                </tr>
-                <tr>
-                    <td>++</td>
-                    <td>Increment operator</td>
-                    <td>++2 or 2++</td>
-                </tr>
-                <tr>
-                    <td>&ndash;</td>
-                    <td>Decrement operator</td>
-                    <td>&ndash;3 or 3&ndash;</td>
-                </tr>
-            </tbody>
-        </table>
-        <h4>2. Relational</h4>
-        <p>Relations between two variables</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Operator</th>
-                    <th>Description</th>
-                    <th>Example</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>==</td>
-                    <td>Equal</td>
-                    <td>a == b</td>
-                </tr>
-                <tr>
-                    <td>!=</td>
-                    <td>Not Equal</td>
-                    <td>a != b</td>
-                </tr>
-                <tr>
-                    <td>&gt;</td>
-                    <td>Greater</td>
-                    <td>a &gt; b</td>
-                </tr>
-                <tr>
-                    <td>&gt;=</td>
-                    <td>Greater or Equal</td>
-                    <td>a &gt;= b</td>
-                </tr>
-                <tr>
-                    <td>&lt;</td>
-                    <td>Lesser</td>
-                    <td>a &lt; b</td>
-                </tr>
-                <tr>
-                    <td>&lt;=</td>
-                    <td>Lesser or Equal</td>
-                    <td>a &lt;= b</td>
-                </tr>
-            </tbody>
-        </table>
-        <h4>3. Logical</h4>
-        <p>Perform Logical operations</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Operator</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>&amp;&amp;</td>
-                    <td>Logical Operator AND</td>
-                </tr>
-                <tr>
-                    <td>||</td>
-                    <td>Logical Operator OR</td>
-                </tr>
-                <tr>
-                    <td>!</td>
-                    <td>Logical operator NOT</td>
-                </tr>
-            </tbody>
-        </table>
-        <h4>4. Bitwise</h4>
-        <p>Perform bitwise operations</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Operator</th>
-                    <th>Description</th>
-                    <th>Syntax</th>
-                    <th>Example</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>&amp;</td>
-                    <td>Bitwise AND</td>
-                    <td>x &amp; y</td>
-                    <td>101 &amp; 11</td>
-                </tr>
-                <tr>
-                    <td>&#124;</td>
-                    <td>Bitwise OR</td>
-                    <td>x &#124; y</td>
-                    <td>101 &#124; 11</td>
-                </tr>
-                <tr>
-                    <td>~</td>
-                    <td>Bitwise NOT</td>
-                    <td>~x</td>
-                    <td>~1</td>
-                </tr>
-                <tr>
-                    <td>^</td>
-                    <td>Bitwise XOR</td>
-                    <td>x ^ y</td>
-                    <td>1 ^ 1</td>
-                </tr>
-                <tr>
-                    <td>&lt;&lt;</td>
-                    <td>Shifts y bits in x to the left (Left shift operator)</td>
-                    <td>x &lt;&lt; y</td>
-                    <td>111001 &lt;&lt; 2</td>
-                </tr>
-                <tr>
-                    <td>&gt;&gt;</td>
-                    <td>Shifts y bits in x to the right (Right Shift Operator)</td>
-                    <td>x &gt;&gt; y</td>
-                    <td>111001 &gt;&gt; 2</td>
-                </tr>
-            </tbody>
-        </table>
-        <h4>5. Assignment</h4>
-        <p>Assigns value to a variable</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Operator</th>
-                    <th>Description</th>
-                    <th>Example</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>=</td>
-                    <td>Assign</td>
-                    <td>c = 30</td>
-                </tr>
-                <tr>
-                    <td>+=</td>
-                    <td>Add and assign</td>
-                    <td>a += b</td>
-                </tr>
-                <tr>
-                    <td>-=</td>
-                    <td>Subtract and assign</td>
-                    <td>a -= b</td>
-                </tr>
-                <tr>
-                    <td>*=</td>
-                    <td>Multiply and assign</td>
-                    <td>a *= b</td>
-                </tr>
-                <tr>
-                    <td>/=</td>
-                    <td>Divide and assign</td>
-                    <td>a /= b</td>
-                </tr>
-                <tr>
-                    <td>%=</td>
-                    <td>Get remainder and assign</td>
-                    <td>a %= b</td>
-                </tr>
-                <tr>
-                    <td>&lt;&lt;=</td>
-                    <td>Left Shift and assign</td>
-                    <td>a %= b</td>
-                </tr>
-                <tr>
-                    <td>&gt;&gt;=</td>
-                    <td>Right Shift and assign</td>
-                    <td>a %= b</td>
-                </tr>
-                <tr>
-                    <td>&amp;=</td>
-                    <td>Bitwise AND and assign</td>
-                    <td>a %= b</td>
-                </tr>
-                <tr>
-                    <td>|=</td>
-                    <td>Bitwise OR and assign</td>
-                    <td>a %= b</td>
-                </tr>
-                <tr>
-                    <td>^=</td>
-                    <td>Bitwise XOR and assign</td>
-                    <td>a %= b</td>
-                </tr>
-            </tbody>
-        </table>
-        <h4>6. Miscellaneous Operators</h4>
-        <p>Besides the operators discussed above, there are a few other important operators supported by C language</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Operator</th>
-                    <th>Description</th>
-                    <th>Example</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>&amp;</td>
-                    <td>Address Operator (returns Address of a identifier)</td>
-                    <td>&amp;a</td>
-                </tr>
-                <tr>
-                    <td>*</td>
-                    <td>Pointer to a variable</td>
-                    <td>*a</td>
-                </tr>
-                <tr>
-                    <td>?</td>
-                    <td>Ternary Operator</td>
-                    <td>condition? a: b</td>
-                </tr>
-            </tbody>
-        </table>
-        <hr>
-        <h2>Operator Precedence</h2>
-        <p>Operator precedence determines the grouping of terms in an expression and decides how an expression is
-            evaluated. Certain operators have higher precedence than others; for example, the multiplication operator
-            has a higher precedence than the addition operator.</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Category</th>
-                    <th>Operator</th>
-                    <th>Associativity</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Postfix</td>
-                    <td>() [] −&gt; . ++ −−</td>
-                    <td>Left to right</td>
-                </tr>
-                <tr>
-                    <td>Unary</td>
-                    <td>+ − ! ~ ++ −− (type)* &amp; sizeof</td>
-                    <td>Right to left</td>
-                </tr>
-                <tr>
-                    <td>Multiplicative</td>
-                    <td>* / %</td>
-                    <td>Left to right</td>
-                </tr>
-                <tr>
-                    <td>Additive</td>
-                    <td>+ −</td>
-                    <td>Left to right</td>
-                </tr>
-                <tr>
-                    <td>Shift</td>
-                    <td>&lt;&lt; &gt;&gt;</td>
-                    <td>Left to right</td>
-                </tr>
-                <tr>
-                    <td>Relational</td>
-                    <td>&lt; &lt;= &gt; &gt;=</td>
-                    <td>Left to right</td>
-                </tr>
-                <tr>
-                    <td>Equality</td>
-                    <td>== !=</td>
-                    <td>Left to right</td>
-                </tr>
-                <tr>
-                    <td>Bitwise AND</td>
-                    <td>&amp;</td>
-                    <td>Left to right</td>
-                </tr>
-                <tr>
-                    <td>Bitwise XOR</td>
-                    <td>^</td>
-                    <td>Left to right</td>
-                </tr>
-                <tr>
-                    <td>Bitwise OR</td>
-                    <td>|</td>
-                    <td>Left to right</td>
-                </tr>
-                <tr>
-                    <td>Logical AND</td>
-                    <td>&amp;&amp;</td>
-                    <td>Left to right</td>
-                </tr>
-                <tr>
-                    <td>Logical OR</td>
-                    <td>||</td>
-                    <td>Left to right</td>
-                </tr>
-                <tr>
-                    <td>Conditional(Ternary)</td>
-                    <td>?:</td>
-                    <td>Right to left</td>
-                </tr>
-                <tr>
-                    <td>Assignment</td>
-                    <td>= += −= *= /= %=&gt;&gt;= &lt;&lt;= &amp;= ^= |=</td>
-                    <td>Right to left</td>
-                </tr>
-                <tr>
-                    <td>Comma</td>
-                    <td>,</td>
-                    <td>Left to right</td>
-                </tr>
-            </tbody>
-        </table>
-        <hr>
-        <h2>Expressions</h2>
-        <p>A statement that gives a finite value.</p>
-        <p>Types:</p>
-        <ol>
-            <li>Infix expressions:<br>
-                Example: 12 + 23</li>
-            <li>Prefix expressions:<br>
-                Example: + 12 23</li>
-            <li>Postfix expressions:<br>
-                Example: 12 23 +</li>
-        </ol>
-        <hr>
-        <h2>Escape Sequences</h2>
-        <p>Few special characters defined under ASCII for formatting strings/output. The <code>\</code> is used to
-            escape the original use of a character.</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Sequence</th>
-                    <th>Explanation</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>\\</td>
-                    <td>Back slash</td>
-                </tr>
-                <tr>
-                    <td>\&lsquo;</td>
-                    <td>Apostrophe or Single quotes</td>
-                </tr>
-                <tr>
-                    <td>\n</td>
-                    <td>new line or line feed</td>
-                </tr>
-                <tr>
-                    <td>\f</td>
-                    <td>form feed</td>
-                </tr>
-                <tr>
-                    <td>\r</td>
-                    <td>carriage return</td>
-                </tr>
-                <tr>
-                    <td>\t</td>
-                    <td>horizontal tab</td>
-                </tr>
-                <tr>
-                    <td>\&ldquo;</td>
-                    <td>Double quotes</td>
-                </tr>
-                <tr>
-                    <td>\0</td>
-                    <td>Null character</td>
-                </tr>
-                <tr>
-                    <td>\a</td>
-                    <td>bell</td>
-                </tr>
-                <tr>
-                    <td>\v</td>
-                    <td>vertical tab</td>
-                </tr>
-            </tbody>
-        </table>
-        <hr>
+<p>The format specifiers are as listed for <code>printf</code>. It is to be noted that for all format specifiers except <code>%c</code>, the input is taken till the next character &lt; space (in terms ASCII value), mostly <code>\n</code> or space (<code>' '</code>)</p>
+<hr>
+<h2>Operators</h2>
+<p>Used to perform arithmetic and logical operations.</p>
+<h3>Types</h3>
+<ol>
+<li>Arithmetic</li>
+<li>Relational</li>
+<li>Logical</li>
+<li>Bitwise</li>
+<li>Assignment</li>
+<li>Miscellaneous Operators</li>
+</ol>
+<h4>1. Arithmetic</h4>
+<p>Perform arithmetic operations</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+</td>
+<td>Addition</td>
+<td>2 + 3 = 5</td>
+</tr>
+<tr>
+<td>-</td>
+<td>Subtraction</td>
+<td>2 - 3 = -1</td>
+</tr>
+<tr>
+<td>*</td>
+<td>Multiplication</td>
+<td>2 * 3 = 6</td>
+</tr>
+<tr>
+<td>/</td>
+<td>Division (returns quotient)</td>
+<td>2 / 3 = 0</td>
+</tr>
+<tr>
+<td>%</td>
+<td>Modulo (returns remainder)</td>
+<td>2 % 3 = 2</td>
+</tr>
+<tr>
+<td>++</td>
+<td>Increment operator</td>
+<td>++2 or 2++</td>
+</tr>
+<tr>
+<td>&ndash;</td>
+<td>Decrement operator</td>
+<td>&ndash;3 or 3&ndash;</td>
+</tr>
+</tbody>
+</table>
+<h4>2. Relational</h4>
+<p>Relations between two variables</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>==</td>
+<td>Equal</td>
+<td>a == b</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>Not Equal</td>
+<td>a != b</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>Greater</td>
+<td>a &gt; b</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>Greater or Equal</td>
+<td>a &gt;= b</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>Lesser</td>
+<td>a &lt; b</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>Lesser or Equal</td>
+<td>a &lt;= b</td>
+</tr>
+</tbody>
+</table>
+<h4>3. Logical</h4>
+<p>Perform Logical operations</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&amp;&amp;</td>
+<td>Logical Operator AND</td>
+</tr>
+<tr>
+<td>||</td>
+<td>Logical Operator OR</td>
+</tr>
+<tr>
+<td>!</td>
+<td>Logical operator NOT</td>
+</tr>
+</tbody>
+</table>
+<h4>4. Bitwise</h4>
+<p>Perform bitwise operations</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+<th>Syntax</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&amp;</td>
+<td>Bitwise AND</td>
+<td>x &amp; y</td>
+<td>101 &amp; 11</td>
+</tr>
+<tr>
+<td>&#124;</td>
+<td>Bitwise OR</td>
+<td>x &#124; y</td>
+<td>101 &#124; 11</td>
+</tr>
+<tr>
+<td>~</td>
+<td>Bitwise NOT</td>
+<td>~x</td>
+<td>~1</td>
+</tr>
+<tr>
+<td>^</td>
+<td>Bitwise XOR</td>
+<td>x ^ y</td>
+<td>1 ^ 1</td>
+</tr>
+<tr>
+<td>&lt;&lt;</td>
+<td>Shifts y bits in x to the left (Left shift operator)</td>
+<td>x &lt;&lt; y</td>
+<td>111001 &lt;&lt; 2</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>Shifts y bits in x to the right (Right Shift Operator)</td>
+<td>x &gt;&gt; y</td>
+<td>111001 &gt;&gt; 2</td>
+</tr>
+</tbody>
+</table>
+<h4>5. Assignment</h4>
+<p>Assigns value to a variable</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>=</td>
+<td>Assign</td>
+<td>c = 30</td>
+</tr>
+<tr>
+<td>+=</td>
+<td>Add and assign</td>
+<td>a += b</td>
+</tr>
+<tr>
+<td>-=</td>
+<td>Subtract and assign</td>
+<td>a -= b</td>
+</tr>
+<tr>
+<td>*=</td>
+<td>Multiply and assign</td>
+<td>a *= b</td>
+</tr>
+<tr>
+<td>/=</td>
+<td>Divide and assign</td>
+<td>a /= b</td>
+</tr>
+<tr>
+<td>%=</td>
+<td>Get remainder and assign</td>
+<td>a %= b</td>
+</tr>
+<tr>
+<td>&lt;&lt;=</td>
+<td>Left Shift and assign</td>
+<td>a %= b</td>
+</tr>
+<tr>
+<td>&gt;&gt;=</td>
+<td>Right Shift and assign</td>
+<td>a %= b</td>
+</tr>
+<tr>
+<td>&amp;=</td>
+<td>Bitwise AND and assign</td>
+<td>a %= b</td>
+</tr>
+<tr>
+<td>|=</td>
+<td>Bitwise OR and assign</td>
+<td>a %= b</td>
+</tr>
+<tr>
+<td>^=</td>
+<td>Bitwise XOR and assign</td>
+<td>a %= b</td>
+</tr>
+</tbody>
+</table>
+<h4>6. Miscellaneous Operators</h4>
+<p>Besides the operators discussed above, there are a few other important operators supported by C language</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&amp;</td>
+<td>Address Operator (returns Address of a identifier)</td>
+<td>&amp;a</td>
+</tr>
+<tr>
+<td>*</td>
+<td>Pointer to a variable</td>
+<td>*a</td>
+</tr>
+<tr>
+<td>?</td>
+<td>Ternary Operator</td>
+<td>condition? a: b</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Operator Precedence</h2>
+<p>Operator precedence determines the grouping of terms in an expression and decides how an expression is evaluated. Certain operators have higher precedence than others; for example, the multiplication operator has a higher precedence than the addition operator.</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Operator</th>
+<th>Associativity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Postfix</td>
+<td>() [] −&gt; . ++ −−</td>
+<td>Left to right</td>
+</tr>
+<tr>
+<td>Unary</td>
+<td>+ − ! ~ ++ −− (type)* &amp; sizeof</td>
+<td>Right to left</td>
+</tr>
+<tr>
+<td>Multiplicative</td>
+<td>* / %</td>
+<td>Left to right</td>
+</tr>
+<tr>
+<td>Additive</td>
+<td>+ −</td>
+<td>Left to right</td>
+</tr>
+<tr>
+<td>Shift</td>
+<td>&lt;&lt; &gt;&gt;</td>
+<td>Left to right</td>
+</tr>
+<tr>
+<td>Relational</td>
+<td>&lt; &lt;= &gt; &gt;=</td>
+<td>Left to right</td>
+</tr>
+<tr>
+<td>Equality</td>
+<td>== !=</td>
+<td>Left to right</td>
+</tr>
+<tr>
+<td>Bitwise AND</td>
+<td>&amp;</td>
+<td>Left to right</td>
+</tr>
+<tr>
+<td>Bitwise XOR</td>
+<td>^</td>
+<td>Left to right</td>
+</tr>
+<tr>
+<td>Bitwise OR</td>
+<td>|</td>
+<td>Left to right</td>
+</tr>
+<tr>
+<td>Logical AND</td>
+<td>&amp;&amp;</td>
+<td>Left to right</td>
+</tr>
+<tr>
+<td>Logical OR</td>
+<td>||</td>
+<td>Left to right</td>
+</tr>
+<tr>
+<td>Conditional(Ternary)</td>
+<td>?:</td>
+<td>Right to left</td>
+</tr>
+<tr>
+<td>Assignment</td>
+<td>= += −= *= /= %=&gt;&gt;= &lt;&lt;= &amp;= ^= |=</td>
+<td>Right to left</td>
+</tr>
+<tr>
+<td>Comma</td>
+<td>,</td>
+<td>Left to right</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Expressions</h2>
+<p>A statement that gives a finite value.</p>
+<p>Types:</p>
+<ol>
+<li>Infix expressions:<br>
+   Example: 12 + 23</li>
+<li>Prefix expressions:<br>
+   Example: + 12 23</li>
+<li>Postfix expressions:<br>
+   Example: 12 23 +</li>
+</ol>
+<hr>
+<h2>Escape Sequences</h2>
+<p>Few special characters defined under ASCII for formatting strings/output. The <code>\</code> is used to escape the original use of a character.</p>
+<table>
+<thead>
+<tr>
+<th>Sequence</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\\</td>
+<td>Back slash</td>
+</tr>
+<tr>
+<td>\&lsquo;</td>
+<td>Apostrophe or Single quotes</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>new line or line feed</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>form feed</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>carriage return</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>horizontal tab</td>
+</tr>
+<tr>
+<td>\&ldquo;</td>
+<td>Double quotes</td>
+</tr>
+<tr>
+<td>\0</td>
+<td>Null character</td>
+</tr>
+<tr>
+<td>\a</td>
+<td>bell</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>vertical tab</td>
+</tr>
+</tbody>
+</table>
+<hr>
     </div>
 
     <div class="foot">
-
+        
         <a href="Intro_to_C(1).html" style="margin: 10%;">Prev</a>
-
+        
         <a href="./" style="margin: 10%;">Home</a>
-
+        
         <a href=" Intro_to_C(3).html" style="margin: 10%;">Next</a>
-
+        
         <br>
     </div>
 

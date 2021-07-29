@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./static/main.css" />
+    <script
+        src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autorun=false&amp;lang=llvm"></script>
     <script>
         window.onload = (function () {
             let tags = document.getElementsByTagName("pre");
@@ -26,11 +28,10 @@
                     tags[i].classList.remove("language-c");
                 }
             }
+            PR.prettyPrint();
         })
     </script>
 
-    <script
-        src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autorun=true&amp;lang=c&amp;lang=llvm"></script>
 
 
     <script>
@@ -45,53 +46,45 @@
 
     <div class="container">
         <h1>Introduction to C - Part 1</h1>
-        <h2>Introduction</h2>
-        <h3>Program</h3>
-        <p>A program is a set of instructions written on a computer to perform a specific task.</p>
-        <h3>Programming Language</h3>
-        <p>Simply said, it is a language used to write a program.</p>
-        <p>It is a well defined medium to instruct the computer.</p>
-        <hr>
-        <h3>Types of Programming Languages</h3>
-        <p>Based on uses, the Programming languages can be classified under 50 types refer <a
-                href="https://en.wikipedia.org/wiki/List_of_programming_languages_by_type">List of Programming Languages
-                by type</a></p>
-        <p>Based on ease of readability:</p>
-        <ol>
-            <li>Low-level Language - Assembly Language</li>
-            <li>Middle level Language - C, C++, etc.</li>
-            <li>High level Language - Python, java, Perl, etc.</li>
-        </ol>
-        <p>Based on execution method:</p>
-        <ol>
-            <li>Compiled Language</li>
-            <li>Interpreted Language</li>
-        </ol>
-        <hr>
-        <h2>Basic parts in programming</h2>
-        <p>A few basic instructions that appear in almost all language (by <a
-                href="https://en.wikipedia.org/wiki/Allen_Downey">Allen Downey</a>, in his book <em>How To Think Like A
-                Computer Scientist</em>):</p>
-        <ol>
-            <li><strong>Input:</strong> Gather data from the keyboard, a file, or some other device.</li>
-            <li><strong>Output:</strong> Display data on the screen or send data to a file or other device.</li>
-            <li><strong>Arithmetic:</strong> Perform basic arithmetical operations like addition and multiplication</li>
-            <li><strong>Conditional Execution:</strong> Check for certain conditions and execute the appropriate
-                sequence of statements.</li>
-            <li><strong>Repetition:</strong> Perform some action repeatedly, usually with some variation.</li>
-        </ol>
-        <hr>
-        <h2>Introduction to C programming</h2>
-        <p>C is a general-purpose, procedural computer programming language supporting structured programming, with a
-            static type system.</p>
-        <p>By design, C provides constructs that map efficiently to typical machine instructions.</p>
-        <p>It is generally used to learn basic programming concepts. C language is being used to build other High level
-            programming languages like python.<br>
-            <img alt="Derivatives of C language" src="Clogo.png">
-        </p>
-        <hr>
-        <h2>Basic Structure</h2>
-        <pre><code class="language-c">/**
+<h2>Introduction</h2>
+<h3>Program</h3>
+<p>A program is a set of instructions written on a computer to perform a specific task.</p>
+<h3>Programming Language</h3>
+<p>Simply said, it is a language used to write a program.</p>
+<p>It is a well defined medium to instruct the computer.</p>
+<hr>
+<h3>Types of Programming Languages</h3>
+<p>Based on uses, the Programming languages can be classified under 50 types refer <a href="https://en.wikipedia.org/wiki/List_of_programming_languages_by_type">List of Programming Languages by type</a></p>
+<p>Based on ease of readability:</p>
+<ol>
+<li>Low-level Language - Assembly Language</li>
+<li>Middle level Language - C, C++, etc.</li>
+<li>High level Language - Python, java, Perl, etc.</li>
+</ol>
+<p>Based on execution method:</p>
+<ol>
+<li>Compiled Language</li>
+<li>Interpreted Language</li>
+</ol>
+<hr>
+<h2>Basic parts in programming</h2>
+<p>A few basic instructions that appear in almost all language (by <a href="https://en.wikipedia.org/wiki/Allen_Downey">Allen Downey</a>, in his book <em>How To Think Like A Computer Scientist</em>):</p>
+<ol>
+<li><strong>Input:</strong> Gather data from the keyboard, a file, or some other device.</li>
+<li><strong>Output:</strong> Display data on the screen or send data to a file or other device.</li>
+<li><strong>Arithmetic:</strong> Perform basic arithmetical operations like addition and multiplication</li>
+<li><strong>Conditional Execution:</strong> Check for certain conditions and execute the appropriate sequence of statements.</li>
+<li><strong>Repetition:</strong> Perform some action repeatedly, usually with some variation.</li>
+</ol>
+<hr>
+<h2>Introduction to C programming</h2>
+<p>C is a general-purpose, procedural computer programming language supporting structured programming, with a static type system.</p>
+<p>By design, C provides constructs that map efficiently to typical machine instructions.</p>
+<p>It is generally used to learn basic programming concepts. C language is being used to build other High level programming languages like python.<br>
+<img alt="Derivatives of C language" src="Clogo.png"></p>
+<hr>
+<h2>Basic Structure</h2>
+<pre><code class="language-c">/**
 * Basic Structure of a C program.
 * It is the documentation section
 */
@@ -106,311 +99,290 @@ int main(){
     return 0;
 }
 </code></pre>
-        <ul>
-            <li>
-                <p>The first few lines define what is called a documentation. This section contains a multi line comment
-                    describing the code. The details on comments are discussed below.</p>
-            </li>
-            <li>
-                <p>Next is the link for the compiler to indicate header files that are being used from the library.
-                    <strong>Header files</strong> are documents that define the symbols that are used in the program.
-                    Here <code>stdio.h</code> header file is linked.</p>
-            </li>
-            <li>
-                <p>The next section is the area of definition of constants and Global variables</p>
-            </li>
-            <li>
-                <p>Below this is the area of code.</p>
-            </li>
-        </ul>
-        <blockquote>
-            <p>The <code>main</code> function is the point of code at which execution of the program starts</p>
-            <p>More details on <code>functions</code> will be discussed later.</p>
-        </blockquote>
-        <h2>Data Types</h2>
-        <p>Data can be defined as a representation of facts, concepts, or instructions in a formalized manner, which
-            should be suitable for communication, interpretation, or processing by human or electronic machine.</p>
-        <p>Data type is an attribute which tells the compiler or interpreter how the programmer intends to use the data.
-        </p>
-        <p>Basic Types:</p>
-        <ol>
-            <li>Numeric:</li>
-            <li>Integer - 0, 2, 30</li>
-            <li>Float - 3.0, -0.0005 (single precision)</li>
-            <li>Double - 3.0, -0.00003 (double precision)</li>
-            <li>Boolean - <code>true</code> and <code>false</code></li>
-            <li>Character - all symbols defined by ASCII</li>
-            <li>Null</li>
-        </ol>
-        <p><strong>ASCII</strong> - American Standard Code for Information Interchange</p>
-        <p><img alt="ASCII charset" src="ASCII_chart.png"></p>
-        <p><strong>Derived Data Types:</strong></p>
-        <ol>
-            <li>Array</li>
-            <li>Strings</li>
-            <li>Structures</li>
-            <li>Unions</li>
-            <li>Enum</li>
-            <li>Pointers</li>
-        </ol>
-        <p>Additional types in integers (Base):</p>
-        <ol>
-            <li>Binary (base 2) [0,1]</li>
-            <li>Octal (base 8) [0-7]</li>
-            <li>Decimal (base 10) [0-9] Most Common</li>
-            <li>HexaDecimal (base 16) [0-9, A-F]</li>
-        </ol>
-        <blockquote>
-            <p><code>Derived</code> or <code>Non primitive</code> data types and the <code>types of integers</code> will
-                be discussed later</p>
-        </blockquote>
-        <hr>
-        <h2>Literals</h2>
-        <p>Literals are data that are directly used or processed in a program. If your program contains direct values
-            like <code>10</code>, <code>3.14159</code>, <code>'a'</code> or <code>"str"</code>, they are known as
-            literals</p>
-        <h3>Types of Identifiers</h3>
-        <ol>
-            <li>Constant - Values that do not change during the execution</li>
-            <li>Variable - Values that change</li>
-        </ol>
-        <p>There are certain rules to be followed while naming an identifier:</p>
-        <ol>
-            <li>Should start only with an alphabet or underscore (<code>'_'</code>) like a1, a2, _name not 1a, 24c</li>
-            <li>Can contain characters defined in ASCII (alphabets and numbers) except ( &#36;, \, /, etc.)</li>
-            <li>It should not be keyword</li>
-            <li>No spaces</li>
-            <li>Generally, uppercase alphabets are not used in the beginning of a variable name.</li>
-        </ol>
-        <p>Naming Conventions: <a href="https://en.wikipedia.org/wiki/Naming_convention_(programming)">Naming Convention
-                - Wikipedia article</a></p>
-        <p>For Easy readability:</p>
-        <ul>
-            <li>Function or use as name</li>
-            <li>first letter in lowercase</li>
-            <li>If Name has Multiple words:</li>
-            <li>Use underscore for space</li>
-            <li>joint writing with words in Camel Case</li>
-            <li>Avoid Long names</li>
-        </ul>
-        <p>Naming convention for multi word variable names:</p>
-        <ol>
-            <li>Camel case (abcAbc)</li>
-            <li>Pascal case (AbcAbc)</li>
-            <li>Screaming case (ABC)</li>
-            <li>Lazy case (abc)</li>
-            <li>Kebab case (ab-ab)</li>
-            <li>Snake case(ab_ab)</li>
-        </ol>
-        <p>E.g.: age, input_values, firstName, number, prime_num</p>
-        <p>Not: user name, number_to_find_prime</p>
-        <p><a href="variable_name.c">Variables (data type), Naming Convention</a></p>
-        <hr>
-        <h2>Keywords or Reserved words</h2>
-        <p>Words used for a special purpose in program.</p>
-        <p>E.g: <code>scanf</code>, <code>printf</code>, <code>int</code>, <code>if</code>, <code>for</code>,
-            <code>try</code>, etc.</p>
-        <hr>
-        <h3>Declaration vs Initialization of variables</h3>
-        <p><strong>Declaration</strong> is the process of defining the variables&rsquo; or constants&rsquo; names to be
-            used in the program.</p>
-        <p><strong>Syntax:</strong></p>
-        <pre><code class="language-txt">&lt;type&gt; variableName;
+<ul>
+<li>
+<p>The first few lines define what is called a documentation. This section contains a multi line comment describing the code. The details on comments are discussed below.</p>
+</li>
+<li>
+<p>Next is the link for the compiler to indicate header files that are being used from the library. <strong>Header files</strong> are documents that define the symbols that are used in the program. Here <code>stdio.h</code> header file is linked.</p>
+</li>
+<li>
+<p>The next section is the area of definition of constants and Global variables</p>
+</li>
+<li>
+<p>Below this is the area of code.</p>
+</li>
+</ul>
+<blockquote>
+<p>The <code>main</code> function is the point of code at which execution of the program starts</p>
+<p>More details on <code>functions</code> will be discussed later.</p>
+</blockquote>
+<h2>Data Types</h2>
+<p>Data can be defined as a representation of facts, concepts, or instructions in a formalized manner, which should be suitable for communication, interpretation, or processing by human or electronic machine.</p>
+<p>Data type is an attribute which tells the compiler or interpreter how the programmer intends to use the data.</p>
+<p>Basic Types:</p>
+<ol>
+<li>Numeric:</li>
+<li>Integer - 0, 2, 30</li>
+<li>Float - 3.0, -0.0005 (single precision)</li>
+<li>Double - 3.0, -0.00003 (double precision)</li>
+<li>Boolean - <code>true</code> and <code>false</code></li>
+<li>Character - all symbols defined by ASCII</li>
+<li>Null</li>
+</ol>
+<p><strong>ASCII</strong> - American Standard Code for Information Interchange</p>
+<p><img alt="ASCII charset" src="ASCII_chart.png"></p>
+<p><strong>Derived Data Types:</strong></p>
+<ol>
+<li>Array</li>
+<li>Strings</li>
+<li>Structures</li>
+<li>Unions</li>
+<li>Enum</li>
+<li>Pointers</li>
+</ol>
+<p>Additional types in integers (Base):</p>
+<ol>
+<li>Binary (base 2) [0,1]</li>
+<li>Octal (base 8) [0-7]</li>
+<li>Decimal (base 10) [0-9] Most Common</li>
+<li>HexaDecimal (base 16) [0-9, A-F]</li>
+</ol>
+<blockquote>
+<p><code>Derived</code> or <code>Non primitive</code> data types and the <code>types of integers</code> will be discussed later</p>
+</blockquote>
+<hr>
+<h2>Literals</h2>
+<p>Literals are data that are directly used or processed in a program. If your program contains direct values like <code>10</code>, <code>3.14159</code>, <code>'a'</code> or <code>"str"</code>, they are known as literals</p>
+<h3>Types of Identifiers</h3>
+<ol>
+<li>Constant - Values that do not change during the execution</li>
+<li>Variable - Values that change</li>
+</ol>
+<p>There are certain rules to be followed while naming an identifier:</p>
+<ol>
+<li>Should start only with an alphabet or underscore (<code>'_'</code>) like a1, a2, _name not 1a, 24c</li>
+<li>Can contain characters defined in ASCII (alphabets and numbers) except ( &#36;, \, /, etc.)</li>
+<li>It should not be keyword</li>
+<li>No spaces</li>
+<li>Generally, uppercase alphabets are not used in the beginning of a variable name.</li>
+</ol>
+<p>Naming Conventions: <a href="https://en.wikipedia.org/wiki/Naming_convention_(programming)">Naming Convention - Wikipedia article</a></p>
+<p>For Easy readability:</p>
+<ul>
+<li>Function or use as name</li>
+<li>first letter in lowercase</li>
+<li>If Name has Multiple words:</li>
+<li>Use underscore for space</li>
+<li>joint writing with words in Camel Case</li>
+<li>Avoid Long names</li>
+</ul>
+<p>Naming convention for multi word variable names:</p>
+<ol>
+<li>Camel case (abcAbc)</li>
+<li>Pascal case (AbcAbc)</li>
+<li>Screaming case (ABC)</li>
+<li>Lazy case (abc)</li>
+<li>Kebab case (ab-ab)</li>
+<li>Snake case(ab_ab)</li>
+</ol>
+<p>E.g.: age, input_values, firstName, number, prime_num</p>
+<p>Not: user name, number_to_find_prime</p>
+<p><a href="variable_name.c">Variables (data type), Naming Convention</a></p>
+<hr>
+<h2>Keywords or Reserved words</h2>
+<p>Words used for a special purpose in program.</p>
+<p>E.g: <code>scanf</code>, <code>printf</code>, <code>int</code>, <code>if</code>, <code>for</code>, <code>try</code>, etc.</p>
+<hr>
+<h3>Declaration vs Initialization of variables</h3>
+<p><strong>Declaration</strong> is the process of defining the variables&rsquo; or constants&rsquo; names to be used in the program.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-txt">&lt;type&gt; variableName;
 </code></pre>
-        <blockquote>
-            <p>Multiple variables of same type can be declared on the same line, being separated be comma.</p>
-        </blockquote>
-        <p>Eg:</p>
-        <pre><code class="language-c">int age, num1;
+<blockquote>
+<p>Multiple variables of same type can be declared on the same line, being separated be comma.</p>
+</blockquote>
+<p>Eg:</p>
+<pre><code class="language-c">int age, num1;
 char ch;
 </code></pre>
-        <p><strong>Initialization</strong> is the process of assigning values to the variables declared. It is done
-            using assignment operator <code>=</code>. (For Details, check Assignment operators in <a
-                href="Intro_to_C(2).html">Part 2</a>)</p>
-        <p>Eg:</p>
-        <pre><code class="language-c">age = 10;
+<p><strong>Initialization</strong> is the process of assigning values to the variables declared. It is done using assignment operator <code>=</code>. (For Details, check Assignment operators in <a href="Intro_to_C(2).html">Part 2</a>)</p>
+<p>Eg:</p>
+<pre><code class="language-c">age = 10;
 ch = 'a';
 </code></pre>
-        <blockquote>
-            <p>Both Declaration and Initialization can be done in the same statement, for multiple variables</p>
-        </blockquote>
-        <pre><code class="language-c">int age = 20, num2 = 10;
+<blockquote>
+<p>Both Declaration and Initialization can be done in the same statement, for multiple variables</p>
+</blockquote>
+<pre><code class="language-c">int age = 20, num2 = 10;
 char ch = 'z';
 </code></pre>
-        <hr>
-        <h3>Declaration of constants</h3>
-        <p>In <code>C</code>, constants are declared and initialized in a single line using the <code>const</code>
-            keyword.</p>
-        <p><strong>Syntax:</strong></p>
-        <pre><code class="language-c">const type variable_name = value;
+<hr>
+<h3>Declaration of constants</h3>
+<p>In <code>C</code>, constants are declared and initialized in a single line using the <code>const</code> keyword.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-c">const type variable_name = value;
 </code></pre>
-        <hr>
-        <h2>Output handling or Printing out statements/Values to user</h2>
-        <p><strong>Syntax:</strong></p>
-        <pre><code class="language-c">printf(&quot;format specifier&quot;, identifier);
+<hr>
+<h2>Output handling or Printing out statements/Values to user</h2>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-c">printf(&quot;format specifier&quot;, identifier);
 printf(&quot;statement&quot;);
 </code></pre>
-        <h3>Format Specifiers</h3>
-        <ol>
-            <li><code>%d</code> - integer (int)</li>
-            <li><code>%f</code> - float</li>
-            <li><code>%c</code> - character (char)</li>
-            <li><code>%s</code> - string (str)</li>
-            <li><code>%lf</code> - double</li>
-        </ol>
-        <p><strong>Identifiers</strong> - variables or expressions</p>
-        <p><a href="Hello_world.c">Writing your first Program - printing &ldquo;Hello World&rdquo;</a></p>
-        <hr>
-        <h3>Modifiers</h3>
-        <p>Modifiers are key words that modify the default state of <code>int</code> and <code>char</code> data types.
-            There are 4 modifiers in <code>C</code>:</p>
-        <ol>
-            <li>short</li>
-            <li>long</li>
-            <li>signed</li>
-            <li>unsigned</li>
-        </ol>
-        <p><strong>1. <code>short</code>:</strong></p>
-        <p>It limits user to store small integer values from <code>-32768</code> to <code>32767</code>. It can be used
-            only on <code>int</code> data type.</p>
-        <pre><code class="language-c">short int myShortInt = 10;
+<h3>Format Specifiers</h3>
+<ol>
+<li><code>%d</code> - integer (int)</li>
+<li><code>%f</code> - float</li>
+<li><code>%c</code> - character (char)</li>
+<li><code>%s</code> - string (str)</li>
+<li><code>%lf</code> - double</li>
+</ol>
+<p><strong>Identifiers</strong> - variables or expressions</p>
+<p><a href="Hello_world.c">Writing your first Program - printing &ldquo;Hello World&rdquo;</a></p>
+<hr>
+<h3>Modifiers</h3>
+<p>Modifiers are key words that modify the default state of <code>int</code> and <code>char</code> data types. There are 4 modifiers in <code>C</code>:</p>
+<ol>
+<li>short</li>
+<li>long</li>
+<li>signed</li>
+<li>unsigned</li>
+</ol>
+<p><strong>1. <code>short</code>:</strong></p>
+<p>It limits user to store small integer values from <code>-32768</code> to <code>32767</code>. It can be used only on <code>int</code> data type.</p>
+<pre><code class="language-c">short int myShortInt = 10;
 </code></pre>
-        <p><strong>2. <code>long</code>:</strong></p>
-        <p>It allows storage of large value than default limit for <code>int</code>. Tt can be use once or twice to
-            mention the limits.</p>
-        <pre><code class="language-c">long int myLongInt;
+<p><strong>2. <code>long</code>:</strong></p>
+<p>It allows storage of large value than default limit for <code>int</code>. Tt can be use once or twice to mention the limits.</p>
+<pre><code class="language-c">long int myLongInt;
 long myLongerInt;
 long long myLongLongInt;
 </code></pre>
-        <p><strong>3. <code>signed</code>:</strong></p>
-        <p>It is default modifier of <code>int</code> and <code>char</code> data type if no modifier is specified. It
-            says that user can store negative and positive values.</p>
-        <pre><code class="language-c">int myValue = -289;
+<p><strong>3. <code>signed</code>:</strong></p>
+<p>It is default modifier of <code>int</code> and <code>char</code> data type if no modifier is specified. It says that user can store negative and positive values.</p>
+<pre><code class="language-c">int myValue = -289;
 signed int myValues = -544;
 </code></pre>
-        <p><strong>4. <code>unsigned</code>:</strong></p>
-        <p>When user intends to store only positive values in the given data type (<code>int</code> and
-            <code>char</code>).</p>
-        <pre><code class="language-c">unsigned int myVal = 10;
+<p><strong>4. <code>unsigned</code>:</strong></p>
+<p>When user intends to store only positive values in the given data type (<code>int</code> and <code>char</code>).</p>
+<pre><code class="language-c">unsigned int myVal = 10;
 </code></pre>
-        <p>To check the limitations of the modifiers, check <a href="Intro_to_c(3).html">Part 3</a></p>
-        <hr>
-        <h3>List of Format specifiers</h3>
-        <p>Having understood the modifiers in C, we can look at the complete list of format specifiers.</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Format Specifier</th>
-                    <th>Type</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><code>%c</code></td>
-                    <td>Character</td>
-                </tr>
-                <tr>
-                    <td><code>%d</code></td>
-                    <td>Signed integer</td>
-                </tr>
-                <tr>
-                    <td><code>%e</code> or <code>%E</code></td>
-                    <td>Scientific notation of floats</td>
-                </tr>
-                <tr>
-                    <td><code>%f</code></td>
-                    <td>Float values</td>
-                </tr>
-                <tr>
-                    <td><code>%g</code> or <code>%G</code></td>
-                    <td>Similar as <code>%e</code> or <code>%E</code></td>
-                </tr>
-                <tr>
-                    <td><code>%hi</code></td>
-                    <td>Signed integer (<code>short</code>)</td>
-                </tr>
-                <tr>
-                    <td><code>%hu</code></td>
-                    <td>Unsigned Integer (<code>short</code>)</td>
-                </tr>
-                <tr>
-                    <td><code>%i</code></td>
-                    <td>Unsigned integer</td>
-                </tr>
-                <tr>
-                    <td><code>%l</code> or <code>%ld</code> or <code>%li</code></td>
-                    <td>Long or <code>long int</code></td>
-                </tr>
-                <tr>
-                    <td><code>%lf</code></td>
-                    <td>Double</td>
-                </tr>
-                <tr>
-                    <td><code>%Lf</code></td>
-                    <td>Long double</td>
-                </tr>
-                <tr>
-                    <td><code>%lu</code></td>
-                    <td>Unsigned int or unsigned long</td>
-                </tr>
-                <tr>
-                    <td><code>%lli</code> or <code>%lld</code></td>
-                    <td>Long long</td>
-                </tr>
-                <tr>
-                    <td><code>%llu</code></td>
-                    <td>Unsigned long long</td>
-                </tr>
-                <tr>
-                    <td><code>%o</code></td>
-                    <td>Octal representation</td>
-                </tr>
-                <tr>
-                    <td><code>%p</code></td>
-                    <td>Pointer</td>
-                </tr>
-                <tr>
-                    <td><code>%s</code></td>
-                    <td>String</td>
-                </tr>
-                <tr>
-                    <td><code>%u</code></td>
-                    <td>Unsigned int</td>
-                </tr>
-                <tr>
-                    <td><code>%x</code> or <code>%X</code></td>
-                    <td>Hexadecimal representation</td>
-                </tr>
-                <tr>
-                    <td><code>%n</code></td>
-                    <td>Prints nothing</td>
-                </tr>
-                <tr>
-                    <td><code>%%</code></td>
-                    <td>Prints <code>%</code> character</td>
-                </tr>
-            </tbody>
-        </table>
-        <p>These are the basic format specifiers. We can add some other parts with the format specifiers. These are like
-            below −</p>
-        <ul>
-            <li>
-                <p>A minus symbol (<code>-</code>) sign tells left alignment</p>
-            </li>
-            <li>
-                <p>A number after <code>%</code> specifies the minimum field width. If string is less than the width, it
-                    will be filled with spaces</p>
-            </li>
-            <li>
-                <p>A period (<code>.</code>) is used to separate field width and precision</p>
-            </li>
-        </ul>
-        <hr>
-        <h2>Comments</h2>
-        <p>Lines that are not executed. It used only for understanding by the programmers or users.</p>
-        <p>// is used to comment a single line</p>
-        <p>/**/ - comment multiple lines</p>
-        <pre><code class="language-c">// single line comment
+<p>To check the limitations of the modifiers, check <a href="Intro_to_c(3).html">Part 3</a></p>
+<hr>
+<h3>List of Format specifiers</h3>
+<p>Having understood the modifiers in C, we can look at the complete list of format specifiers.</p>
+<table>
+<thead>
+<tr>
+<th>Format Specifier</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>%c</code></td>
+<td>Character</td>
+</tr>
+<tr>
+<td><code>%d</code></td>
+<td>Signed integer</td>
+</tr>
+<tr>
+<td><code>%e</code> or <code>%E</code></td>
+<td>Scientific notation of floats</td>
+</tr>
+<tr>
+<td><code>%f</code></td>
+<td>Float values</td>
+</tr>
+<tr>
+<td><code>%g</code> or <code>%G</code></td>
+<td>Similar as <code>%e</code> or <code>%E</code></td>
+</tr>
+<tr>
+<td><code>%hi</code></td>
+<td>Signed integer (<code>short</code>)</td>
+</tr>
+<tr>
+<td><code>%hu</code></td>
+<td>Unsigned Integer (<code>short</code>)</td>
+</tr>
+<tr>
+<td><code>%i</code></td>
+<td>Unsigned integer</td>
+</tr>
+<tr>
+<td><code>%l</code> or <code>%ld</code> or <code>%li</code></td>
+<td>Long or <code>long int</code></td>
+</tr>
+<tr>
+<td><code>%lf</code></td>
+<td>Double</td>
+</tr>
+<tr>
+<td><code>%Lf</code></td>
+<td>Long double</td>
+</tr>
+<tr>
+<td><code>%lu</code></td>
+<td>Unsigned int or unsigned long</td>
+</tr>
+<tr>
+<td><code>%lli</code> or <code>%lld</code></td>
+<td>Long long</td>
+</tr>
+<tr>
+<td><code>%llu</code></td>
+<td>Unsigned long long</td>
+</tr>
+<tr>
+<td><code>%o</code></td>
+<td>Octal representation</td>
+</tr>
+<tr>
+<td><code>%p</code></td>
+<td>Pointer</td>
+</tr>
+<tr>
+<td><code>%s</code></td>
+<td>String</td>
+</tr>
+<tr>
+<td><code>%u</code></td>
+<td>Unsigned int</td>
+</tr>
+<tr>
+<td><code>%x</code> or <code>%X</code></td>
+<td>Hexadecimal representation</td>
+</tr>
+<tr>
+<td><code>%n</code></td>
+<td>Prints nothing</td>
+</tr>
+<tr>
+<td><code>%%</code></td>
+<td>Prints <code>%</code> character</td>
+</tr>
+</tbody>
+</table>
+<p>These are the basic format specifiers. We can add some other parts with the format specifiers. These are like below −</p>
+<ul>
+<li>
+<p>A minus symbol (<code>-</code>) sign tells left alignment</p>
+</li>
+<li>
+<p>A number after <code>%</code> specifies the minimum field width. If string is less than the width, it will be filled with spaces</p>
+</li>
+<li>
+<p>A period (<code>.</code>) is used to separate field width and precision</p>
+</li>
+</ul>
+<hr>
+<h2>Comments</h2>
+<p>Lines that are not executed. It used only for understanding by the programmers or users.</p>
+<p>// is used to comment a single line</p>
+<p>/**/ - comment multiple lines</p>
+<pre><code class="language-c">// single line comment
 /*
 This is used to comment multiple lines
 */
@@ -418,13 +390,13 @@ This is used to comment multiple lines
     </div>
 
     <div class="foot">
-
+        
         <a href="./" style="margin: 10%;">Prev</a>
-
+        
         <a href="./" style="margin: 10%;">Home</a>
-
+        
         <a href=" Intro_to_C(2).html" style="margin: 10%;">Next</a>
-
+        
         <br>
     </div>
 
