@@ -78,7 +78,7 @@
 </ol>
 <hr>
 <h2>Introduction to C programming</h2>
-<p>C is a general-purpose, procedural computer programming language supporting structured programming, with a static type system.</p>
+<p>C is a general-purpose, procedural computer programming language supporting structured programming, with a static type system. In static type system, variables are defined to have only a specific type of data and cannot be assigned a different type of data.</p>
 <p>By design, C provides constructs that map efficiently to typical machine instructions.</p>
 <p>It is generally used to learn basic programming concepts. C language is being used to build other High level programming languages like python.<br>
 <img alt="Derivatives of C language" src="Clogo.png"></p>
@@ -197,7 +197,7 @@ int main(){
 <h3>Declaration vs Initialization of variables</h3>
 <p><strong>Declaration</strong> is the process of defining the variables&rsquo; or constants&rsquo; names to be used in the program.</p>
 <p><strong>Syntax:</strong></p>
-<pre><code class="language-txt">&lt;type&gt; variableName;
+<pre><code class="language-c">&lt;type&gt; variableName;
 </code></pre>
 <blockquote>
 <p>Multiple variables of same type can be declared on the same line, being separated be comma.</p>
@@ -221,7 +221,7 @@ char ch = 'z';
 <h3>Declaration of constants</h3>
 <p>In <code>C</code>, constants are declared and initialized in a single line using the <code>const</code> keyword.</p>
 <p><strong>Syntax:</strong></p>
-<pre><code class="language-c">const type variable_name = value;
+<pre><code class="language-c">const &lt;type&gt; variable_name = &lt;value&gt;;
 </code></pre>
 <hr>
 <h2>Output handling or Printing out statements/Values to user</h2>
@@ -380,8 +380,8 @@ signed int myValues = -544;
 <hr>
 <h2>Comments</h2>
 <p>Lines that are not executed. It used only for understanding by the programmers or users.</p>
-<p>// is used to comment a single line</p>
-<p>/**/ - comment multiple lines</p>
+<p><code>//</code> is used to comment a single line</p>
+<p><code>/**/</code> - comment multiple lines</p>
 <pre><code class="language-c">// single line comment
 /*
 This is used to comment multiple lines

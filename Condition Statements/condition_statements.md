@@ -88,6 +88,8 @@ The above program will print `x` as the conditional expression `y > x` results i
 
 ### 3. `if` - `else if` - `else` statement
 
+Checks for truth of the second if (`else if`) statement when if statement fails, chain of `if`-`else`.
+
 **Syntax:**
 
 ```c
@@ -111,12 +113,36 @@ Eg:
 #include<stdio.h>
 
 int main(){
-    // Yet to fill the example
+    int x;
+
+    printf("Enter a number");
+    scanf("%d", &x);
+
+    if (x < 10) {
+        printf("The number %d is small", x);
+    } else if (10 <= x <= 20) {
+        printf("The number %d is in range", x);
+    } else {
+        printf("The number %d is big", x);
+    }
     return 0;
 }
 ```
 
+The above code gets a number `x` and decides the output based on the following:
+
+$$
+\rm{Output} =
+\begin{cases}
+\text{small}, ~~~~~~~\rm{if}~ x \lt 10\\\\
+\text{in range}, ~~\rm{if}~10 \le x \le 20\\\\
+\text{big}, ~~~~~~~~~~~\rm{otherwise}
+\end{cases}
+$$
+
 ### 4. Nested `if` - `else` statement
+
+`if else` within another `if else` statement is _nested if else_. In general all nested conditions come under this category.
 
 **Syntax:**
 
@@ -149,16 +175,43 @@ else
 
 Eg:
 
+The below code gets a number `n` and decides the output based on the following:
+
+$$
+\rm{Output} =
+\begin{cases}
+\text{small even}, ~~~~~~~\rm{if}~ 0 \le n \lt 10 ~\text{and n is even}\\\\
+\text{small odd}, ~~~~~~~~\rm{if}~ 0 \le n \lt 10 ~\text{and n is odd}\\\\
+\text{in range}, ~~~~~~~~~~~\rm{if}~10 \le x \lt 20\\\\
+\text{not in range}, ~~~~~~~~~~~\rm{otherwise}
+\end{cases}
+$$
+
 ```c
 #include<stdio.h>
 
 int main(){
-    // Yet to fill the example
+    int n;
+    printf("Enter a number");
+    scanf("%d", &n);
+    if(0 <= n < 10){
+        if (n % 2 == 0) { // Checks if even
+            printf("The number %d is small even", n);
+        } else { // if not even
+            printf("The number %d is small odd", n);
+        }
+    } else if (10 <= n < 20) {
+        printf("The number %d is in range", n);
+    } else{
+        printf("The number %d is not in range", n);
+    }
     return 0;
 }
 ```
 
 ### 5. Ternary (`?`) Operator
+
+One liner of if else statements. Used for small decision making when such structure is too big.
 
 **Syntax:**
 
@@ -166,13 +219,32 @@ int main(){
 condition? statement1: statement2;
 ```
 
+If the conditional expression is `true`, the Statement1 is executed or considered, otherwise, statement2 is considered.
+
 Eg:
+
+Consider the below code that outputs if a number is even or odd.
+
+A number is `even` if its remainder ( `%` ) when divided by `2` is zero
+
+$$
+\rm{Output} =
+\begin{cases}
+\text{even}, ~~~~~~~\rm{if}~~{n~mod ~2} \rightarrow 0\\\\
+\text{odd}, ~~~~~~~~~~~\rm{otherwise}
+\end{cases}
+$$
+
+> `mod` operation ( `%` ) yields the reminder of the division. Check operators in Introduction to C - Part 2
 
 ```c
 #include<stdio.h>
 
 int main(){
-    // Yet to fill the example
+    int n;
+    printf("Enter a number");
+    scanf("%d", &n);
+    printf((n % 2 == 0)? "Even": "Odd");
     return 0;
 }
 ```

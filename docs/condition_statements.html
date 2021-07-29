@@ -108,6 +108,7 @@ int main(){
 </code></pre>
 <p>The above program will print <code>x</code> as the conditional expression <code>y &gt; x</code> results in <code>false</code></p>
 <h3>3. <code>if</code> - <code>else if</code> - <code>else</code> statement</h3>
+<p>Checks for truth of the second if (<code>else if</code>) statement when if statement fails, chain of <code>if</code>-<code>else</code>.</p>
 <p><strong>Syntax:</strong></p>
 <pre><code class="language-c">if (condition1)
 {
@@ -126,11 +127,32 @@ else
 <pre><code class="language-c">#include&lt;stdio.h&gt;
 
 int main(){
-    // Yet to fill the example
+    int x;
+
+    printf(&quot;Enter a number&quot;);
+    scanf(&quot;%d&quot;, &amp;x);
+
+    if (x &lt; 10) {
+        printf(&quot;The number %d is small&quot;, x);
+    } else if (10 &lt;= x &lt;= 20) {
+        printf(&quot;The number %d is in range&quot;, x);
+    } else {
+        printf(&quot;The number %d is big&quot;, x);
+    }
     return 0;
 }
 </code></pre>
+<p>The above code gets a number <code>x</code> and decides the output based on the following:</p>
+<p>$$
+\rm{Output} =
+\begin{cases}
+\text{small}, ~~~~~~~\rm{if}~ x \lt 10\\
+\text{in range}, ~~\rm{if}~10 \le x \le 20\\
+\text{big}, ~~~~~~~~~~~\rm{otherwise}
+\end{cases}
+$$</p>
 <h3>4. Nested <code>if</code> - <code>else</code> statement</h3>
+<p><code>if else</code> within another <code>if else</code> statement is <em>nested if else</em>. In general all nested conditions come under this category.</p>
 <p><strong>Syntax:</strong></p>
 <pre><code class="language-c">if (condition1)
 {
@@ -159,22 +181,62 @@ else
 <p>The nesting need not be always in both the blocks. One of them may not contain such nesting and nesting may also be to the next level or multiple nesting may be found.</p>
 </blockquote>
 <p>Eg:</p>
+<p>The below code gets a number <code>n</code> and decides the output based on the following:</p>
+<p>$$
+\rm{Output} =
+\begin{cases}
+\text{small even}, ~~~~~~~\rm{if}~ 0 \le n \lt 10 ~\text{and n is even}\\
+\text{small odd}, ~~~~~~~~\rm{if}~ 0 \le n \lt 10 ~\text{and n is odd}\\
+\text{in range}, ~~~~~~~~~~~\rm{if}~10 \le x \lt 20\\
+\text{not in range}, ~~~~~~~~~~~\rm{otherwise}
+\end{cases}
+$$</p>
 <pre><code class="language-c">#include&lt;stdio.h&gt;
 
 int main(){
-    // Yet to fill the example
+    int n;
+    printf(&quot;Enter a number&quot;);
+    scanf(&quot;%d&quot;, &amp;n);
+    if(0 &lt;= n &lt; 10){
+        if (n % 2 == 0) { // Checks if even
+            printf(&quot;The number %d is small even&quot;, n);
+        } else { // if not even
+            printf(&quot;The number %d is small odd&quot;, n);
+        }
+    } else if (10 &lt;= n &lt; 20) {
+        printf(&quot;The number %d is in range&quot;, n);
+    } else{
+        printf(&quot;The number %d is not in range&quot;, n);
+    }
     return 0;
 }
 </code></pre>
 <h3>5. Ternary (<code>?</code>) Operator</h3>
+<p>One liner of if else statements. Used for small decision making when such structure is too big.</p>
 <p><strong>Syntax:</strong></p>
 <pre><code class="language-c">condition? statement1: statement2;
 </code></pre>
+<p>If the conditional expression is <code>true</code>, the Statement1 is executed or considered, otherwise, statement2 is considered.</p>
 <p>Eg:</p>
+<p>Consider the below code that outputs if a number is even or odd.</p>
+<p>A number is <code>even</code> if its remainder ( <code>%</code> ) when divided by <code>2</code> is zero</p>
+<p>$$
+\rm{Output} =
+\begin{cases}
+\text{even}, ~~~~~~~\rm{if}~~{n~mod ~2} \rightarrow 0\\
+\text{odd}, ~~~~~~~~~~~\rm{otherwise}
+\end{cases}
+$$</p>
+<blockquote>
+<p><code>mod</code> operation ( <code>%</code> ) yields the reminder of the division. Check operators in Introduction to C - Part 2</p>
+</blockquote>
 <pre><code class="language-c">#include&lt;stdio.h&gt;
 
 int main(){
-    // Yet to fill the example
+    int n;
+    printf(&quot;Enter a number&quot;);
+    scanf(&quot;%d&quot;, &amp;n);
+    printf((n % 2 == 0)? &quot;Even&quot;: &quot;Odd&quot;);
     return 0;
 }
 </code></pre>

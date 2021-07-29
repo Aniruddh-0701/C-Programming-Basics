@@ -53,7 +53,7 @@ A few basic instructions that appear in almost all language (by [Allen Downey](h
 
 ## Introduction to C programming
 
-C is a general-purpose, procedural computer programming language supporting structured programming, with a static type system.
+C is a general-purpose, procedural computer programming language supporting structured programming, with a static type system. In static type system, variables are defined to have only a specific type of data and cannot be assigned a different type of data.
 
 By design, C provides constructs that map efficiently to typical machine instructions.
 
@@ -192,7 +192,7 @@ E.g: `scanf`, `printf`, `int`, `if`, `for`, `try`, etc.
 
 **Syntax:**
 
-```txt
+```c
 <type> variableName;
 ```
 
@@ -230,7 +230,7 @@ In `C`, constants are declared and initialized in a single line using the `const
 **Syntax:**
 
 ```c
-const type variable_name = value;
+const <type> variable_name = <value>;
 ```
 
 ---
@@ -348,9 +348,9 @@ These are the basic format specifiers. We can add some other parts with the form
 
 Lines that are not executed. It used only for understanding by the programmers or users.
 
-// is used to comment a single line
+`//` is used to comment a single line
 
-/\*\*/ - comment multiple lines
+`/**/` - comment multiple lines
 
 ```c
 // single line comment
