@@ -121,6 +121,10 @@ pre {
   box-shadow: 4px 4px 7px 5px #555;
 }
 
+pre > code > span.pln {
+  color: #01579b;
+}
+
 code {
   font-weight: bold;
 }
