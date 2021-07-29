@@ -3,7 +3,7 @@ title: Conditional Statements in C
 subtitle: Conditional statements
 image: ../C.png
 prev: Intro_to_C(3).html
-next: ""
+next: loops.html
 ---
 
 # Conditional Statements

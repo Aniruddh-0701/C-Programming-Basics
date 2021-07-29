@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping Statements in C</title>
+    <meta name="description" content="Looping Statements in C">
+    <link rel="shortcut icon" href="C.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./static/main.css" />
+    <script
+        src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autorun=false&amp;lang=llvm"></script>
+    <script>
+        window.onload = (function () {
+            let tags = document.getElementsByTagName("pre");
+            let br = document.createElement("br");
+            for (var i = 0; i < tags.length; ++i) {
+                tags[i].classList.add("prettyprint");
+            }
+            tags = document.getElementsByTagName("code");
+            console.log(tags);
+            for (var i = 0; i < tags.length; ++i) {
+                if (tags[i].classList.contains("language-c")) {
+                    tags[i].classList.add("lang-c");
+                    tags[i].classList.remove("language-c");
+                }
+            }
+            PR.prettyPrint();
+        })
+    </script>
+
+
+
+    <script>
+        MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Looping Statemets</h1>
+<p>There may be times when a set of tasks need to be repeated. It is done with the help of looping statements.</p>
+<p>A loop is a block of code that would repeat for a specified number of times or until some condition is satisfied.</p>
+<p><strong>Types:</strong></p>
+<ol>
+<li>Definite Looping</li>
+<li>Indefinite Looping</li>
+</ol>
+<h2>Definite vs Indefinite looping</h2>
+<p>A <strong>definite loop</strong> is a loop in which the number of times it is going to execute is known in advance before entering the loop. The number of iterations it is going to repeat will be typically provided through an <code>integer</code> variable.</p>
+<blockquote>
+<p>Iteration is the <code>repetition</code> of a process/task in order to generate a sequence of outcomes desired.</p>
+</blockquote>
+<p>In an <strong>indefinite loop</strong>, the number of times it is going to execute is not known in advance and it is going to be executed until some condition is satisfied.</p>
+<p>Some of common examples that you would need to implement indefinite loops are prompting for reading an input until user inserts a positive integer, reading a password until the user inserts the same password twice in a row, etc.</p>
+<h2>Types of Looping Statements</h2>
+<ol>
+<li><code>for</code> loop</li>
+<li><code>while</code> loop</li>
+<li><code>do-while</code> loop</li>
+</ol>
+<blockquote>
+<p>Looping variables are generally named <code>i</code>, <code>j</code>, and <code>k</code>, while it is not recommended citing clarity of the code.</p>
+</blockquote>
+<p>The examples below will use them for easiness of code understanding, making a note that it should not be followed.</p>
+<h3>1. <code>for</code> loop</h3>
+<p><code>for</code> is the most commonly used definite looping statement.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-c">for(&lt;initialization&gt;; &lt;condition&gt;; &lt;increment/decrement&gt;)
+</code></pre>
+<p>A <code>looping variable</code> is a variable that decides the flow of a loop.</p>
+<ol>
+<li><strong>Initialization</strong> - assigning the loop variable with the starting value.</li>
+<li><strong>Condition</strong> - defines the end point of the loop with respect to the looping variable</li>
+<li><strong>Increment/decrement</strong> - Defining the expression that changes the variable&rsquo;s value at the end of each iteration.</li>
+</ol>
+    </div>
+
+    <div class="foot">
+        
+        <a href="condition_statements.html" style="margin: 10%;">Prev</a>
+        
+        <a href="./" style="margin: 10%;">Home</a>
+        
+        <a href="http://" target="_blank" rel="noopener noreferrer" style="margin: 10%;"></a>
+        
+        <br>
+    </div>
+
+</body>
+
+</html>
