@@ -86,59 +86,105 @@ Here `i` is the loop variable
 
 Note:
 
-1. The initialization phase can be given in 3 ways.
+<ol>
+<li> The <strong>initialization phase</strong> can be given in 3 ways:</li>
+<ul>
+<li>The declaration and initialization both in the loop definition (as above)</li>
 
-   - The declaration and initialization both in the loop definition (as above)
+```c
+for(int <variable> = value; <condition>; <increment/decrement>) {
+    // Statements
+}
+```
 
-   ```c
-   for(int <variable> = value; <condition>; <increment/decrement>) {
-       // Statements
-   }
-   ```
+<li>The declaration being done before the loop and initialization in the definition.</li>
 
-   - The declaration being done before the loop and initialization in the definition:
+```c
+int <variable>;
+for(<variable> = <value>; <condition>; <increment/decrement>){
+    // Statements
+}
+```
 
-   ```c
-   int <variable>;
-   for(<variable> = <value>; <condition>; <increment/decrement>){
-       // Statements
-   }
-   ```
+<li> Both declaration and initialization outside the loop. If done so, the initialization section is left empty.</li>
 
-   - Both declaration and initialization outside the loop. If done so, the initialization section is left empty.
+```c
+int <variable> = <value>;
+for(; <condition>; <increment/decrement>){
+    // Statements
+}
+```
 
-   ```c
-   int <variable> = <value>;
-   for(; <condition>; <increment/decrement>){
-       // Statements
-   }
-   ```
+</ul>
 
-2. Increment - The increment part can be any expression that results in change of variable towards the condition.
+<li> <strong>Increment</strong> - The increment part can be any expression that results in change of variable towards the condition.</li>
 
-   ```c
-   i++ or ++i or i-- or --i // unary operation
-   i += 10 or i *= 20 // assignment and modification
-   i = i / 2 or i = 1 + 3 // operation then assignment
-   ```
+```c
+i++ or ++i or i-- or --i // unary operation
+i += 10 or i *= 20 // assignment and modification
+i = i / 2 or i = 1 + 3 // operation then assignment
+```
 
-   The above three variations are allowed in the condition that there is variable change to offer definite loop termination
+The above three variations are allowed in the condition that there is variable change to offer definite loop termination
 
-3. within loop modifications of _loop variable_ - The loop variable can be modified inside the loop too.  
-   The below example shows a type where the variable change is not provided in loop definition.
+<li> <strong>Within loop modifications</strong> of <em>loop variable</em> - The loop variable can be modified inside the loop too.</li>
 
-   ```c
-   #include <stdio.h>
+The below example shows a type where the variable change is not provided in loop definition.
 
-   int main() {
-       for (int i = 1; i <= 10;) {
-           printf("%d ", i++); // increment done here
-       }
-       return 0;
-   }
-   ```
+```c
+#include <stdio.h>
 
-#### Pre-increment ( `i++` ) vs post-increment ( `++i` )
+int main() {
+    for (int i = 1; i <= 10;) {
+        printf("%d ", i++); // increment done here
+    }
+    return 0;
+}
+```
+
+</ol>
+
+#### Pre-increment ( `++i` ) vs post-increment ( `i++` )
+
+Both of them are unary operators doing the same thing, increasing the value by `1`. Still they have differences to be addressed.
+
+**1. Post-increment operator (`i++`):**
+
+In post incrementation, the value is incremented after use
+
+```c
+printf("%d", i++);
+```
+
+is same as
+
+```c
+printf("%d", i);
+i = i + 1;
+```
+
+So here, since there is a need for old value of `i` which is being used, it has to be stored along with the updated value, adding the requirement of an extra space (memory).
+
+**2. Pre-increment operator (`++i`):**
+
+In pre-incrementation, the value is incremented before use.
+
+```c
+printf("%d", ++i);
+```
+
+is same as
+
+```c
+i = i + 1;
+printf("%d", i);
+```
+
+So here, since there is a no need for old value of `i`, only the updated value is stored. This does not add the requirement of an extra space (memory), unlike post-increment.
+
+The question is **which is better**. At points where there is not the need of the old value, pre-increment is efficient, like just incrementing inside increment condition in `for` loop.
+
+> The explanation above applies for decrement operator (`--`) too.
 
 ### 2. `while` loop
 

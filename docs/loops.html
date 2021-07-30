@@ -107,55 +107,92 @@ int main(){
 </blockquote>
 <p>Note:</p>
 <ol>
-<li>
-<p>The initialization phase can be given in 3 ways.</p>
-</li>
-<li>
-<p>The declaration and initialization both in the loop definition (as above)</p>
-</li>
-</ol>
-<p><code>c
-   for(int &lt;variable&gt; = value; &lt;condition&gt;; &lt;increment/decrement&gt;) {
-       // Statements
-   }</code></p>
+<li> The <strong>initialization phase</strong> can be given in 3 ways:</li>
 <ul>
-<li>The declaration being done before the loop and initialization in the definition:</li>
+<li>The declaration and initialization both in the loop definition (as above)</li>
+
+
+<pre><code class="language-c">for(int &lt;variable&gt; = value; &lt;condition&gt;; &lt;increment/decrement&gt;) {
+    // Statements
+}
+</code></pre>
+
+
+<li>The declaration being done before the loop and initialization in the definition.</li>
+
+
+<pre><code class="language-c">int &lt;variable&gt;;
+for(&lt;variable&gt; = &lt;value&gt;; &lt;condition&gt;; &lt;increment/decrement&gt;){
+    // Statements
+}
+</code></pre>
+
+
+<li> Both declaration and initialization outside the loop. If done so, the initialization section is left empty.</li>
+
+
+<pre><code class="language-c">int &lt;variable&gt; = &lt;value&gt;;
+for(; &lt;condition&gt;; &lt;increment/decrement&gt;){
+    // Statements
+}
+</code></pre>
+
+
 </ul>
-<p><code>c
-   int &lt;variable&gt;;
-   for(&lt;variable&gt; = &lt;value&gt;; &lt;condition&gt;; &lt;increment/decrement&gt;){
-       // Statements
-   }</code></p>
-<ul>
-<li>Both declaration and initialization outside the loop. If done so, the initialization section is left empty.</li>
-</ul>
-<p><code>c
-   int &lt;variable&gt; = &lt;value&gt;;
-   for(; &lt;condition&gt;; &lt;increment/decrement&gt;){
-       // Statements
-   }</code></p>
-<ol>
-<li>Increment - The increment part can be any expression that results in change of variable towards the condition.</li>
+
+<li> <strong>Increment</strong> - The increment part can be any expression that results in change of variable towards the condition.</li>
+
+
+<pre><code class="language-c">i++ or ++i or i-- or --i // unary operation
+i += 10 or i *= 20 // assignment and modification
+i = i / 2 or i = 1 + 3 // operation then assignment
+</code></pre>
+
+
+The above three variations are allowed in the condition that there is variable change to offer definite loop termination
+
+<li> <strong>Within loop modifications</strong> of <em>loop variable</em> - The loop variable can be modified inside the loop too.</li>
+
+The below example shows a type where the variable change is not provided in loop definition.
+
+
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    for (int i = 1; i &lt;= 10;) {
+        printf(&quot;%d &quot;, i++); // increment done here
+    }
+    return 0;
+}
+</code></pre>
+
+
 </ol>
-<p><code>c
-   i++ or ++i or i-- or --i // unary operation
-   i += 10 or i *= 20 // assignment and modification
-   i = i / 2 or i = 1 + 3 // operation then assignment</code></p>
-<p>The above three variations are allowed in the condition that there is variable change to offer definite loop termination</p>
-<ol>
-<li>within loop modifications of <em>loop variable</em> - The loop variable can be modified inside the loop too.<br>
-   The below example shows a type where the variable change is not provided in loop definition.</li>
-</ol>
-<p>```c
-   #include <stdio.h></p>
-<p>int main() {
-       for (int i = 1; i &lt;= 10;) {
-           printf(&ldquo;%d &ldquo;, i++); // increment done here
-       }
-       return 0;
-   }
-   ```</p>
-<h4>Pre-increment ( <code>i++</code> ) vs post-increment ( <code>++i</code> )</h4>
+
+<h4>Pre-increment ( <code>++i</code> ) vs post-increment ( <code>i++</code> )</h4>
+<p>Both of them are unary operators doing the same thing, increasing the value by <code>1</code>. Still they have differences to be addressed.</p>
+<p><strong>1. Post-increment operator (<code>i++</code>):</strong></p>
+<p>In post incrementation, the value is incremented after use</p>
+<pre><code class="language-c">printf(&quot;%d&quot;, i++);
+</code></pre>
+<p>is same as</p>
+<pre><code class="language-c">printf(&quot;%d&quot;, i);
+i = i + 1;
+</code></pre>
+<p>So here, since there is a need for old value of <code>i</code> which is being used, it has to be stored along with the updated value, adding the requirement of an extra space (memory).</p>
+<p><strong>2. Pre-increment operator (<code>++i</code>):</strong></p>
+<p>In pre-incrementation, the value is incremented before use.</p>
+<pre><code class="language-c">printf(&quot;%d&quot;, ++i);
+</code></pre>
+<p>is same as</p>
+<pre><code class="language-c">i = i + 1;
+printf(&quot;%d&quot;, i);
+</code></pre>
+<p>So here, since there is a no need for old value of <code>i</code>, only the updated value is stored. This does not add the requirement of an extra space (memory), unlike post-increment.</p>
+<p>The question is <strong>which is better</strong>. At points where there is not the need of the old value, pre-increment is efficient, like just incrementing inside increment condition in <code>for</code> loop.</p>
+<blockquote>
+<p>The explanation above applies for decrement operator (<code>--</code>) too.</p>
+</blockquote>
 <h3>2. <code>while</code> loop</h3>
 <p><strong>Syntax:</strong></p>
 <pre><code class="language-c">while (condition) {
