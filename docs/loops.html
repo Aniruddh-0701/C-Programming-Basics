@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Looping Statements in C</title>
-    <meta name="description" content="Looping Statements in C">
+    <title>Looping Statements in C - Part 1</title>
+    <meta name="description" content="Looping Statements in C - Part 1/2">
     <link rel="shortcut icon" href="C.png" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -140,7 +140,8 @@ for(; &lt;condition&gt;; &lt;increment/decrement&gt;){
 
 </ul>
 
-<li> <strong>Increment</strong> - The increment part can be any expression that results in change of variable towards the condition.</li>
+<li> <strong>Increment</strong> - The increment part can be any expression that results in change of variable towards the condition.<br>
+The below three variations are allowed in the condition that there is variable change to offer definite loop termination</li>
 
 
 <pre><code class="language-c">i++ or ++i or i-- or --i // unary operation
@@ -149,11 +150,9 @@ i = i / 2 or i = 1 + 3 // operation then assignment
 </code></pre>
 
 
-The above three variations are allowed in the condition that there is variable change to offer definite loop termination
+<li> <strong>Within loop modifications</strong> of <em>loop variable</em> - The loop variable can be modified inside the loop too.
 
-<li> <strong>Within loop modifications</strong> of <em>loop variable</em> - The loop variable can be modified inside the loop too.</li>
-
-The below example shows a type where the variable change is not provided in loop definition.
+The below example shows a type where the variable change is not provided in loop definition.</li>
 
 
 <pre><code class="language-c">#include &lt;stdio.h&gt;
@@ -193,18 +192,6 @@ printf(&quot;%d&quot;, i);
 <blockquote>
 <p>The explanation above applies for decrement operator (<code>--</code>) too.</p>
 </blockquote>
-<h3>2. <code>while</code> loop</h3>
-<p><strong>Syntax:</strong></p>
-<pre><code class="language-c">while (condition) {
-    // statements
-}
-</code></pre>
-<h3>3. <code>do while</code> loop</h3>
-<p><strong>Syntax:</strong></p>
-<pre><code class="language-c">do {
-    // statements
-} while(condition);
-</code></pre>
     </div>
 
     <div class="foot">
@@ -213,7 +200,7 @@ printf(&quot;%d&quot;, i);
         
         <a href="./" style="margin: 10%;">Home</a>
         
-        <a href="http://" target="_blank" rel="noopener noreferrer" style="margin: 10%;"></a>
+        <a href=" indefinite_loops.html" style="margin: 10%;">Next</a>
         
         <br>
     </div>

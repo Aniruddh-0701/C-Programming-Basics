@@ -1,9 +1,9 @@
 ---
-title: Looping Statements in C
-subtitle: Looping Statements in C
+title: Looping Statements in C - Part 1
+subtitle: Looping Statements in C - Part 1/2
 image: ../C.png
 prev: condition_statements.html
-next: ""
+next: indefinite_loops.html
 ---
 
 # Looping Statements
@@ -117,7 +117,8 @@ for(; <condition>; <increment/decrement>){
 
 </ul>
 
-<li> <strong>Increment</strong> - The increment part can be any expression that results in change of variable towards the condition.</li>
+<li> <strong>Increment</strong> - The increment part can be any expression that results in change of variable towards the condition.<br>
+The below three variations are allowed in the condition that there is variable change to offer definite loop termination</li>
 
 ```c
 i++ or ++i or i-- or --i // unary operation
@@ -125,11 +126,9 @@ i += 10 or i *= 20 // assignment and modification
 i = i / 2 or i = 1 + 3 // operation then assignment
 ```
 
-The above three variations are allowed in the condition that there is variable change to offer definite loop termination
+<li> <strong>Within loop modifications</strong> of <em>loop variable</em> - The loop variable can be modified inside the loop too.
 
-<li> <strong>Within loop modifications</strong> of <em>loop variable</em> - The loop variable can be modified inside the loop too.</li>
-
-The below example shows a type where the variable change is not provided in loop definition.
+The below example shows a type where the variable change is not provided in loop definition.</li>
 
 ```c
 #include <stdio.h>
@@ -185,23 +184,3 @@ So here, since there is a no need for old value of `i`, only the updated value i
 The question is **which is better**. At points where there is not the need of the old value, pre-increment is efficient, like just incrementing inside increment condition in `for` loop.
 
 > The explanation above applies for decrement operator (`--`) too.
-
-### 2. `while` loop
-
-**Syntax:**
-
-```c
-while (condition) {
-    // statements
-}
-```
-
-### 3. `do while` loop
-
-**Syntax:**
-
-```c
-do {
-    // statements
-} while(condition);
-```

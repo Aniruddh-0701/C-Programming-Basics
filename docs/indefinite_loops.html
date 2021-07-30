@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping Statements in C - Part 1</title>
+    <meta name="description" content="Looping Statements in C - Part 1/2">
+    <link rel="shortcut icon" href="C.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./static/main.css" />
+    <script
+        src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autorun=false&amp;lang=llvm"></script>
+    <script>
+        window.onload = (function () {
+            let tags = document.getElementsByTagName("pre");
+            let br = document.createElement("br");
+            for (var i = 0; i < tags.length; ++i) {
+                tags[i].classList.add("prettyprint");
+            }
+            tags = document.getElementsByTagName("code");
+            console.log(tags);
+            for (var i = 0; i < tags.length; ++i) {
+                if (tags[i].classList.contains("language-c")) {
+                    tags[i].classList.add("lang-c");
+                    tags[i].classList.remove("language-c");
+                }
+            }
+            PR.prettyPrint();
+        })
+    </script>
+
+
+
+    <script>
+        MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Looping Statements</h1>
+<h3>2. <code>while</code> loop</h3>
+<p><code>while</code> is most commonly used for indefinite looping. Preferred for variable conditions.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-c">while (condition) {
+    // statements
+}
+</code></pre>
+<p>The <code>while</code> loop follows the basic syntax of <code>if</code> statement. When the conditional expression is true, the loop executes an iteration.</p>
+<p>Eg:</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    int i = 1;
+    while (i &lt;= 10){
+        printf(&quot;%d &quot;, i++);
+        // The incrementation will cause the loop termination change
+    }
+    return 0;
+}
+</code></pre>
+<blockquote>
+<p>The <code>while</code> loop should definitely contain an expression that will cause the termination of loop sooner or later.</p>
+</blockquote>
+<h3>3. <code>do while</code> loop</h3>
+<p>The <code>do while</code> looping is yet another looping statement that is used in indefinite cases. It works similar to the <code>while</code> loop where truthfulness of a conditional expression decides the flow.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-c">do {
+    // statements
+} while(condition);
+</code></pre>
+<p>Eg:</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    int i = 1;
+    do {
+        printf(&quot;%d &quot;, i++);
+        // The incrementation will cause the loop termination change
+    } while (i &lt;= 10);
+    return 0;
+}
+</code></pre>
+<h4>Indefinite looping using <code>while</code></h4>
+<p>Consider the problem:</p>
+<pre><code class="language-txt">Given a number 'n', find the number of steps taken to reach 1 using the following function:
+</code></pre>
+<p>$$
+\displaystyle
+n =
+\begin{cases}
+n/2, ~~~~~~~~~~~~\rm{if}~ n~ \text{is even}\\
+3 \times n + 1, ~~ \rm{if}~n~ \text{is odd}
+\end{cases}
+$$</p>
+<p>Here, the number of steps it takes to reach <code>1</code> is not clear (indefinite).
+It is implemented using <code>while</code> loop as below:</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    int n, steps = 0; // steps variable to count number of steps taken
+    printf(&quot;Enter n &quot;);
+    scanf(&quot;%d&quot;, &amp;n); // getting n
+    while (n != 1) {
+        ++steps;
+        if (n % 2 == 0) {
+            // if n is even
+            n /= 2;
+        } else {
+            n = (3 * n) + 1;
+        }
+    }
+    printf(&quot;Steps taken = %d&quot;, steps);
+    return 0;
+}
+</code></pre>
+<ol>
+<li>Case 1:
+<br><br>
+Input: <code>10</code><br>
+Output: <code>Steps taken = 6</code><br>
+
+Path: $10 \rightarrow 5 \rightarrow 16 \rightarrow 8 \rightarrow 4 \rightarrow 2 \rightarrow 1$
+
+</li>
+<li> Case 2:
+<br><br>
+Input: <code>11</code><br>
+Output: <code>Steps taken = 14</code><br>
+
+Path: $11 \rightarrow 34 \rightarrow 17 \rightarrow 52 \rightarrow 26 \rightarrow 13 \rightarrow 40 \rightarrow 20 \rightarrow 10 \rightarrow 5 \rightarrow 16 \rightarrow 8 \rightarrow 4 \rightarrow 2 \rightarrow 1$
+
+</li>
+</ol>
+<h3><code>while</code> vs <code>do while</code> loops</h3>
+    </div>
+
+    <div class="foot">
+        
+        <a href="loops.html" style="margin: 10%;">Prev</a>
+        
+        <a href="./" style="margin: 10%;">Home</a>
+        
+        <a href="http://" target="_blank" rel="noopener noreferrer" style="margin: 10%;"></a>
+        
+        <br>
+    </div>
+
+</body>
+
+</html>
