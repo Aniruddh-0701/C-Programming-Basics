@@ -87,6 +87,8 @@ table {
 blockquote {
   padding: 10px 20px;
   margin: 2%;
+  margin-top: 5%;
+  margin-bottom: 5%;
   font-size: 17.5px;
 }
 
@@ -118,7 +120,6 @@ pre {
   align-content: flex-start;
   box-sizing: border-box;
   background-color: #dddddd;
-  box-shadow: 4px 4px 7px 5px #555;
 }
 
 pre > code > span.pln {
@@ -139,7 +140,11 @@ code {
     color: #333;
   }
   blockquote {
-    border-left: 5px solid #3e3c3c;
+    border-left: 7.5px solid #e83e8c;
+    background-color: #dddddd;
+  }
+  pre {
+    box-shadow: 4px 4px 7px 5px #777;
   }
 }
 @media (prefers-color-scheme: dark) {
