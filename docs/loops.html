@@ -45,7 +45,7 @@
 <body>
 
     <div class="container">
-        <h1>Looping Statemets</h1>
+        <h1>Looping Statements</h1>
 <p>There may be times when a set of tasks need to be repeated. It is done with the help of looping statements.</p>
 <p>A loop is a block of code that would repeat for a specified number of times or until some condition is satisfied.</p>
 <p><strong>Types:</strong></p>
@@ -81,6 +81,93 @@
 <li><strong>Condition</strong> - defines the end point of the loop with respect to the looping variable</li>
 <li><strong>Increment/decrement</strong> - Defining the expression that changes the variable&rsquo;s value at the end of each iteration.</li>
 </ol>
+<p><strong>Eg:</strong></p>
+<p>The below example prints numbers from <code>1</code> to <code>10</code></p>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+
+int main(){
+    for(int i = 1; i &lt;= 10; i++){
+        printf(&quot;%d &quot;, i);
+    }
+    return 0;
+}
+</code></pre>
+<p>The output will be:</p>
+<pre><code class="language-txt">1 2 3 4 5 6 7 8 9 10
+</code></pre>
+<p>Explanation:</p>
+<p>Here <code>i</code> is the loop variable</p>
+<ol>
+<li>Initialization - <code>i</code> is being declared and initialized to <code>1</code> as the starting value needed is <code>1</code>.</li>
+<li>Condition - The loop should run till i reaches 10 $\left(\rm{i} \le 10\right)$. So <code>i &lt;= 10</code> is the required condition.</li>
+<li>Increment/Decrement - Here <code>i</code> should be varying from $1 \rightarrow 10$, i.e. for every loop it should be increased by 1 ( <code>i++</code> unary increment operator is used).</li>
+</ol>
+<blockquote>
+<p>Watch for <code>mismatch</code> in condition and variable change. Incorrect variable change can cause <code>infinite</code> loop.</p>
+</blockquote>
+<p>Note:</p>
+<ol>
+<li>
+<p>The initialization phase can be given in 3 ways.</p>
+</li>
+<li>
+<p>The declaration and initialization both in the loop definition (as above)</p>
+</li>
+</ol>
+<p><code>c
+   for(int &lt;variable&gt; = value; &lt;condition&gt;; &lt;increment/decrement&gt;) {
+       // Statements
+   }</code></p>
+<ul>
+<li>The declaration being done before the loop and initialization in the definition:</li>
+</ul>
+<p><code>c
+   int &lt;variable&gt;;
+   for(&lt;variable&gt; = &lt;value&gt;; &lt;condition&gt;; &lt;increment/decrement&gt;){
+       // Statements
+   }</code></p>
+<ul>
+<li>Both declaration and initialization outside the loop. If done so, the initialization section is left empty.</li>
+</ul>
+<p><code>c
+   int &lt;variable&gt; = &lt;value&gt;;
+   for(; &lt;condition&gt;; &lt;increment/decrement&gt;){
+       // Statements
+   }</code></p>
+<ol>
+<li>Increment - The increment part can be any expression that results in change of variable towards the condition.</li>
+</ol>
+<p><code>c
+   i++ or ++i or i-- or --i // unary operation
+   i += 10 or i *= 20 // assignment and modification
+   i = i / 2 or i = 1 + 3 // operation then assignment</code></p>
+<p>The above three variations are allowed in the condition that there is variable change to offer definite loop termination</p>
+<ol>
+<li>within loop modifications of <em>loop variable</em> - The loop variable can be modified inside the loop too.<br>
+   The below example shows a type where the variable change is not provided in loop definition.</li>
+</ol>
+<p>```c
+   #include <stdio.h></p>
+<p>int main() {
+       for (int i = 1; i &lt;= 10;) {
+           printf(&ldquo;%d &ldquo;, i++); // increment done here
+       }
+       return 0;
+   }
+   ```</p>
+<h4>Pre-increment ( <code>i++</code> ) vs post-increment ( <code>++i</code> )</h4>
+<h3>2. <code>while</code> loop</h3>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-c">while (condition) {
+    // statements
+}
+</code></pre>
+<h3>3. <code>do while</code> loop</h3>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-c">do {
+    // statements
+} while(condition);
+</code></pre>
     </div>
 
     <div class="foot">
