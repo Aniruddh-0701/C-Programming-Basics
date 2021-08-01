@@ -1,4 +1,6 @@
-# C Programming Basics
+---
+title: C Programming Basics
+---
 
 ## Contents
 
