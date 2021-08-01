@@ -1,5 +1,7 @@
 # C Programming Basics
 
+Visit Github pages [here](https://aniruddh-0701.github.io/C-Programming-Basics/)
+
 ## Contents
 
 1. [Introduction to C](<Introduction to C>)
