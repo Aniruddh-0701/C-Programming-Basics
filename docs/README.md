@@ -1,4 +1,7 @@
-# C Programming Notes
+---
+layout: post
+title: C Programming Basics
+---
 
 ## Contents
 
