@@ -1,3 +1,7 @@
+# Notes for Introduction to C Programming Basics
+
+Visit index.md for the same or [github pages](https://aniruddh-0701.github.io/C-Programming-Basics/)
+
 ## Contents
 
 1. [Introduction to C](<Intro_to_C(1).html>)
