@@ -17,6 +17,8 @@ A loop is a block of code that would repeat for a specified number of times or u
 1. Definite Looping
 2. Indefinite Looping
 
+---
+
 ## Definite vs Indefinite looping
 
 A **definite loop** is a loop in which the number of times it is going to execute is known in advance before entering the loop. The number of iterations it is going to repeat will be typically provided through an `integer` variable.
@@ -27,6 +29,8 @@ In an **indefinite loop**, the number of times it is going to execute is not kno
 
 Some of common examples that you would need to implement indefinite loops are prompting for reading an input until user inserts a positive integer, reading a password until the user inserts the same password twice in a row, etc.
 
+---
+
 ## Types of Looping Statements
 
 1. `for` loop
@@ -36,6 +40,8 @@ Some of common examples that you would need to implement indefinite loops are pr
 > Looping variables are generally named `i`, `j`, and `k`, while it is not recommended citing clarity of the code.
 
 The examples below will use them for easiness of code understanding, making a note that it should not be followed.
+
+---
 
 ### 1. `for` loop
 
@@ -143,6 +149,8 @@ int main() {
 
 </ol>
 
+---
+
 #### Pre-increment ( `++i` ) vs post-increment ( `i++` )
 
 Both of them are unary operators doing the same thing, increasing the value by `1`. Still they have differences to be addressed.
@@ -164,6 +172,8 @@ i = i + 1;
 
 So here, since there is a need for old value of `i` which is being used, it has to be stored along with the updated value, adding the requirement of an extra space (memory).
 
+---
+
 **2. Pre-increment operator (`++i`):**
 
 In pre-incrementation, the value is incremented before use.
@@ -181,6 +191,10 @@ printf("%d", i);
 
 So here, since there is a no need for old value of `i`, only the updated value is stored. This does not add the requirement of an extra space (memory), unlike post-increment.
 
+---
+
 The question is **which is better**. At points where there is not the need of the old value, pre-increment is efficient, like just incrementing inside increment condition in `for` loop.
 
 > The explanation above applies for decrement operator (`--`) too.
+
+---

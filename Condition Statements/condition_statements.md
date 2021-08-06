@@ -20,6 +20,8 @@ The conditions statements have same basic structure in all programming languages
 
 > The result of expression used to make decision should always result in any of the boolean values (`true` or `false`)
 
+---
+
 ### 1. `if` statement
 
 Executes the statements inside the block only if the condition is satisfied.
@@ -49,6 +51,8 @@ int main(){
 ```
 
 The above program will print `y` as the conditional expression `y > x` results in `true`
+
+---
 
 ### 2. `if - else` statement
 
@@ -85,6 +89,8 @@ int main(){
 ```
 
 The above program will print `x` as the conditional expression `y > x` results in `false`
+
+---
 
 ### 3. `if` - `else if` - `else` statement
 
@@ -139,6 +145,8 @@ $$
 \text{big}, ~~~~~~~~~~~\rm{otherwise}
 \end{cases}
 $$
+
+---
 
 ### 4. Nested `if` - `else` statement
 
@@ -209,6 +217,8 @@ int main(){
 }
 ```
 
+---
+
 ### 5. Ternary (`?`) Operator
 
 One liner of if else statements. Used for small decision making when such structure is too big.
@@ -250,3 +260,5 @@ int main(){
 ```
 
 > It should be used only for a simple `if` - `else` condition.
+
+---

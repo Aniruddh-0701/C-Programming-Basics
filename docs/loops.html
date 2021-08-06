@@ -64,6 +64,7 @@
 <li>Definite Looping</li>
 <li>Indefinite Looping</li>
 </ol>
+<hr>
 <h2>Definite vs Indefinite looping</h2>
 <p>A <strong>definite loop</strong> is a loop in which the number of times it is going to execute is known in advance before entering the loop. The number of iterations it is going to repeat will be typically provided through an <code>integer</code> variable.</p>
 <blockquote>
@@ -71,6 +72,7 @@
 </blockquote>
 <p>In an <strong>indefinite loop</strong>, the number of times it is going to execute is not known in advance and it is going to be executed until some condition is satisfied.</p>
 <p>Some of common examples that you would need to implement indefinite loops are prompting for reading an input until user inserts a positive integer, reading a password until the user inserts the same password twice in a row, etc.</p>
+<hr>
 <h2>Types of Looping Statements</h2>
 <ol>
 <li><code>for</code> loop</li>
@@ -81,6 +83,7 @@
 <p>Looping variables are generally named <code>i</code>, <code>j</code>, and <code>k</code>, while it is not recommended citing clarity of the code.</p>
 </blockquote>
 <p>The examples below will use them for easiness of code understanding, making a note that it should not be followed.</p>
+<hr>
 <h3>1. <code>for</code> loop</h3>
 <p><code>for</code> is the most commonly used definite looping statement.</p>
 <p><strong>Syntax:</strong></p>
@@ -179,6 +182,7 @@ int main() {
 
 </ol>
 
+<hr>
 <h4>Pre-increment ( <code>++i</code> ) vs post-increment ( <code>i++</code> )</h4>
 <p>Both of them are unary operators doing the same thing, increasing the value by <code>1</code>. Still they have differences to be addressed.</p>
 <p><strong>1. Post-increment operator (<code>i++</code>):</strong></p>
@@ -190,6 +194,7 @@ int main() {
 i = i + 1;
 </code></pre>
 <p>So here, since there is a need for old value of <code>i</code> which is being used, it has to be stored along with the updated value, adding the requirement of an extra space (memory).</p>
+<hr>
 <p><strong>2. Pre-increment operator (<code>++i</code>):</strong></p>
 <p>In pre-incrementation, the value is incremented before use.</p>
 <pre><code class="language-c">printf(&quot;%d&quot;, ++i);
@@ -199,10 +204,12 @@ i = i + 1;
 printf(&quot;%d&quot;, i);
 </code></pre>
 <p>So here, since there is a no need for old value of <code>i</code>, only the updated value is stored. This does not add the requirement of an extra space (memory), unlike post-increment.</p>
+<hr>
 <p>The question is <strong>which is better</strong>. At points where there is not the need of the old value, pre-increment is efficient, like just incrementing inside increment condition in <code>for</code> loop.</p>
 <blockquote>
 <p>The explanation above applies for decrement operator (<code>--</code>) too.</p>
 </blockquote>
+<hr>
     </div>
 
     <div class="head-foot">

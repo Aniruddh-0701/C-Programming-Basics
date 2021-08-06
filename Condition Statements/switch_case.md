@@ -80,3 +80,5 @@ Enter a color code (r/g/b/y)
 g
 Green color
 ```
+
+---

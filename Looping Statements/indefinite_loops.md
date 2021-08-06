@@ -39,6 +39,8 @@ int main() {
 
 > The `while` loop should definitely contain an expression that will cause the termination of loop sooner or later.
 
+---
+
 ### 3. `do while` loop
 
 The `do while` looping is yet another looping statement that is used in indefinite cases. It works similar to the `while` loop where truthfulness of a conditional expression decides the flow.
@@ -65,6 +67,8 @@ int main() {
     return 0;
 }
 ```
+
+---
 
 #### Indefinite looping using `while`
 
@@ -125,4 +129,9 @@ Path: $11 \rightarrow 34 \rightarrow 17 \rightarrow 52 \rightarrow 26 \rightarro
 
 </li>
 </ol>
+
+---
+
 ### `while` vs `do while` loops
+
+---
