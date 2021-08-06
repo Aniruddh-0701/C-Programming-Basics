@@ -1,6 +1,6 @@
 ---
-title: Looping Statements in C - Part 1
-subtitle: Looping Statements in C - Part 1/2
+title: Looping Statements in C - Part 2
+subtitle: Looping Statements in C - Part 2/2
 image: ../C.png
 prev: loops.html
 next: ""
@@ -41,9 +41,9 @@ int main() {
 
 ---
 
-### 3. `do while` loop
+### 3. `do...while` loop
 
-The `do while` looping is yet another looping statement that is used in indefinite cases. It works similar to the `while` loop where truthfulness of a conditional expression decides the flow.
+The `do...while` looping is yet another looping statement that is used in indefinite cases. It works similar to the `while` loop where truthfulness of a conditional expression decides the flow.
 
 **Syntax:**
 
@@ -132,6 +132,163 @@ Path: $11 \rightarrow 34 \rightarrow 17 \rightarrow 52 \rightarrow 26 \rightarro
 
 ---
 
-### `while` vs `do while` loops
+### `while` vs `do...while` loops
+
+Both while and do...while loops are indefinite loops, working similar. But still they have differences.
+
+In `while` loop, the iteration starts with a condition check. If the result is `false`, the loop is not entered and execution is passed to after the loop.
+
+In `do...while` loop, the condition check is done after iteration. This means an iteration may execute even if condition is not satisfied.
+
+Eg:  
+**while loop:**
+
+```c
+#include<stdio.h>
+
+int main(){
+    int n = 11;
+
+    while(n < 10){
+        printf("%d ", n);
+    }
+
+    printf("Outside Loop")
+    return 0;
+}
+```
+
+output
+
+```txt
+Outside Loop
+```
+
+**do...while loop:**
+
+```c
+#include<stdio.h>
+
+int main(){
+    int n = 11;
+
+    do{
+        printf("%d ", n);
+    }while(n < 10);
+
+    printf("Outside Loop");
+    return 0;
+}
+```
+
+output
+
+```txt
+11 Outside Loop
+```
+
+---
+
+### Nested Looping
+
+You can use one or more loops inside any other `while`, `for`, or `do...while` loop.
+
+## The Infinite Loop
+
+A loop becomes an `infinite loop` if a condition never becomes false. The for loop is traditionally used for this purpose. Since none of the three expressions that form the 'for' loop are required, you can make an endless loop by leaving the conditional expression empty.
+
+```c
+#include <stdio.h>
+
+int main () {
+
+   for( ; ; ) {
+      printf("This loop will run forever.\n");
+   }
+
+   return 0;
+}
+```
+
+When the conditional expression is absent, it is assumed to be `true`. You may have an initialization and increment expression, but C programmers more commonly use the `for( ; ; )` construct to signify an infinite loop.
+
+While loops can also be used for infinite loops. In that case:
+
+```c
+while(1){
+
+}
+
+// or
+
+while(true){
+
+}
+```
+
+> Terminate an infinite loop (code execution) by pressing `Ctrl + C`.
+
+---
+
+## Loop Control Statements
+
+**Loop control Statements** are statements that alter the flow of loop.
+C supports the following statements
+
+1. `break`
+2. `continue`
+3. `goto`
+
+**1. `break` Statement:**
+The `break` statement has the following two usages −
+
+- When a `break` statement is encountered inside a loop, the loop is immediately terminated and the program control resumes at the next statement following the loop.
+
+- It can be used to terminate a case in the switch statement
+
+> In nested loops, the break statement will stop the execution of the innermost loop and start executing the next line of code after the block.
+
+**Syntax:**
+
+```c
+break;
+```
+
+Eg:
+
+```c
+#include <stdio.h>
+
+int main () {
+
+    /* local variable definition */
+    int a = 10;
+
+    /* while loop execution */
+    while( a < 20 ) {
+
+        printf("value of a: %d\n", a);
+        ++a;
+
+        if( a > 15) {
+            /* terminate the loop using break statement */
+            break;
+        }
+    }
+
+    return 0;
+}
+```
+
+Output
+
+```txt
+value of a: 10
+value of a: 11
+value of a: 12
+value of a: 13
+value of a: 14
+value of a: 15
+```
 
 ---

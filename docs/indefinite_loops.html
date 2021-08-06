@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Looping Statements in C - Part 1</title>
-    <meta name="description" content="Looping Statements in C - Part 1/2">
+    <title>Looping Statements in C - Part 2</title>
+    <meta name="description" content="Looping Statements in C - Part 2/2">
     <link rel="shortcut icon" href="C.png" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -82,8 +82,8 @@ int main() {
 <p>The <code>while</code> loop should definitely contain an expression that will cause the termination of loop sooner or later.</p>
 </blockquote>
 <hr>
-<h3>3. <code>do while</code> loop</h3>
-<p>The <code>do while</code> looping is yet another looping statement that is used in indefinite cases. It works similar to the <code>while</code> loop where truthfulness of a conditional expression decides the flow.</p>
+<h3>3. <code>do...while</code> loop</h3>
+<p>The <code>do...while</code> looping is yet another looping statement that is used in indefinite cases. It works similar to the <code>while</code> loop where truthfulness of a conditional expression decides the flow.</p>
 <p><strong>Syntax:</strong></p>
 <pre><code class="language-c">do {
     // statements
@@ -155,7 +155,132 @@ Path: $11 \rightarrow 34 \rightarrow 17 \rightarrow 52 \rightarrow 26 \rightarro
 </ol>
 
 <hr>
-<h3><code>while</code> vs <code>do while</code> loops</h3>
+<h3><code>while</code> vs <code>do...while</code> loops</h3>
+<p>Both while and do&hellip;while loops are indefinite loops, working similar. But still they have differences.</p>
+<p>In <code>while</code> loop, the iteration starts with a condition check. If the result is <code>false</code>, the loop is not entered and execution is passed to after the loop.</p>
+<p>In <code>do...while</code> loop, the condition check is done after iteration. This means an iteration may execute even if condition is not satisfied.</p>
+<p>Eg:<br>
+<strong>while loop:</strong></p>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+
+int main(){
+    int n = 11;
+
+    while(n &lt; 10){
+        printf(&quot;%d &quot;, n);
+    }
+
+    printf(&quot;Outside Loop&quot;)
+    return 0;
+}
+</code></pre>
+<p>output</p>
+<pre><code class="language-txt">Outside Loop
+</code></pre>
+<p><strong>do&hellip;while loop:</strong></p>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+
+int main(){
+    int n = 11;
+
+    do{
+        printf(&quot;%d &quot;, n);
+    }while(n &lt; 10);
+
+    printf(&quot;Outside Loop&quot;);
+    return 0;
+}
+</code></pre>
+<p>output</p>
+<pre><code class="language-txt">11 Outside Loop
+</code></pre>
+<hr>
+<h3>Nested Looping</h3>
+<p>You can use one or more loops inside any other <code>while</code>, <code>for</code>, or <code>do...while</code> loop.</p>
+<h2>The Infinite Loop</h2>
+<p>A loop becomes an <code>infinite loop</code> if a condition never becomes false. The for loop is traditionally used for this purpose. Since none of the three expressions that form the &lsquo;for&rsquo; loop are required, you can make an endless loop by leaving the conditional expression empty.</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main () {
+
+   for( ; ; ) {
+      printf(&quot;This loop will run forever.\n&quot;);
+   }
+
+   return 0;
+}
+</code></pre>
+<p>When the conditional expression is absent, it is assumed to be <code>true</code>. You may have an initialization and increment expression, but C programmers more commonly use the <code>for( ; ; )</code> construct to signify an infinite loop.</p>
+<p>While loops can also be used for infinite loops. In that case:</p>
+<pre><code class="language-c">while(1){
+
+}
+
+// or
+
+while(true){
+
+}
+</code></pre>
+<blockquote>
+<p>Terminate an infinite loop (code execution) by pressing <code>Ctrl + C</code>.</p>
+</blockquote>
+<hr>
+<h2>Loop Control Statements</h2>
+<p><strong>Loop control Statements</strong> are statements that alter the flow of loop.
+C supports the following statements</p>
+<ol>
+<li><code>break</code></li>
+<li><code>continue</code></li>
+<li><code>goto</code></li>
+</ol>
+<p><strong>1. <code>break</code> Statement:</strong>
+The <code>break</code> statement has the following two usages −</p>
+<ul>
+<li>
+<p>When a <code>break</code> statement is encountered inside a loop, the loop is immediately terminated and the program control resumes at the next statement following the loop.</p>
+</li>
+<li>
+<p>It can be used to terminate a case in the switch statement</p>
+</li>
+</ul>
+<blockquote>
+<p>In nested loops, the break statement will stop the execution of the innermost loop and start executing the next line of code after the block.</p>
+</blockquote>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-c">break;
+</code></pre>
+<p>Eg:</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main () {
+
+    /* local variable definition */
+    int a = 10;
+
+    /* while loop execution */
+    while( a &lt; 20 ) {
+
+        printf(&quot;value of a: %d\n&quot;, a);
+        ++a;
+
+        if( a &gt; 15) {
+            /* terminate the loop using break statement */
+            break;
+        }
+    }
+
+    return 0;
+}
+</code></pre>
+<p>Output</p>
+<pre><code class="language-txt">value of a: 10
+value of a: 11
+value of a: 12
+value of a: 13
+value of a: 14
+value of a: 15
+</code></pre>
 <hr>
     </div>
 
