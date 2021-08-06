@@ -74,37 +74,37 @@
 </thead>
 <tbody>
 <tr>
-<td>+</td>
+<td><code>+</code></td>
 <td>Addition</td>
 <td>2 + 3 = 5</td>
 </tr>
 <tr>
-<td>-</td>
+<td><code>-</code></td>
 <td>Subtraction</td>
 <td>2 - 3 = -1</td>
 </tr>
 <tr>
-<td>*</td>
+<td><code>*</code></td>
 <td>Multiplication</td>
 <td>2 * 3 = 6</td>
 </tr>
 <tr>
-<td>/</td>
+<td><code>/</code></td>
 <td>Division (returns quotient)</td>
 <td>2 / 3 = 0</td>
 </tr>
 <tr>
-<td>%</td>
+<td><code>%</code></td>
 <td>Modulo (returns remainder)</td>
 <td>2 % 3 = 2</td>
 </tr>
 <tr>
-<td>++</td>
+<td><code>++</code></td>
 <td>Increment operator</td>
 <td>++2 or 2++</td>
 </tr>
 <tr>
-<td>--</td>
+<td><code>--</code></td>
 <td>Decrement operator</td>
 <td>--3 or 3--</td>
 </tr>
@@ -122,32 +122,32 @@
 </thead>
 <tbody>
 <tr>
-<td>==</td>
+<td><code>==</code></td>
 <td>Equal</td>
 <td>a == b</td>
 </tr>
 <tr>
-<td>!=</td>
+<td><code>!=</code></td>
 <td>Not Equal</td>
 <td>a != b</td>
 </tr>
 <tr>
-<td>&gt;</td>
+<td><code>&gt;</code></td>
 <td>Greater</td>
 <td>a &gt; b</td>
 </tr>
 <tr>
-<td>&gt;=</td>
+<td><code>&gt;=</code></td>
 <td>Greater or Equal</td>
 <td>a &gt;= b</td>
 </tr>
 <tr>
-<td>&lt;</td>
+<td><code>&lt;</code></td>
 <td>Lesser</td>
 <td>a &lt; b</td>
 </tr>
 <tr>
-<td>&lt;=</td>
+<td><code>&lt;=</code></td>
 <td>Lesser or Equal</td>
 <td>a &lt;= b</td>
 </tr>
@@ -164,15 +164,15 @@
 </thead>
 <tbody>
 <tr>
-<td>&amp;&amp;</td>
+<td><code>&amp;&amp;</code></td>
 <td>Logical Operator AND</td>
 </tr>
 <tr>
-<td>||</td>
+<td>&#124;&#124;</td>
 <td>Logical Operator OR</td>
 </tr>
 <tr>
-<td>!</td>
+<td><code>!</code></td>
 <td>Logical operator NOT</td>
 </tr>
 </tbody>
@@ -191,7 +191,7 @@
 </thead>
 <tbody>
 <tr>
-<td>&amp;</td>
+<td><code>&amp;</code></td>
 <td>Bitwise AND</td>
 <td>x &amp; y</td>
 <td>5 &amp; 2</td>
@@ -203,25 +203,25 @@
 <td>5 &#124; 3</td>
 </tr>
 <tr>
-<td>~</td>
+<td><code>~</code></td>
 <td>Bitwise NOT</td>
 <td>~x</td>
 <td>~1</td>
 </tr>
 <tr>
-<td>^</td>
+<td><code>^</code></td>
 <td>Bitwise XOR</td>
 <td>x ^ y</td>
 <td>6 ^ 1</td>
 </tr>
 <tr>
-<td>&lt;&lt;</td>
+<td><code>&lt;&lt;</code></td>
 <td>Shifts y bits in x to the left (Left shift operator)</td>
 <td>x &lt;&lt; y</td>
 <td>10 &lt;&lt; 2</td>
 </tr>
 <tr>
-<td>&gt;&gt;</td>
+<td><code>&gt;&gt;</code></td>
 <td>Shifts y bits in x to the right (Right Shift Operator)</td>
 <td>x &gt;&gt; y</td>
 <td>15 &gt;&gt; 2</td>
@@ -261,12 +261,32 @@
 <pre><code class="language-txt">~N = -(N + 1)
 </code></pre>
 <p>So,</p>
-<p>Eg:</p>
 <pre><code class="language-c">~5 = -(5 + 1) = -6
 </code></pre>
 <p><strong>4. Bitwise XOR (<code>^</code>):</strong></p>
-<p><strong>5. Left Shift Operator:</strong></p>
-<p><strong>6. Right Shift Operator:</strong></p>
+<p>It applies the <code>Exclusive OR</code> (<code>XOR</code>) operation for each bit.</p>
+<p>Eg:</p>
+<pre><code class="language-c">6 ^ 2 = 4
+
+   6  = 110
+   2  = 010 // Padding zeroes on left
+6 ^ 1 = 100 = 4
+</code></pre>
+<p><strong>5. Left Shift Operator (<code>&lt;&lt;</code>):</strong></p>
+<p>Shifts the bits to the left by adding trailing zeros and removing start bits (MSB) which overflows.</p>
+<p>Eg:</p>
+<pre><code class="language-c">5 &lt;&lt; 2 = 20
+5  = 101
+5 &lt;&lt; 2 = 10100 = 20
+
+</code></pre>
+<p><strong>6. Right Shift Operator (<code>&gt;&gt;</code>):</strong></p>
+<p>Shifts the bits to the right by adding leading zeroes and removing End bits (LSB).</p>
+<p>Eg:</p>
+<pre><code class="language-c">15 &gt;&gt; 2 = 0
+15  = 1111
+15 &gt;&gt; 2 = 0011 = 3
+</code></pre>
 <h4>5. Assignment</h4>
 <p>Assigns value to a variable</p>
 <table>
@@ -279,57 +299,57 @@
 </thead>
 <tbody>
 <tr>
-<td>=</td>
+<td><code>=</code></td>
 <td>Assign</td>
 <td>c = 30</td>
 </tr>
 <tr>
-<td>+=</td>
+<td><code>+=</code></td>
 <td>Add and assign</td>
 <td>a += b</td>
 </tr>
 <tr>
-<td>-=</td>
+<td><code>-=</code></td>
 <td>Subtract and assign</td>
 <td>a -= b</td>
 </tr>
 <tr>
-<td>*=</td>
+<td><code>*=</code></td>
 <td>Multiply and assign</td>
 <td>a *= b</td>
 </tr>
 <tr>
-<td>/=</td>
+<td><code>/=</code></td>
 <td>Divide and assign</td>
 <td>a /= b</td>
 </tr>
 <tr>
-<td>%=</td>
+<td><code>%=</code></td>
 <td>Get remainder and assign</td>
 <td>a %= b</td>
 </tr>
 <tr>
-<td>&lt;&lt;=</td>
+<td><code>&lt;&lt;=</code></td>
 <td>Left Shift and assign</td>
 <td>a &lt;&lt;= b</td>
 </tr>
 <tr>
-<td>&gt;&gt;=</td>
+<td><code>&gt;&gt;=</code></td>
 <td>Right Shift and assign</td>
 <td>a &gt;&gt;= b</td>
 </tr>
 <tr>
-<td>&amp;=</td>
+<td><code>&amp;=</code></td>
 <td>Bitwise AND and assign</td>
 <td>a &amp;= b</td>
 </tr>
 <tr>
-<td>|=</td>
+<td>&#124;=</td>
 <td>Bitwise OR and assign</td>
 <td>a | = b</td>
 </tr>
 <tr>
-<td>^=</td>
+<td><code>^=</code></td>
 <td>Bitwise XOR and assign</td>
 <td>a ^= b</td>
 </tr>
@@ -347,32 +367,32 @@
 </thead>
 <tbody>
 <tr>
-<td>&amp;</td>
+<td><code>&amp;</code></td>
 <td>Address Operator (returns Address of a identifier)</td>
 <td>&amp;a</td>
 </tr>
 <tr>
-<td>*</td>
+<td><code>*</code></td>
 <td>Pointer to a variable / Dereferencing operator</td>
 <td>*a</td>
 </tr>
 <tr>
-<td>?</td>
+<td><code>?</code></td>
 <td>Ternary Operator</td>
 <td>condition? a: b</td>
 </tr>
 <tr>
-<td>.</td>
+<td><code>.</code></td>
 <td>dot operator</td>
 <td>var1.var2</td>
 </tr>
 <tr>
-<td>-&gt;</td>
+<td><code>-&gt;</code></td>
 <td>Arrow or Member access operator</td>
 <td>(pointer)-&gt;(member)</td>
 </tr>
 <tr>
-<td>,</td>
+<td><code>,</code></td>
 <td>Comma operator</td>
 <td>a, b</td>
 </tr>
@@ -430,77 +450,77 @@ sizeof(&lt;type&gt;);
 <tbody>
 <tr>
 <td>Postfix</td>
-<td>() [] −&gt; . ++ −−</td>
+<td><code>()</code> <code>[]</code> <code>−&gt;</code> <code>.</code> <code>++</code> <code>−−</code></td>
 <td>Left to right</td>
 </tr>
 <tr>
 <td>Unary</td>
-<td>+ − ! ~ ++ −− (type) * &amp; sizeof</td>
+<td><code>+</code> <code>−</code> <code>!</code> <code>~</code> <code>++</code> <code>−−</code> <code>(type)</code> <code>*</code> <code>&amp;</code> <code>sizeof</code></td>
 <td>Right to left</td>
 </tr>
 <tr>
 <td>Multiplicative</td>
-<td>* / %</td>
+<td><code>*</code> <code>/</code> <code>%</code></td>
 <td>Left to right</td>
 </tr>
 <tr>
 <td>Additive</td>
-<td>+ −</td>
+<td><code>+</code> <code>−</code></td>
 <td>Left to right</td>
 </tr>
 <tr>
 <td>Shift</td>
-<td>&lt;&lt; &gt;&gt;</td>
+<td><code>&lt;&lt;</code> <code>&gt;&gt;</code></td>
 <td>Left to right</td>
 </tr>
 <tr>
 <td>Relational</td>
-<td>&lt; &lt;= &gt; &gt;=</td>
+<td><code>&lt;</code> <code>&lt;=</code> <code>&gt;</code> <code>&gt;=</code></td>
 <td>Left to right</td>
 </tr>
 <tr>
 <td>Equality</td>
-<td>== !=</td>
+<td><code>==</code> <code>!=</code></td>
 <td>Left to right</td>
 </tr>
 <tr>
 <td>Bitwise AND</td>
-<td>&amp;</td>
+<td><code>&amp;</code></td>
 <td>Left to right</td>
 </tr>
 <tr>
 <td>Bitwise XOR</td>
-<td>^</td>
+<td><code>^</code></td>
 <td>Left to right</td>
 </tr>
 <tr>
 <td>Bitwise OR</td>
-<td>|</td>
+<td>&#124;</td>
 <td>Left to right</td>
 </tr>
 <tr>
 <td>Logical AND</td>
-<td>&amp;&amp;</td>
+<td><code>&amp;&amp;</code></td>
 <td>Left to right</td>
 </tr>
 <tr>
 <td>Logical OR</td>
-<td>||</td>
+<td>&#124;&#124;</td>
 <td>Left to right</td>
 </tr>
 <tr>
 <td>Conditional (Ternary)</td>
-<td>?:</td>
+<td><code>?:</code></td>
 <td>Right to left</td>
 </tr>
 <tr>
 <td>Assignment</td>
-<td>= += −= *= /= %=&gt;&gt;= &lt;&lt;= &amp;= ^= |=</td>
+<td><code>=</code> <code>+=</code> <code>−=</code> <code>*=</code> <code>/=</code> <code>%=</code> <code>&gt;&gt;=</code> <code>&lt;&lt;=</code> <code>&amp;=</code> <code>^=</code> &#124;=</td>
 <td>Right to left</td>
 </tr>
 <tr>
 <td>Comma</td>
-<td>,</td>
+<td><code>,</code></td>
 <td>Left to right</td>
 </tr>
 </tbody>
@@ -532,7 +552,7 @@ sizeof(&lt;type&gt;);
 </thead>
 <tbody>
 <tr>
-<td>\\</td>
+<td>\ \</td>
 <td>Back slash</td>
 </tr>
 <tr>
@@ -589,25 +609,23 @@ sizeof(&lt;type&gt;);
 <li>int $\rightarrow$ double</li>
 </ol>
 <p>This is done by the <code>Arithmetic converter</code>. The following is the basic hierarchy of conversion.</p>
-<p>$$
-\text{long double}\
-\uparrow\
-\text{double}\
-\uparrow\
-\text{float}\
-\uparrow\
-\text{unsigned long long}\
-\uparrow\
-\text{long long}\
-\uparrow\
-\text{unsigned long}\
-\uparrow\
-\text{long}\
-\uparrow\
-\text{unsigned int}\
-\uparrow\
-\text{int}\
-$$</p>
+<p>$$\text{long double}$$
+$$\uparrow$$
+$$\text{double} $$
+$$\uparrow$$
+$$\text{float}$$
+$$\uparrow$$
+$$\text{unsigned long long}$$
+$$\uparrow$$
+$$\text{long long}$$
+$$\uparrow$$
+$$\text{unsigned long}$$
+$$\uparrow$$
+$$\text{long}$$
+$$\uparrow$$
+$$\text{unsigned int}$$
+$$\uparrow$$
+$$\text{int}$$</p>
 <p>Eg:</p>
 <pre><code class="language-c">#include &lt;stdio.h&gt;
 

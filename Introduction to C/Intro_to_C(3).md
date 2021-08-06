@@ -25,7 +25,7 @@ next: condition_statements.html
 | float                  | 0                    | 340282346638528860000000000000000000000.000000 | 4                 |
 | double                 | 0                    | 17976931348623157000...(289 more 0s).000000    | 8                 |
 
-The sizes and value limits for various data types can printed from `<ctype.h>` header file and it is done in the file [here](datatypes.c)
+The sizes and value limits for various data types can printed from `<ctype.h>` header file and it is done in the file [here](data_types.c)
 
 ---
 

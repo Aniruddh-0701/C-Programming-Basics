@@ -154,25 +154,38 @@ Naming Conventions: [Naming Convention - Wikipedia article](<https://en.wikipedi
 
 For Easy readability:
 
-- Function or use as name
-- first letter in lowercase
-- If Name has Multiple words:
-  1. Use underscore for space
-  2. joint writing with words in Camel Case
-- Avoid Long names
-
+<ul>
+<li> Function or use as name</li>
+<li> first letter in lowercase</li>
+<li> If Name has Multiple words:</li>
+  <ol>
+  <li> Use underscore for space </li>
+  <li> joint writing with words in Camel Case</li>
+  </ol>
+<li> Avoid Long names</li>
+</ul>
 Naming convention for multi word variable names:
 
-1. Camel case (abcAbc)
-2. Pascal case (AbcAbc)
-3. Screaming case (ABC)
-4. Lazy case (abc)
-5. Kebab case (ab-ab)
-6. Snake case(ab_ab)
+1. Camel case (abcAbc) - `camelCase`
+2. Pascal case (AbcAbc) - `PascalCase`
+3. Screaming case (ABC) - `SCREAMINGCASE`
+4. Lazy case (abc) - `lazycase`
+5. Kebab case (ab-ab) - `kebab-case`
+6. Snake case(ab_ab) - `snake_case`
 
-E.g.: age, input_values, firstName, number, prime_num
+> Of the above, the `camel` and `snake` cases are the most common ones
 
-Not: user name, number_to_find_prime
+Eg.:
+
+```txt
+age, input_values, firstName, number, prime_num
+```
+
+Not this way:
+
+```txt
+user name, number_to_find_prime
+```
 
 [Variables (data type), Naming Convention](variable_name.c)
 
@@ -225,12 +238,18 @@ char ch = 'z';
 
 ### Declaration of constants
 
-In `C`, constants are declared and initialized in a single line using the `const` keyword.
+In `C`, constants are declared and initialized in a single line using the `const` keyword. It is advised to have the constants' name in Uppercase.
 
 **Syntax:**
 
 ```c
 const <type> variable_name = <value>;
+```
+
+Eg:
+
+```c
+const int MY_CONSTANT = 10;
 ```
 
 ---

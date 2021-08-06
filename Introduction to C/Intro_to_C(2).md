@@ -37,13 +37,13 @@ Perform arithmetic operations
 
 | Operator | Description                 | Example        |
 | -------- | --------------------------- | -------------- |
-| +        | Addition                    | 2 + 3 = 5      |
-| -        | Subtraction                 | 2 - 3 = -1     |
-| \*       | Multiplication              | 2 \* 3 = 6     |
-| /        | Division (returns quotient) | 2 / 3 = 0      |
-| %        | Modulo (returns remainder)  | 2 % 3 = 2      |
-| ++       | Increment operator          | ++2 or 2++     |
-| \-\-     | Decrement operator          | \-\-3 or 3\-\- |
+| `+`      | Addition                    | 2 + 3 = 5      |
+| `-`      | Subtraction                 | 2 - 3 = -1     |
+| `*`      | Multiplication              | 2 \* 3 = 6     |
+| `/`      | Division (returns quotient) | 2 / 3 = 0      |
+| `%`      | Modulo (returns remainder)  | 2 % 3 = 2      |
+| `++`     | Increment operator          | ++2 or 2++     |
+| `--`     | Decrement operator          | \-\-3 or 3\-\- |
 
 #### 2. Relational
 
@@ -51,22 +51,22 @@ Relations between two variables
 
 | Operator | Description      | Example |
 | -------- | ---------------- | ------- |
-| ==       | Equal            | a == b  |
-| !=       | Not Equal        | a != b  |
-| >        | Greater          | a > b   |
-| >=       | Greater or Equal | a >= b  |
-| <        | Lesser           | a < b   |
-| <=       | Lesser or Equal  | a <= b  |
+| `==`     | Equal            | a == b  |
+| `!=`     | Not Equal        | a != b  |
+| `>`      | Greater          | a > b   |
+| `>=`     | Greater or Equal | a >= b  |
+| `<`      | Lesser           | a < b   |
+| `<=`     | Lesser or Equal  | a <= b  |
 
 #### 3. Logical
 
 Perform Logical operations
 
-| Operator | Description          |
-| -------- | -------------------- |
-| &&       | Logical Operator AND |
-| \|\|     | Logical Operator OR  |
-| !        | Logical operator NOT |
+| Operator     | Description          |
+| ------------ | -------------------- |
+| `&&`         | Logical Operator AND |
+| &#124;&#124; | Logical Operator OR  |
+| `!`          | Logical operator NOT |
 
 #### 4. Bitwise
 
@@ -76,12 +76,12 @@ The binary forms are padded by `0` on the left to compensate the differences in 
 
 | Operator | Description                                            | Syntax     | Example    |
 | -------- | ------------------------------------------------------ | ---------- | ---------- |
-| &        | Bitwise AND                                            | x & y      | 5 & 2      |
+| `&`      | Bitwise AND                                            | x & y      | 5 & 2      |
 | &#124;   | Bitwise OR                                             | x &#124; y | 5 &#124; 3 |
-| ~        | Bitwise NOT                                            | ~x         | ~1         |
-| ^        | Bitwise XOR                                            | x ^ y      | 6 ^ 1      |
-| <<       | Shifts y bits in x to the left (Left shift operator)   | x << y     | 10 << 2    |
-| >>       | Shifts y bits in x to the right (Right Shift Operator) | x >> y     | 15 >> 2    |
+| `~`      | Bitwise NOT                                            | ~x         | ~1         |
+| `^`      | Bitwise XOR                                            | x ^ y      | 6 ^ 1      |
+| `<<`     | Shifts y bits in x to the left (Left shift operator)   | x << y     | 10 << 2    |
+| `>>`     | Shifts y bits in x to the right (Right Shift Operator) | x >> y     | 15 >> 2    |
 
 **1. Bitwise AND (`&`):**
 
@@ -138,17 +138,48 @@ Two's complement is an operation on binary numbers. The 2's complement of a numb
 
 So,
 
-Eg:
-
 ```c
 ~5 = -(5 + 1) = -6
 ```
 
 **4. Bitwise XOR (`^`):**
 
-**5. Left Shift Operator:**
+It applies the `Exclusive OR` (`XOR`) operation for each bit.
 
-**6. Right Shift Operator:**
+Eg:
+
+```c
+6 ^ 2 = 4
+
+   6  = 110
+   2  = 010 // Padding zeroes on left
+6 ^ 1 = 100 = 4
+```
+
+**5. Left Shift Operator (`<<`):**
+
+Shifts the bits to the left by adding trailing zeros and removing start bits (MSB) which overflows.
+
+Eg:
+
+```c
+5 << 2 = 20
+5  = 101
+5 << 2 = 10100 = 20
+
+```
+
+**6. Right Shift Operator (`>>`):**
+
+Shifts the bits to the right by adding leading zeroes and removing End bits (LSB).
+
+Eg:
+
+```c
+15 >> 2 = 0
+15  = 1111
+15 >> 2 = 0011 = 3
+```
 
 #### 5. Assignment
 
@@ -156,17 +187,17 @@ Assigns value to a variable
 
 | Operator | Description              | Example  |
 | -------- | ------------------------ | -------- |
-| =        | Assign                   | c = 30   |
-| +=       | Add and assign           | a += b   |
-| -=       | Subtract and assign      | a -= b   |
-| \*=      | Multiply and assign      | a \*= b  |
-| /=       | Divide and assign        | a /= b   |
-| %=       | Get remainder and assign | a %= b   |
-| <<=      | Left Shift and assign    | a <<= b  |
-| >>=      | Right Shift and assign   | a >>= b  |
-| &=       | Bitwise AND and assign   | a &= b   |
-| \|=      | Bitwise OR and assign    | a \| = b |
-| ^=       | Bitwise XOR and assign   | a ^= b   |
+| `=`      | Assign                   | c = 30   |
+| `+=`     | Add and assign           | a += b   |
+| `-=`     | Subtract and assign      | a -= b   |
+| `*=`     | Multiply and assign      | a \*= b  |
+| `/=`     | Divide and assign        | a /= b   |
+| `%=`     | Get remainder and assign | a %= b   |
+| `<<=`    | Left Shift and assign    | a <<= b  |
+| `>>=`    | Right Shift and assign   | a >>= b  |
+| `&=`     | Bitwise AND and assign   | a &= b   |
+| &#124;=  | Bitwise OR and assign    | a \| = b |
+| `^=`     | Bitwise XOR and assign   | a ^= b   |
 
 #### 6. Miscellaneous Operators
 
@@ -174,12 +205,12 @@ Besides the operators discussed above, there are a few other important operators
 
 | Operator | Description                                        | Example             |
 | -------- | -------------------------------------------------- | ------------------- |
-| &        | Address Operator (returns Address of a identifier) | &a                  |
-| \*       | Pointer to a variable / Dereferencing operator     | \*a                 |
-| ?        | Ternary Operator                                   | condition? a: b     |
-| .        | dot operator                                       | var1.var2           |
-| ->       | Arrow or Member access operator                    | (pointer)->(member) |
-| ,        | Comma operator                                     | a, b                |
+| `&`      | Address Operator (returns Address of a identifier) | &a                  |
+| `*`      | Pointer to a variable / Dereferencing operator     | \*a                 |
+| `?`      | Ternary Operator                                   | condition? a: b     |
+| `.`      | dot operator                                       | var1.var2           |
+| `->`     | Arrow or Member access operator                    | (pointer)->(member) |
+| `,`      | Comma operator                                     | a, b                |
 
 > Check pointers topic for more details on dereferencing operator and address operator
 
@@ -246,23 +277,23 @@ sizeof(<type>);
 
 Operator precedence determines the grouping of terms in an expression and decides how an expression is evaluated. Certain operators have higher precedence than others; for example, the multiplication operator has a higher precedence than the addition operator.
 
-| Category              | Operator                           | Associativity |
-| --------------------- | ---------------------------------- | ------------- |
-| Postfix               | () [] −> . ++ −−                   | Left to right |
-| Unary                 | + − ! ~ ++ −− (type) \* & sizeof   | Right to left |
-| Multiplicative        | \* / %                             | Left to right |
-| Additive              | + −                                | Left to right |
-| Shift                 | << >>                              | Left to right |
-| Relational            | < <= > >=                          | Left to right |
-| Equality              | == !=                              | Left to right |
-| Bitwise AND           | &                                  | Left to right |
-| Bitwise XOR           | ^                                  | Left to right |
-| Bitwise OR            | \|                                 | Left to right |
-| Logical AND           | &&                                 | Left to right |
-| Logical OR            | \|\|                               | Left to right |
-| Conditional (Ternary) | ?:                                 | Right to left |
-| Assignment            | = += −= \*= /= %=>>= <<= &= ^= \|= | Right to left |
-| Comma                 | ,                                  | Left to right |
+| Category              | Operator                                                   | Associativity |
+| --------------------- | ---------------------------------------------------------- | ------------- |
+| Postfix               | `()` `[]` `−>` `.` `++` `−−`                               | Left to right |
+| Unary                 | `+` `−` `!` `~` `++` `−−` `(type)` `*` `&` `sizeof`        | Right to left |
+| Multiplicative        | `*` `/` `%`                                                | Left to right |
+| Additive              | `+` `−`                                                    | Left to right |
+| Shift                 | `<<` `>>`                                                  | Left to right |
+| Relational            | `<` `<=` `>` `>=`                                          | Left to right |
+| Equality              | `==` `!=`                                                  | Left to right |
+| Bitwise AND           | `&`                                                        | Left to right |
+| Bitwise XOR           | `^`                                                        | Left to right |
+| Bitwise OR            | &#124;                                                     | Left to right |
+| Logical AND           | `&&`                                                       | Left to right |
+| Logical OR            | &#124;&#124;                                               | Left to right |
+| Conditional (Ternary) | `?:`                                                       | Right to left |
+| Assignment            | `=` `+=` `−=` `*=` `/=` `%=` `>>=` `<<=` `&=` `^=` &#124;= | Right to left |
+| Comma                 | `,`                                                        | Left to right |
 
 > `(type)` means type casting operation
 
@@ -289,7 +320,7 @@ Few special characters defined under ASCII for formatting strings/output. The `\
 
 | Sequence | Explanation                 |
 | -------- | --------------------------- |
-| \\\\     | Back slash                  |
+| \\ \\    | Back slash                  |
 | \\'      | Apostrophe or Single quotes |
 | \n       | new line or line feed       |
 | \f       | form feed                   |
@@ -320,25 +351,23 @@ At points, we use some operation that needs values in different type than define
 
 This is done by the `Arithmetic converter`. The following is the basic hierarchy of conversion.
 
-$$
-\text{long double}\\
-\uparrow\\
-\text{double}\\
-\uparrow\\
-\text{float}\\
-\uparrow\\
-\text{unsigned long long}\\
-\uparrow\\
-\text{long long}\\
-\uparrow\\
-\text{unsigned long}\\
-\uparrow\\
-\text{long}\\
-\uparrow\\
-\text{unsigned int}\\
-\uparrow\\
-\text{int}\\
-$$
+$$\text{long double}$$
+$$\uparrow$$
+$$\text{double} $$
+$$\uparrow$$
+$$\text{float}$$
+$$\uparrow$$
+$$\text{unsigned long long}$$
+$$\uparrow$$
+$$\text{long long}$$
+$$\uparrow$$
+$$\text{unsigned long}$$
+$$\uparrow$$
+$$\text{long}$$
+$$\uparrow$$
+$$\text{unsigned int}$$
+$$\uparrow$$
+$$\text{int}$$
 
 Eg:
 

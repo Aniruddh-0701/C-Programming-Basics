@@ -170,24 +170,33 @@ int main(){
 <p>Naming Conventions: <a href="https://en.wikipedia.org/wiki/Naming_convention_(programming)">Naming Convention - Wikipedia article</a></p>
 <p>For Easy readability:</p>
 <ul>
-<li>Function or use as name</li>
-<li>first letter in lowercase</li>
-<li>If Name has Multiple words:</li>
-<li>Use underscore for space</li>
-<li>joint writing with words in Camel Case</li>
-<li>Avoid Long names</li>
+<li> Function or use as name</li>
+<li> first letter in lowercase</li>
+<li> If Name has Multiple words:</li>
+  <ol>
+  <li> Use underscore for space </li>
+  <li> joint writing with words in Camel Case</li>
+  </ol>
+<li> Avoid Long names</li>
 </ul>
 <p>Naming convention for multi word variable names:</p>
 <ol>
-<li>Camel case (abcAbc)</li>
-<li>Pascal case (AbcAbc)</li>
-<li>Screaming case (ABC)</li>
-<li>Lazy case (abc)</li>
-<li>Kebab case (ab-ab)</li>
-<li>Snake case(ab_ab)</li>
+<li>Camel case (abcAbc) - <code>camelCase</code></li>
+<li>Pascal case (AbcAbc) - <code>PascalCase</code></li>
+<li>Screaming case (ABC) - <code>SCREAMINGCASE</code></li>
+<li>Lazy case (abc) - <code>lazycase</code></li>
+<li>Kebab case (ab-ab) - <code>kebab-case</code></li>
+<li>Snake case(ab_ab) - <code>snake_case</code></li>
 </ol>
-<p>E.g.: age, input_values, firstName, number, prime_num</p>
-<p>Not: user name, number_to_find_prime</p>
+<blockquote>
+<p>Of the above, the <code>camel</code> and <code>snake</code> cases are the most common ones</p>
+</blockquote>
+<p>Eg.:</p>
+<pre><code class="language-txt">age, input_values, firstName, number, prime_num
+</code></pre>
+<p>Not this way:</p>
+<pre><code class="language-txt">user name, number_to_find_prime
+</code></pre>
 <p><a href="variable_name.c">Variables (data type), Naming Convention</a></p>
 <hr>
 <h2>Keywords or Reserved words</h2>
@@ -219,9 +228,12 @@ char ch = 'z';
 </code></pre>
 <hr>
 <h3>Declaration of constants</h3>
-<p>In <code>C</code>, constants are declared and initialized in a single line using the <code>const</code> keyword.</p>
+<p>In <code>C</code>, constants are declared and initialized in a single line using the <code>const</code> keyword. It is advised to have the constants&rsquo; name in Uppercase.</p>
 <p><strong>Syntax:</strong></p>
 <pre><code class="language-c">const &lt;type&gt; variable_name = &lt;value&gt;;
+</code></pre>
+<p>Eg:</p>
+<pre><code class="language-c">const int MY_CONSTANT = 10;
 </code></pre>
 <hr>
 <h2>Output handling or Printing out statements/Values to user</h2>
