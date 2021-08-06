@@ -37,36 +37,36 @@ Perform arithmetic operations
 
 | Operator | Description                 | Example        |
 | -------- | --------------------------- | -------------- |
-| `+`      | Addition                    | 2 + 3 = 5      |
-| `-`      | Subtraction                 | 2 - 3 = -1     |
-| `*`      | Multiplication              | 2 \* 3 = 6     |
-| `/`      | Division (returns quotient) | 2 / 3 = 0      |
-| `%`      | Modulo (returns remainder)  | 2 % 3 = 2      |
-| `++`     | Increment operator          | ++2 or 2++     |
-| `--`     | Decrement operator          | \-\-3 or 3\-\- |
+| `+`      | Addition                    | 2 `+` 3 `=` 5  |
+| `-`      | Subtraction                 | 2 `-` 3 `=` -1 |
+| `*`      | Multiplication              | 2 `*` 3 `=` 6  |
+| `/`      | Division (returns quotient) | 2 `/` 3 `=` 0  |
+| `%`      | Modulo (returns remainder)  | 2 `%` 3 `=` 2  |
+| `++`     | Increment operator          | `++2` or `2++` |
+| `--`     | Decrement operator          | `--3` or `3--` |
 
 #### 2. Relational
 
 Relations between two variables
 
-| Operator | Description      | Example |
-| -------- | ---------------- | ------- |
-| `==`     | Equal            | a == b  |
-| `!=`     | Not Equal        | a != b  |
-| `>`      | Greater          | a > b   |
-| `>=`     | Greater or Equal | a >= b  |
-| `<`      | Lesser           | a < b   |
-| `<=`     | Lesser or Equal  | a <= b  |
+| Operator | Description      | Example  |
+| -------- | ---------------- | -------- |
+| `==`     | Equal            | a `==` b |
+| `!=`     | Not Equal        | a `!=` b |
+| `>`      | Greater          | a `>` b  |
+| `>=`     | Greater or Equal | a `>=` b |
+| `<`      | Lesser           | a `<` b  |
+| `<=`     | Lesser or Equal  | a `<=` b |
 
 #### 3. Logical
 
 Perform Logical operations
 
-| Operator     | Description          |
-| ------------ | -------------------- |
-| `&&`         | Logical Operator AND |
-| &#124;&#124; | Logical Operator OR  |
-| `!`          | Logical operator NOT |
+| Operator     | Description            |
+| ------------ | ---------------------- |
+| `&&`         | Logical Operator `AND` |
+| &#124;&#124; | Logical Operator `OR`  |
+| `!`          | Logical operator `NOT` |
 
 #### 4. Bitwise
 
@@ -76,12 +76,12 @@ The binary forms are padded by `0` on the left to compensate the differences in 
 
 | Operator | Description                                            | Syntax     | Example    |
 | -------- | ------------------------------------------------------ | ---------- | ---------- |
-| `&`      | Bitwise AND                                            | x & y      | 5 & 2      |
+| `&`      | Bitwise AND                                            | x `&` y    | 5 `&` 2    |
 | &#124;   | Bitwise OR                                             | x &#124; y | 5 &#124; 3 |
-| `~`      | Bitwise NOT                                            | ~x         | ~1         |
-| `^`      | Bitwise XOR                                            | x ^ y      | 6 ^ 1      |
-| `<<`     | Shifts y bits in x to the left (Left shift operator)   | x << y     | 10 << 2    |
-| `>>`     | Shifts y bits in x to the right (Right Shift Operator) | x >> y     | 15 >> 2    |
+| `~`      | Bitwise NOT                                            | `~x`       | `~1`       |
+| `^`      | Bitwise XOR                                            | x `^` y    | 6 `^` 1    |
+| `<<`     | Shifts y bits in x to the left (Left shift operator)   | x `<<` y   | 10 `<<` 2  |
+| `>>`     | Shifts y bits in x to the right (Right Shift Operator) | x `>>` y   | 15 `>>` 2  |
 
 **1. Bitwise AND (`&`):**
 
@@ -185,32 +185,32 @@ Eg:
 
 Assigns value to a variable
 
-| Operator | Description              | Example  |
-| -------- | ------------------------ | -------- |
-| `=`      | Assign                   | c = 30   |
-| `+=`     | Add and assign           | a += b   |
-| `-=`     | Subtract and assign      | a -= b   |
-| `*=`     | Multiply and assign      | a \*= b  |
-| `/=`     | Divide and assign        | a /= b   |
-| `%=`     | Get remainder and assign | a %= b   |
-| `<<=`    | Left Shift and assign    | a <<= b  |
-| `>>=`    | Right Shift and assign   | a >>= b  |
-| `&=`     | Bitwise AND and assign   | a &= b   |
-| &#124;=  | Bitwise OR and assign    | a \| = b |
-| `^=`     | Bitwise XOR and assign   | a ^= b   |
+| Operator | Description              | Example   |
+| -------- | ------------------------ | --------- |
+| `=`      | Assign                   | c `=` 30  |
+| `+=`     | Add and assign           | a `+=` b  |
+| `-=`     | Subtract and assign      | a `-=` b  |
+| `*=`     | Multiply and assign      | a `*=` b  |
+| `/=`     | Divide and assign        | a `/=` b  |
+| `%=`     | Get remainder and assign | a `%=` b  |
+| `<<=`    | Left Shift and assign    | a `<<=` b |
+| `>>=`    | Right Shift and assign   | a `>>=` b |
+| `&=`     | Bitwise AND and assign   | a `&=` b  |
+| &#124;=  | Bitwise OR and assign    | a \| = b  |
+| `^=`     | Bitwise XOR and assign   | a `^=` b  |
 
 #### 6. Miscellaneous Operators
 
 Besides the operators discussed above, there are a few other important operators supported by C language
 
-| Operator | Description                                        | Example             |
-| -------- | -------------------------------------------------- | ------------------- |
-| `&`      | Address Operator (returns Address of a identifier) | &a                  |
-| `*`      | Pointer to a variable / Dereferencing operator     | \*a                 |
-| `?`      | Ternary Operator                                   | condition? a: b     |
-| `.`      | dot operator                                       | var1.var2           |
-| `->`     | Arrow or Member access operator                    | (pointer)->(member) |
-| `,`      | Comma operator                                     | a, b                |
+| Operator | Description                                        | Example               |
+| -------- | -------------------------------------------------- | --------------------- |
+| `&`      | Address Operator (returns Address of a identifier) | `&a`                  |
+| `*`      | Pointer to a variable / Dereferencing operator     | `*a`                  |
+| `?`      | Ternary Operator                                   | `condition? a: b`     |
+| `.`      | dot operator                                       | `var1.var2`           |
+| `->`     | Arrow or Member access operator                    | `(pointer)->(member)` |
+| `,`      | Comma operator                                     | `a, b`                |
 
 > Check pointers topic for more details on dereferencing operator and address operator
 

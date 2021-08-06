@@ -9,6 +9,8 @@ title: C Programming Basics
    - [Introduction to C - Part 2](<Intro_to_C(2).html>)
    - [Introduction to C - Part 3](<Intro_to_C(3).html>)
 2. [Condition Statements](condition_statements.html)
+   - [Condition Statements](condition_statements.html)
+   - [Switch cases](switch_case.html)
 3. [Looping Statements](loops.html)
    - [Loops - Part 1](loops.html) - Introduction to Loops, definite Looping
    - [Loops - Part 2](indefinite_loops.html) - Indefinite Looping

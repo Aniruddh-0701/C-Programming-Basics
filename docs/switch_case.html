@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Statements in C - Switch Statement</title>
+    <meta name="description" content="Conditional statements Part 2/2">
+    <link rel="shortcut icon" href="C.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./static/main.css" />
+    <script
+        src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autorun=false&amp;lang=llvm"></script>
+    <script>
+        window.onload = (function () {
+            let tags = document.getElementsByTagName("pre");
+            let br = document.createElement("br");
+            for (var i = 0; i < tags.length; ++i) {
+                tags[i].classList.add("prettyprint");
+            }
+            tags = document.getElementsByTagName("code");
+            console.log(tags);
+            for (var i = 0; i < tags.length; ++i) {
+                if (tags[i].classList.contains("language-c")) {
+                    tags[i].classList.add("lang-c");
+                    tags[i].classList.remove("language-c");
+                }
+            }
+            PR.prettyPrint();
+        })
+    </script>
+
+
+
+    <script>
+        MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+
+<body>
+
+    <div class="head-foot">
+        
+        <a href="condition_statements.html" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Prev</a>
+        
+        <a href="./" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Home</a>
+        
+        <a href=" loops.html" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Next</a>
+        
+        <br>
+    </div>
+    <hr>
+    <div class="container">
+        <h1>Switch Case</h1>
+<p>A <strong>switch</strong> statement allows a variable to be tested for equality against a list of values. Each value is called a <code>case</code>, and the variable being switched on is checked for each switch case.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-c">switch(expression) {
+
+    case constant-expression  :
+        statement(s);
+        break; /* optional */
+
+    case constant-expression  :
+        statement(s);
+        break; /* optional */
+
+    /* you can have any number of case statements */
+    default : /* Optional */
+        statement(s);
+}
+</code></pre>
+<p>When the variable being switched on is equal to a <code>case</code>, the statements following that case will execute until a break statement is reached.</p>
+<p>The <code>break</code> statement interrupts the flow inside <code>switch</code> block and the execution continues outside the block.</p>
+<p>When a break statement is reached, the switch terminates, and the flow of control jumps to the next line following the <code>case</code>.</p>
+<p>Not every case needs to contain a break. If no break appears, the flow of control will fall through to subsequent cases until a break is reached.</p>
+<blockquote>
+<p>We&rsquo;ll discuss about <code>break</code> statement in <code>loops</code></p>
+</blockquote>
+<p>A switch statement can have an optional <code>default</code> case, which must appear at the end of the switch. The default case can be used for performing a task when none of the cases is true.
+No break is needed in the default case.</p>
+<p>Eg:</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    char ch;
+
+    printf(&quot;Enter a color code (r/g/b/y)\n&quot;);
+    scanf(&quot;%c&quot;, &amp;ch);
+
+    switch (ch) {
+    case 'r':
+        printf(&quot;red color&quot;);
+        break;
+    case 'b':
+        printf(&quot;Blue color&quot;);
+        break;
+    case 'g':
+        printf(&quot;Green color&quot;);
+        break;
+    case 'y':
+        printf(&quot;Yellow color&quot;);
+        break;
+    default:
+        printf(&quot;undefined color&quot;);
+    }
+    return 0;
+}
+</code></pre>
+<p>Output</p>
+<pre><code class="language-txt">Enter a color code (r/g/b/y)
+g
+Green color
+</code></pre>
+    </div>
+
+    <div class="head-foot">
+        
+        <a href="condition_statements.html" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Prev</a>
+        
+        <a href="./" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Home</a>
+        
+        <a href=" loops.html" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Next</a>
+        
+        <br>
+    </div>
+    <hr>
+
+</body>
+
+</html>

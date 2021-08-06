@@ -1,9 +1,9 @@
 ---
-title: Conditional Statements in C
-subtitle: Conditional statements
+title: Conditional Statements in C - Part 1
+subtitle: Conditional statements - Part 1/2
 image: ../C.png
 prev: Intro_to_C(3).html
-next: loops.html
+next: switch_case.html
 ---
 
 # Conditional Statements

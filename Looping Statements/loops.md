@@ -2,7 +2,7 @@
 title: Looping Statements in C - Part 1
 subtitle: Looping Statements in C - Part 1/2
 image: ../C.png
-prev: condition_statements.html
+prev: switch_case.html
 next: indefinite_loops.html
 ---
 
