@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions in C Programming</title>
+    <meta name="description" content="Functions in C Programming">
+    <link rel="shortcut icon" href="C.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./static/main.css" />
+    <script
+        src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autorun=false&amp;lang=llvm"></script>
+    <script>
+        window.onload = (function () {
+            let tags = document.getElementsByTagName("pre");
+            let br = document.createElement("br");
+            for (var i = 0; i < tags.length; ++i) {
+                tags[i].classList.add("prettyprint");
+            }
+            tags = document.getElementsByTagName("code");
+            console.log(tags);
+            for (var i = 0; i < tags.length; ++i) {
+                if (tags[i].classList.contains("language-c")) {
+                    tags[i].classList.add("lang-c");
+                    tags[i].classList.remove("language-c");
+                }
+            }
+            PR.prettyPrint();
+        })
+    </script>
+
+
+
+    <script>
+        MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+
+<body>
+
+    <div class="head-foot">
+        
+        <a href="indefinite_loops.html" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Prev</a>
+        
+        <a href="./" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Home</a>
+        
+        <a href="http://" target="_blank" rel="noopener noreferrer"
+            style="margin: 10%; margin-left: 15%; margin-right: 15%;"></a>
+        
+        <br>
+    </div>
+    <hr>
+    <div class="container">
+        <h1>Functions in C Programming</h1>
+<h2>Introduction</h2>
+<p>Function is a set of organized lines of code that performs a specific, well defined task.</p>
+<p>It is used reduce the number of lines of code and improve reusability, mainly applying on <code>DRY</code> principle - <em>Don&rsquo;t Repeat Yourself</em>.</p>
+<p>Syntax:</p>
+<pre><code class="language-c">&lt;return_type&gt; functionName(&lt;type&gt; parameter1, &lt;type&gt; parameter2, ...) {
+    // statements - body of the function
+    return ...; // Optional
+}
+</code></pre>
+<ul>
+<li><code>return_type</code>: </li>
+<li><code>function_name</code>: </li>
+<li><code>&lt;type&gt; parameter</code>: </li>
+<li><code>return</code>: </li>
+</ul>
+
+<p>Every C program has at least one function, which is <code>main()</code>, and all the most trivial programs can define additional functions.</p>
+<h3><code>return</code> statement</h3>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-c">return &lt;value / variable&gt;;
+</code></pre>
+<hr>
+    </div>
+
+    <div class="head-foot">
+        
+        <a href="indefinite_loops.html" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Prev</a>
+        
+        <a href="./" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Home</a>
+        
+        <a href="http://" target="_blank" rel="noopener noreferrer"
+            style="margin: 10%; margin-left: 15%; margin-right: 15%;"></a>
+        
+        <br>
+    </div>
+    <hr>
+
+</body>
+
+</html>
