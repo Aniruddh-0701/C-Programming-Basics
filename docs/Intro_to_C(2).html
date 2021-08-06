@@ -104,9 +104,9 @@
 <td>++2 or 2++</td>
 </tr>
 <tr>
-<td>&ndash;</td>
+<td>--</td>
 <td>Decrement operator</td>
-<td>&ndash;3 or 3&ndash;</td>
+<td>--3 or 3--</td>
 </tr>
 </tbody>
 </table>
@@ -178,7 +178,8 @@
 </tbody>
 </table>
 <h4>4. Bitwise</h4>
-<p>Perform bitwise operations</p>
+<p>Perform bitwise operations. This class of operators takes the binary form of each integer, and applies the operator of respective bits.</p>
+<p>The binary forms are padded by <code>0</code> on the left to compensate the differences in number of bits to represent each value.</p>
 <table>
 <thead>
 <tr>
@@ -193,13 +194,13 @@
 <td>&amp;</td>
 <td>Bitwise AND</td>
 <td>x &amp; y</td>
-<td>101 &amp; 11</td>
+<td>5 &amp; 2</td>
 </tr>
 <tr>
 <td>&#124;</td>
 <td>Bitwise OR</td>
 <td>x &#124; y</td>
-<td>101 &#124; 11</td>
+<td>5 &#124; 3</td>
 </tr>
 <tr>
 <td>~</td>
@@ -211,22 +212,61 @@
 <td>^</td>
 <td>Bitwise XOR</td>
 <td>x ^ y</td>
-<td>1 ^ 1</td>
+<td>6 ^ 1</td>
 </tr>
 <tr>
 <td>&lt;&lt;</td>
 <td>Shifts y bits in x to the left (Left shift operator)</td>
 <td>x &lt;&lt; y</td>
-<td>111001 &lt;&lt; 2</td>
+<td>10 &lt;&lt; 2</td>
 </tr>
 <tr>
 <td>&gt;&gt;</td>
 <td>Shifts y bits in x to the right (Right Shift Operator)</td>
 <td>x &gt;&gt; y</td>
-<td>111001 &gt;&gt; 2</td>
+<td>15 &gt;&gt; 2</td>
 </tr>
 </tbody>
 </table>
+<p><strong>1. Bitwise AND (<code>&amp;</code>):</strong></p>
+<p>It applies Binary <code>AND</code> operation to every bit.</p>
+<p>Eg:</p>
+<pre><code class="language-c">5 &amp; 2 = 0
+
+   5  = 101
+   2  = 010 // Padding zeroes on left
+5 &amp; 2 = 000 = 0
+</code></pre>
+<p><strong>2. Bitwise OR (<code>|</code>):</strong></p>
+<p>It applies the Bitwise <code>OR</code> operation to every bit</p>
+<p>Eg:</p>
+<pre><code class="language-c">5 | 3 = 7
+
+   5  = 101
+   3  = 011 // Padding zeroes on left
+5 | 3 = 111 = 7
+</code></pre>
+<p><strong>3. Bitwise NOT (<code>~</code>):</strong></p>
+<p>It applies the negation/complement/ <code>NOT</code> operation. Additional to flipping the bits, it changes sign.</p>
+<p>Eg:</p>
+<pre><code class="language-c">~5 = 2
+
+   5  = 101
+   ~5 = 010 = 2
+</code></pre>
+<p><strong>Anomaly in <code>C</code>:</strong></p>
+<p>The bitwise complement operator acts differently in <code>C</code>.</p>
+<p>Instead of flipping the bits, it provides 2&rsquo;s complement of the number.</p>
+<p>Two&rsquo;s complement is an operation on binary numbers. The 2&rsquo;s complement of a number is equal to the negative of the number plus 1, i.e.,</p>
+<pre><code class="language-txt">~N = -(N + 1)
+</code></pre>
+<p>So,</p>
+<p>Eg:</p>
+<pre><code class="language-c">~5 = -(5 + 1) = -6
+</code></pre>
+<p><strong>4. Bitwise XOR (<code>^</code>):</strong></p>
+<p><strong>5. Left Shift Operator:</strong></p>
+<p><strong>6. Right Shift Operator:</strong></p>
 <h4>5. Assignment</h4>
 <p>Assigns value to a variable</p>
 <table>
@@ -271,27 +311,27 @@
 <tr>
 <td>&lt;&lt;=</td>
 <td>Left Shift and assign</td>
-<td>a %= b</td>
+<td>a &lt;&lt;= b</td>
 </tr>
 <tr>
 <td>&gt;&gt;=</td>
 <td>Right Shift and assign</td>
-<td>a %= b</td>
+<td>a &gt;&gt;= b</td>
 </tr>
 <tr>
 <td>&amp;=</td>
 <td>Bitwise AND and assign</td>
-<td>a %= b</td>
+<td>a &amp;= b</td>
 </tr>
 <tr>
 <td>|=</td>
 <td>Bitwise OR and assign</td>
-<td>a %= b</td>
+<td>a | = b</td>
 </tr>
 <tr>
 <td>^=</td>
 <td>Bitwise XOR and assign</td>
-<td>a %= b</td>
+<td>a ^= b</td>
 </tr>
 </tbody>
 </table>
@@ -313,7 +353,7 @@
 </tr>
 <tr>
 <td>*</td>
-<td>Pointer to a variable</td>
+<td>Pointer to a variable / Dereferencing operator</td>
 <td>*a</td>
 </tr>
 <tr>
@@ -321,8 +361,61 @@
 <td>Ternary Operator</td>
 <td>condition? a: b</td>
 </tr>
+<tr>
+<td>.</td>
+<td>dot operator</td>
+<td>var1.var2</td>
+</tr>
+<tr>
+<td>-&gt;</td>
+<td>Arrow or Member access operator</td>
+<td>(pointer)-&gt;(member)</td>
+</tr>
+<tr>
+<td>,</td>
+<td>Comma operator</td>
+<td>a, b</td>
+</tr>
 </tbody>
 </table>
+<blockquote>
+<p>Check pointers topic for more details on dereferencing operator and address operator</p>
+</blockquote>
+<h4>Dot operator</h4>
+<p>The dot ( <code>.</code> ) operator is used for direct member selection via object name. In other words, it is used to access the child object/variable.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-c">&lt;variable_name&gt;.&lt;member_name&gt;
+</code></pre>
+<blockquote>
+<p>The dot and arrow operator will be addressed in structures and unions.</p>
+</blockquote>
+<h4>Comma operator</h4>
+<p>The comma token (<code>,</code>) acts as both a separator and an operator.</p>
+<p>The comma operator is used to evaluate multiple expressions in the same statement.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-c">(expression1, expression2, expression3, ...)
+</code></pre>
+<p>When used inside a parenthesis, the expressions separated by comma are evaluated sequentially, the result being the result of last expression.</p>
+<p>Eg:</p>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+
+int main() {
+   int x = 10, y = 20;
+   int a = (x--, y + 2);
+
+   printf(&quot;x = %d, y = %d, a = %d&quot;, x, y, a);
+}
+</code></pre>
+<p>Output:</p>
+<pre><code class="language-txt">x = 9, y = 20, a = 22
+</code></pre>
+<h3><code>sizeof()</code> operation</h3>
+<p>The <code>sizeof</code> function is a builtin function available in <code>stdio.h</code> header file. It returns an integer indicating the size of memory in bytes, allocated to the specific variable.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-c">sizeof(&lt;variable_name&gt;);
+// or
+sizeof(&lt;type&gt;);
+</code></pre>
 <hr>
 <h2>Operator Precedence</h2>
 <p>Operator precedence determines the grouping of terms in an expression and decides how an expression is evaluated. Certain operators have higher precedence than others; for example, the multiplication operator has a higher precedence than the addition operator.</p>
@@ -342,7 +435,7 @@
 </tr>
 <tr>
 <td>Unary</td>
-<td>+ − ! ~ ++ −− (type)* &amp; sizeof</td>
+<td>+ − ! ~ ++ −− (type) * &amp; sizeof</td>
 <td>Right to left</td>
 </tr>
 <tr>
@@ -396,7 +489,7 @@
 <td>Left to right</td>
 </tr>
 <tr>
-<td>Conditional(Ternary)</td>
+<td>Conditional (Ternary)</td>
 <td>?:</td>
 <td>Right to left</td>
 </tr>
@@ -412,6 +505,9 @@
 </tr>
 </tbody>
 </table>
+<blockquote>
+<p><code>(type)</code> means type casting operation</p>
+</blockquote>
 <hr>
 <h2>Expressions</h2>
 <p>A statement that gives a finite value.</p>
@@ -477,6 +573,80 @@
 </tr>
 </tbody>
 </table>
+<h3>Type casting and conversion</h3>
+<p>Converting one datatype into another is known as <strong>type casting</strong> or, <strong>type-conversion</strong>. For example, if you want to store a &lsquo;long&rsquo; value into a simple integer then you can type cast <code>long</code> to <code>int</code>.</p>
+<p>It happens in two ways:</p>
+<ol>
+<li>Automatic type conversion</li>
+<li>Forced type conversion / type casting</li>
+</ol>
+<h4>Type Conversion (Automatic)</h4>
+<p>At points, we use some operation that needs values in different type than defined. The compiler, by default, converts the data type automatically to support the expression.</p>
+<ol>
+<li>char $\rightarrow$ int</li>
+<li>int $\rightarrow$ char</li>
+<li>int $\rightarrow$ float</li>
+<li>int $\rightarrow$ double</li>
+</ol>
+<p>This is done by the <code>Arithmetic converter</code>. The following is the basic hierarchy of conversion.</p>
+<p>$$
+\text{long double}\
+\uparrow\
+\text{double}\
+\uparrow\
+\text{float}\
+\uparrow\
+\text{unsigned long long}\
+\uparrow\
+\text{long long}\
+\uparrow\
+\text{unsigned long}\
+\uparrow\
+\text{long}\
+\uparrow\
+\text{unsigned int}\
+\uparrow\
+\text{int}\
+$$</p>
+<p>Eg:</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+
+   int  i = 17;
+   char c = 'c'; /* ascii value is 99 */
+   float sum;
+
+   sum = i + c;
+   printf(&quot;Value of sum : %f\n&quot;, sum );
+   return 0;
+}
+</code></pre>
+<p>output</p>
+<pre><code class="language-c">Value of sum : 116.000000
+</code></pre>
+<p>Here, it is simple to understand that first c gets converted to integer, but as the final value is <code>float</code>, usual arithmetic conversion applies and the compiler converts <code>i</code> and <code>c</code> into <code>float</code> and adds them yielding a <code>float</code> result.</p>
+<h4>Type casting</h4>
+<p>To have custom type conversion that are not supported by default, we do type casting.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-c">(type_name) expression
+</code></pre>
+<p>Eg:</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+
+   int sum = 17, count = 5;
+   double mean;
+
+   mean = (double) sum / count;
+   printf(&quot;Value of mean : %f\n&quot;, mean );
+   return 0;
+}
+</code></pre>
+<p>Output</p>
+<pre><code class="language-txt">Value of mean : 3.400000
+</code></pre>
 <hr>
     </div>
 
