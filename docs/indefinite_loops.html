@@ -50,8 +50,7 @@
         
         <a href="./" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Home</a>
         
-        <a href="http://" target="_blank" rel="noopener noreferrer"
-            style="margin: 10%; margin-left: 15%; margin-right: 15%;"></a>
+        <a href=" functions.html" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Next</a>
         
         <br>
     </div>
@@ -237,15 +236,13 @@ C supports the following statements</p>
 <p><strong>1. <code>break</code> Statement:</strong>
 The <code>break</code> statement has the following two usages −</p>
 <ul>
-<li>
-<p>When a <code>break</code> statement is encountered inside a loop, the loop is immediately terminated and the program control resumes at the next statement following the loop.</p>
-</li>
-<li>
-<p>It can be used to terminate a case in the switch statement</p>
-</li>
+<li> When a <code>break</code> statement is encountered inside a loop, the loop is immediately terminated and the program control resumes at the next statement following the loop.</li>
+
+<li>It can be used to terminate a case in the switch statement</li>
 </ul>
+
 <blockquote>
-<p>In nested loops, the break statement will stop the execution of the innermost loop and start executing the next line of code after the block.</p>
+<p>In nested loops, the <code>break</code> statement will stop the execution of the innermost loop and start executing the next line of code after the block.</p>
 </blockquote>
 <p><strong>Syntax:</strong></p>
 <pre><code class="language-c">break;
@@ -281,6 +278,101 @@ value of a: 13
 value of a: 14
 value of a: 15
 </code></pre>
+<p>It can be seen that, on encountering the <code>break</code> statement, the execution of loop is interrupted.</p>
+<hr>
+<p><strong>2. <code>continue</code> statement:</strong></p>
+<p>The <code>continue</code> statement is used to interrupt the current iteration. Instead of forcing termination, it forces the next iteration of the loop to take place, skipping any code in between.</p>
+<p>For the <code>for</code> loop, continue statement causes the conditional test and increment portions of the loop to execute. For the <code>while</code> and <code>do...while</code> loops, continue statement causes the program control to pass to the conditional tests.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-c">continue;
+</code></pre>
+<p>Eg:</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main () {
+
+    /* local variable definition */
+    int a = 10;
+
+    /* do loop execution */
+    do {
+
+        if( a == 15) {
+            /* skip the iteration */
+            ++a;
+            continue;
+        }
+
+        printf(&quot;value of a: %d\n&quot;, a);
+        a++;
+
+    } while( a &lt; 20 );
+
+    return 0;
+}
+</code></pre>
+<p>Output:</p>
+<pre><code class="language-txt">value of a: 10
+value of a: 11
+value of a: 12
+value of a: 13
+value of a: 14
+value of a: 16
+value of a: 17
+value of a: 18
+value of a: 19
+</code></pre>
+<p>It can observed that, when the continue statement is encountered, the current iteration is skipped (when <code>a = 15</code>).</p>
+<hr>
+<p><strong>3. <code>goto</code> statement:</strong></p>
+<p>A <code>goto</code> statement in C programming provides an unconditional jump from the <code>'goto'</code> to a labeled statement in the same function.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-c">goto label;
+..
+.
+label: statement;
+</code></pre>
+<p>Here label can be any plain text except C keyword and it can be set anywhere in the C program above or below to goto statement.</p>
+<blockquote>
+<p>Use of <code>goto</code> statement is highly discouraged in any programming language</p>
+</blockquote>
+<p>It is because it makes difficult to trace the control flow of a program, making the program hard to understand and hard to modify. Any program that uses a goto can be rewritten to avoid them.</p>
+<p>Eg:</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main () {
+
+    /* local variable definition */
+    int a = 10;
+
+    /* do loop execution */
+    LOOP:do {
+
+        if( a == 15) {
+            /* skip the iteration */
+            a = a + 1;
+            goto LOOP;
+        }
+
+        printf(&quot;value of a: %d\n&quot;, a);
+        a++;
+
+    } while( a &lt; 20 );
+
+    return 0;
+}
+</code></pre>
+<p>Output:</p>
+<pre><code class="language-txt">value of a: 10
+value of a: 11
+value of a: 12
+value of a: 13
+value of a: 14
+value of a: 16
+value of a: 17
+value of a: 18
+value of a: 19
+</code></pre>
 <hr>
     </div>
 
@@ -290,8 +382,7 @@ value of a: 15
         
         <a href="./" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Home</a>
         
-        <a href="http://" target="_blank" rel="noopener noreferrer"
-            style="margin: 10%; margin-left: 15%; margin-right: 15%;"></a>
+        <a href=" functions.html" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Next</a>
         
         <br>
     </div>

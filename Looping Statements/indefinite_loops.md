@@ -3,7 +3,7 @@ title: Looping Statements in C - Part 2
 subtitle: Looping Statements in C - Part 2/2
 image: ../C.png
 prev: loops.html
-next: ""
+next: functions.html
 ---
 
 # Looping Statements
@@ -242,11 +242,13 @@ C supports the following statements
 **1. `break` Statement:**
 The `break` statement has the following two usages −
 
-- When a `break` statement is encountered inside a loop, the loop is immediately terminated and the program control resumes at the next statement following the loop.
+<ul>
+<li> When a <code>break</code> statement is encountered inside a loop, the loop is immediately terminated and the program control resumes at the next statement following the loop.</li>
 
-- It can be used to terminate a case in the switch statement
+<li>It can be used to terminate a case in the switch statement</li>
+</ul>
 
-> In nested loops, the break statement will stop the execution of the innermost loop and start executing the next line of code after the block.
+> In nested loops, the `break` statement will stop the execution of the innermost loop and start executing the next line of code after the block.
 
 **Syntax:**
 
@@ -289,6 +291,129 @@ value of a: 12
 value of a: 13
 value of a: 14
 value of a: 15
+```
+
+It can be seen that, on encountering the `break` statement, the execution of loop is interrupted.
+
+---
+
+**2. `continue` statement:**
+
+The `continue` statement is used to interrupt the current iteration. Instead of forcing termination, it forces the next iteration of the loop to take place, skipping any code in between.
+
+For the `for` loop, continue statement causes the conditional test and increment portions of the loop to execute. For the `while` and `do...while` loops, continue statement causes the program control to pass to the conditional tests.
+
+**Syntax:**
+
+```c
+continue;
+```
+
+Eg:
+
+```c
+#include <stdio.h>
+
+int main () {
+
+    /* local variable definition */
+    int a = 10;
+
+    /* do loop execution */
+    do {
+
+        if( a == 15) {
+            /* skip the iteration */
+            ++a;
+            continue;
+        }
+
+        printf("value of a: %d\n", a);
+        a++;
+
+    } while( a < 20 );
+
+    return 0;
+}
+```
+
+Output:
+
+```txt
+value of a: 10
+value of a: 11
+value of a: 12
+value of a: 13
+value of a: 14
+value of a: 16
+value of a: 17
+value of a: 18
+value of a: 19
+```
+
+It can observed that, when the continue statement is encountered, the current iteration is skipped (when `a = 15`).
+
+---
+
+**3. `goto` statement:**
+
+A `goto` statement in C programming provides an unconditional jump from the `'goto'` to a labeled statement in the same function.
+
+**Syntax:**
+
+```c
+goto label;
+..
+.
+label: statement;
+```
+
+Here label can be any plain text except C keyword and it can be set anywhere in the C program above or below to goto statement.
+
+> Use of `goto` statement is highly discouraged in any programming language
+
+It is because it makes difficult to trace the control flow of a program, making the program hard to understand and hard to modify. Any program that uses a goto can be rewritten to avoid them.
+
+Eg:
+
+```c
+#include <stdio.h>
+
+int main () {
+
+    /* local variable definition */
+    int a = 10;
+
+    /* do loop execution */
+    LOOP:do {
+
+        if( a == 15) {
+            /* skip the iteration */
+            a = a + 1;
+            goto LOOP;
+        }
+
+        printf("value of a: %d\n", a);
+        a++;
+
+    } while( a < 20 );
+
+    return 0;
+}
+```
+
+Output:
+
+```txt
+value of a: 10
+value of a: 11
+value of a: 12
+value of a: 13
+value of a: 14
+value of a: 16
+value of a: 17
+value of a: 18
+value of a: 19
 ```
 
 ---
