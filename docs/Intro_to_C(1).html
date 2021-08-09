@@ -46,25 +46,58 @@
 
     <div class="head-foot">
         
-        <a href="./" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Prev</a>
+        <a href="./" class="hf-elements">Prev</a>
         
-        <a href="./" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Home</a>
+        <a href="./" class="hf-elements">Home</a>
         
-        <a href=" Intro_to_C(2).html" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Next</a>
+        <a href=" Intro_to_C(2).html" class="hf-elements">Next</a>
         
         <br>
     </div>
     <hr>
     <div class="container">
-        <h1>Introduction to C - Part 1</h1>
-<h2>Introduction</h2>
-<h3>Program</h3>
+        <h1 id="introduction-to-c-part-1">Introduction to C - Part 1</h1>
+<div class="toc">
+<ul>
+<li><a href="#introduction-to-c-part-1">Introduction to C - Part 1</a><ul>
+<li><a href="#introduction">Introduction</a><ul>
+<li><a href="#program">Program</a></li>
+<li><a href="#programming-language">Programming Language</a></li>
+<li><a href="#types-of-programming-languages">Types of Programming Languages</a></li>
+</ul>
+</li>
+<li><a href="#basic-parts-in-programming">Basic parts in programming</a></li>
+<li><a href="#introduction-to-c-programming">Introduction to C programming</a></li>
+<li><a href="#basic-structure">Basic Structure</a></li>
+<li><a href="#data-types">Data Types</a></li>
+<li><a href="#literals">Literals</a><ul>
+<li><a href="#types-of-identifiers">Types of Identifiers</a></li>
+</ul>
+</li>
+<li><a href="#keywords-or-reserved-words">Keywords or Reserved words</a><ul>
+<li><a href="#declaration-vs-initialization-of-variables">Declaration vs Initialization of variables</a></li>
+<li><a href="#declaration-of-constants">Declaration of constants</a></li>
+</ul>
+</li>
+<li><a href="#output-handling-or-printing-out-statementsvalues-to-user">Output handling or Printing out statements/Values to user</a><ul>
+<li><a href="#format-specifiers">Format Specifiers</a></li>
+<li><a href="#modifiers">Modifiers</a></li>
+<li><a href="#list-of-format-specifiers">List of Format specifiers</a></li>
+</ul>
+</li>
+<li><a href="#comments">Comments</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="introduction">Introduction</h2>
+<h3 id="program">Program</h3>
 <p>A program is a set of instructions written on a computer to perform a specific task.</p>
-<h3>Programming Language</h3>
+<h3 id="programming-language">Programming Language</h3>
 <p>Simply said, it is a language used to write a program.</p>
 <p>It is a well defined medium to instruct the computer.</p>
 <hr>
-<h3>Types of Programming Languages</h3>
+<h3 id="types-of-programming-languages">Types of Programming Languages</h3>
 <p>Based on uses, the Programming languages can be classified under 50 types refer <a href="https://en.wikipedia.org/wiki/List_of_programming_languages_by_type">List of Programming Languages by type</a></p>
 <p>Based on ease of readability:</p>
 <ol>
@@ -78,7 +111,7 @@
 <li>Interpreted Language</li>
 </ol>
 <hr>
-<h2>Basic parts in programming</h2>
+<h2 id="basic-parts-in-programming">Basic parts in programming</h2>
 <p>A few basic instructions that appear in almost all language (by <a href="https://en.wikipedia.org/wiki/Allen_Downey">Allen Downey</a>, in his book <em>How To Think Like A Computer Scientist</em>):</p>
 <ol>
 <li><strong>Input:</strong> Gather data from the keyboard, a file, or some other device.</li>
@@ -88,13 +121,13 @@
 <li><strong>Repetition:</strong> Perform some action repeatedly, usually with some variation.</li>
 </ol>
 <hr>
-<h2>Introduction to C programming</h2>
+<h2 id="introduction-to-c-programming">Introduction to C programming</h2>
 <p>C is a general-purpose, procedural computer programming language supporting structured programming, with a static type system. In static type system, variables are defined to have only a specific type of data and cannot be assigned a different type of data.</p>
 <p>By design, C provides constructs that map efficiently to typical machine instructions.</p>
 <p>It is generally used to learn basic programming concepts. C language is being used to build other High level programming languages like python.<br>
 <img alt="Derivatives of C language" src="Clogo.png"></p>
 <hr>
-<h2>Basic Structure</h2>
+<h2 id="basic-structure">Basic Structure</h2>
 <pre><code class="language-c">/**
 * Basic Structure of a C program.
 * It is the documentation section
@@ -128,7 +161,7 @@ int main(){
 <p>The <code>main</code> function is the point of code at which execution of the program starts</p>
 <p>More details on <code>functions</code> will be discussed later.</p>
 </blockquote>
-<h2>Data Types</h2>
+<h2 id="data-types">Data Types</h2>
 <p>Data can be defined as a representation of facts, concepts, or instructions in a formalized manner, which should be suitable for communication, interpretation, or processing by human or electronic machine.</p>
 <p>Data type is an attribute which tells the compiler or interpreter how the programmer intends to use the data.</p>
 <p>Basic Types:</p>
@@ -163,9 +196,9 @@ int main(){
 <p><code>Derived</code> or <code>Non primitive</code> data types and the <code>types of integers</code> will be discussed later</p>
 </blockquote>
 <hr>
-<h2>Literals</h2>
+<h2 id="literals">Literals</h2>
 <p>Literals are data that are directly used or processed in a program. If your program contains direct values like <code>10</code>, <code>3.14159</code>, <code>'a'</code> or <code>"str"</code>, they are known as literals</p>
-<h3>Types of Identifiers</h3>
+<h3 id="types-of-identifiers">Types of Identifiers</h3>
 <ol>
 <li>Constant - Values that do not change during the execution</li>
 <li>Variable - Values that change</li>
@@ -210,11 +243,11 @@ int main(){
 </code></pre>
 <p><a href="variable_name.c">Variables (data type), Naming Convention</a></p>
 <hr>
-<h2>Keywords or Reserved words</h2>
+<h2 id="keywords-or-reserved-words">Keywords or Reserved words</h2>
 <p>Words used for a special purpose in program.</p>
 <p>E.g: <code>scanf</code>, <code>printf</code>, <code>int</code>, <code>if</code>, <code>for</code>, <code>try</code>, etc.</p>
 <hr>
-<h3>Declaration vs Initialization of variables</h3>
+<h3 id="declaration-vs-initialization-of-variables">Declaration vs Initialization of variables</h3>
 <p><strong>Declaration</strong> is the process of defining the variables&rsquo; or constants&rsquo; names to be used in the program.</p>
 <p><strong>Syntax:</strong></p>
 <pre><code class="language-c">&lt;type&gt; variableName;
@@ -238,7 +271,7 @@ ch = 'a';
 char ch = 'z';
 </code></pre>
 <hr>
-<h3>Declaration of constants</h3>
+<h3 id="declaration-of-constants">Declaration of constants</h3>
 <p>In <code>C</code>, constants are declared and initialized in a single line using the <code>const</code> keyword. It is advised to have the constants&rsquo; name in Uppercase.</p>
 <p><strong>Syntax:</strong></p>
 <pre><code class="language-c">const &lt;type&gt; variable_name = &lt;value&gt;;
@@ -247,12 +280,12 @@ char ch = 'z';
 <pre><code class="language-c">const int MY_CONSTANT = 10;
 </code></pre>
 <hr>
-<h2>Output handling or Printing out statements/Values to user</h2>
+<h2 id="output-handling-or-printing-out-statementsvalues-to-user">Output handling or Printing out statements/Values to user</h2>
 <p><strong>Syntax:</strong></p>
 <pre><code class="language-c">printf(&quot;format specifier&quot;, identifier);
 printf(&quot;statement&quot;);
 </code></pre>
-<h3>Format Specifiers</h3>
+<h3 id="format-specifiers">Format Specifiers</h3>
 <ol>
 <li><code>%d</code> - integer (int)</li>
 <li><code>%f</code> - float</li>
@@ -263,7 +296,7 @@ printf(&quot;statement&quot;);
 <p><strong>Identifiers</strong> - variables or expressions</p>
 <p><a href="Hello_world.c">Writing your first Program - printing &ldquo;Hello World&rdquo;</a></p>
 <hr>
-<h3>Modifiers</h3>
+<h3 id="modifiers">Modifiers</h3>
 <p>Modifiers are key words that modify the default state of <code>int</code> and <code>char</code> data types. There are 4 modifiers in <code>C</code>:</p>
 <ol>
 <li>short</li>
@@ -292,7 +325,7 @@ signed int myValues = -544;
 </code></pre>
 <p>To check the limitations of the modifiers, check <a href="Intro_to_c(3).html">Part 3</a></p>
 <hr>
-<h3>List of Format specifiers</h3>
+<h3 id="list-of-format-specifiers">List of Format specifiers</h3>
 <p>Having understood the modifiers in C, we can look at the complete list of format specifiers.</p>
 <table>
 <thead>
@@ -401,7 +434,7 @@ signed int myValues = -544;
 </li>
 </ul>
 <hr>
-<h2>Comments</h2>
+<h2 id="comments">Comments</h2>
 <p>Lines that are not executed. It used only for understanding by the programmers or users.</p>
 <p><code>//</code> is used to comment a single line</p>
 <p><code>/**/</code> - comment multiple lines</p>
@@ -414,11 +447,11 @@ This is used to comment multiple lines
 
     <div class="head-foot">
         
-        <a href="./" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Prev</a>
+        <a href="./" class="hf-elements">Prev</a>
         
-        <a href="./" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Home</a>
+        <a href="./" class="hf-elements">Home</a>
         
-        <a href=" Intro_to_C(2).html" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Next</a>
+        <a href=" Intro_to_C(2).html" class="hf-elements">Next</a>
         
         <br>
     </div>

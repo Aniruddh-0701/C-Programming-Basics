@@ -8,6 +8,8 @@ prev: Intro_to_C(1).html
 
 # Introduction to C - Part 2
 
+[TOC]
+
 ## Input
 
 ```c

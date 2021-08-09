@@ -8,6 +8,8 @@ next: indefinite_loops.html
 
 # Looping Statements
 
+[TOC]
+
 There may be times when a set of tasks need to be repeated. It is done with the help of looping statements.
 
 A loop is a block of code that would repeat for a specified number of times or until some condition is satisfied.

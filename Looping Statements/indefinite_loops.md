@@ -8,6 +8,8 @@ next: functions.html
 
 # Looping Statements
 
+[TOC]
+
 ### 2. `while` loop
 
 `while` is most commonly used for indefinite looping. Preferred for variable conditions.

@@ -8,6 +8,8 @@ next: switch_case.html
 
 # Conditional Statements
 
+[TOC]
+
 **Condition statements** or **Control flow statements** or **Decision Control Statements** are statements that are used to control the flow or execution of a program. The flow is controlled the values of few variables that decide the proceedings of a program.
 
 The conditions statements have same basic structure in all programming languages. The list of Control statements are:

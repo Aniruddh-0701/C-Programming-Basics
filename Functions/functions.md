@@ -8,6 +8,8 @@ next: ""
 
 # Functions in C Programming
 
+[TOC]
+
 ## Introduction
 
 Function is a set of organized lines of code that performs a specific, well defined task.

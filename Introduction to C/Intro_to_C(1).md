@@ -8,6 +8,8 @@ next: Intro_to_C(2).html
 
 # Introduction to C - Part 1
 
+[TOC]
+
 ## Introduction
 
 ### Program

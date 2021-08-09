@@ -46,25 +46,58 @@
 
     <div class="head-foot">
         
-        <a href="Intro_to_C(1).html" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Prev</a>
+        <a href="Intro_to_C(1).html" class="hf-elements">Prev</a>
         
-        <a href="./" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Home</a>
+        <a href="./" class="hf-elements">Home</a>
         
-        <a href=" Intro_to_C(3).html" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Next</a>
+        <a href=" Intro_to_C(3).html" class="hf-elements">Next</a>
         
         <br>
     </div>
     <hr>
     <div class="container">
-        <h1>Introduction to C - Part 2</h1>
-<h2>Input</h2>
+        <h1 id="introduction-to-c-part-2">Introduction to C - Part 2</h1>
+<div class="toc">
+<ul>
+<li><a href="#introduction-to-c-part-2">Introduction to C - Part 2</a><ul>
+<li><a href="#input">Input</a></li>
+<li><a href="#operators">Operators</a><ul>
+<li><a href="#types">Types</a><ul>
+<li><a href="#1-arithmetic">1. Arithmetic</a></li>
+<li><a href="#2-relational">2. Relational</a></li>
+<li><a href="#3-logical">3. Logical</a></li>
+<li><a href="#4-bitwise">4. Bitwise</a></li>
+<li><a href="#5-assignment">5. Assignment</a></li>
+<li><a href="#6-miscellaneous-operators">6. Miscellaneous Operators</a></li>
+<li><a href="#dot-operator">Dot operator</a></li>
+<li><a href="#comma-operator">Comma operator</a></li>
+</ul>
+</li>
+<li><a href="#sizeof-operation">sizeof() operation</a></li>
+</ul>
+</li>
+<li><a href="#operator-precedence">Operator Precedence</a></li>
+<li><a href="#expressions">Expressions</a></li>
+<li><a href="#escape-sequences">Escape Sequences</a><ul>
+<li><a href="#type-casting-and-conversion">Type casting and conversion</a><ul>
+<li><a href="#type-conversion-automatic">Type Conversion (Automatic)</a></li>
+<li><a href="#type-casting">Type casting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="input">Input</h2>
 <pre><code class="language-c">scanf(&quot;format specifier&quot;, &amp;identifier);
 </code></pre>
 <p>The format specifiers are as listed for <code>printf</code>. It is to be noted that for all format specifiers except <code>%c</code>, the input is taken till the next character &lt; space (in terms ASCII value), mostly <code>\n</code> or space (<code>' '</code>)</p>
 <hr>
-<h2>Operators</h2>
+<h2 id="operators">Operators</h2>
 <p>Used to perform arithmetic and logical operations.</p>
-<h3>Types</h3>
+<h3 id="types">Types</h3>
 <ol>
 <li>Arithmetic</li>
 <li>Relational</li>
@@ -73,7 +106,7 @@
 <li>Assignment</li>
 <li>Miscellaneous Operators</li>
 </ol>
-<h4>1. Arithmetic</h4>
+<h4 id="1-arithmetic">1. Arithmetic</h4>
 <p>Perform arithmetic operations</p>
 <table>
 <thead>
@@ -121,7 +154,7 @@
 </tr>
 </tbody>
 </table>
-<h4>2. Relational</h4>
+<h4 id="2-relational">2. Relational</h4>
 <p>Relations between two variables</p>
 <table>
 <thead>
@@ -164,7 +197,7 @@
 </tr>
 </tbody>
 </table>
-<h4>3. Logical</h4>
+<h4 id="3-logical">3. Logical</h4>
 <p>Perform Logical operations</p>
 <table>
 <thead>
@@ -188,7 +221,7 @@
 </tr>
 </tbody>
 </table>
-<h4>4. Bitwise</h4>
+<h4 id="4-bitwise">4. Bitwise</h4>
 <p>Perform bitwise operations. This class of operators takes the binary form of each integer, and applies the operator of respective bits.</p>
 <p>The binary forms are padded by <code>0</code> on the left to compensate the differences in number of bits to represent each value.</p>
 <table>
@@ -298,7 +331,7 @@
 15  = 1111
 15 &gt;&gt; 2 = 0011 = 3
 </code></pre>
-<h4>5. Assignment</h4>
+<h4 id="5-assignment">5. Assignment</h4>
 <p>Assigns value to a variable</p>
 <table>
 <thead>
@@ -366,7 +399,7 @@
 </tr>
 </tbody>
 </table>
-<h4>6. Miscellaneous Operators</h4>
+<h4 id="6-miscellaneous-operators">6. Miscellaneous Operators</h4>
 <p>Besides the operators discussed above, there are a few other important operators supported by C language</p>
 <table>
 <thead>
@@ -412,7 +445,7 @@
 <blockquote>
 <p>Check pointers topic for more details on dereferencing operator and address operator</p>
 </blockquote>
-<h4>Dot operator</h4>
+<h4 id="dot-operator">Dot operator</h4>
 <p>The dot ( <code>.</code> ) operator is used for direct member selection via object name. In other words, it is used to access the child object/variable.</p>
 <p><strong>Syntax:</strong></p>
 <pre><code class="language-c">&lt;variable_name&gt;.&lt;member_name&gt;
@@ -420,7 +453,7 @@
 <blockquote>
 <p>The dot and arrow operator will be addressed in structures and unions.</p>
 </blockquote>
-<h4>Comma operator</h4>
+<h4 id="comma-operator">Comma operator</h4>
 <p>The comma token (<code>,</code>) acts as both a separator and an operator.</p>
 <p>The comma operator is used to evaluate multiple expressions in the same statement.</p>
 <p><strong>Syntax:</strong></p>
@@ -440,7 +473,7 @@ int main() {
 <p>Output:</p>
 <pre><code class="language-txt">x = 9, y = 20, a = 22
 </code></pre>
-<h3><code>sizeof()</code> operation</h3>
+<h3 id="sizeof-operation"><code>sizeof()</code> operation</h3>
 <p>The <code>sizeof</code> function is a builtin function available in <code>stdio.h</code> header file. It returns an integer indicating the size of memory in bytes, allocated to the specific variable.</p>
 <p><strong>Syntax:</strong></p>
 <pre><code class="language-c">sizeof(&lt;variable_name&gt;);
@@ -448,7 +481,7 @@ int main() {
 sizeof(&lt;type&gt;);
 </code></pre>
 <hr>
-<h2>Operator Precedence</h2>
+<h2 id="operator-precedence">Operator Precedence</h2>
 <p>Operator precedence determines the grouping of terms in an expression and decides how an expression is evaluated. Certain operators have higher precedence than others; for example, the multiplication operator has a higher precedence than the addition operator.</p>
 <table>
 <thead>
@@ -540,7 +573,7 @@ sizeof(&lt;type&gt;);
 <p><code>(type)</code> means type casting operation</p>
 </blockquote>
 <hr>
-<h2>Expressions</h2>
+<h2 id="expressions">Expressions</h2>
 <p>A statement that gives a finite value.</p>
 <p>Types:</p>
 <ol>
@@ -552,7 +585,7 @@ sizeof(&lt;type&gt;);
    Example: 12 23 +</li>
 </ol>
 <hr>
-<h2>Escape Sequences</h2>
+<h2 id="escape-sequences">Escape Sequences</h2>
 <p>Few special characters defined under ASCII for formatting strings/output. The <code>\</code> is used to escape the original use of a character.</p>
 <table>
 <thead>
@@ -604,14 +637,14 @@ sizeof(&lt;type&gt;);
 </tr>
 </tbody>
 </table>
-<h3>Type casting and conversion</h3>
+<h3 id="type-casting-and-conversion">Type casting and conversion</h3>
 <p>Converting one datatype into another is known as <strong>type casting</strong> or, <strong>type-conversion</strong>. For example, if you want to store a &lsquo;long&rsquo; value into a simple integer then you can type cast <code>long</code> to <code>int</code>.</p>
 <p>It happens in two ways:</p>
 <ol>
 <li>Automatic type conversion</li>
 <li>Forced type conversion / type casting</li>
 </ol>
-<h4>Type Conversion (Automatic)</h4>
+<h4 id="type-conversion-automatic">Type Conversion (Automatic)</h4>
 <p>At points, we use some operation that needs values in different type than defined. The compiler, by default, converts the data type automatically to support the expression.</p>
 <ol>
 <li>char $\rightarrow$ int</li>
@@ -655,7 +688,7 @@ int main() {
 <pre><code class="language-c">Value of sum : 116.000000
 </code></pre>
 <p>Here, it is simple to understand that first c gets converted to integer, but as the final value is <code>float</code>, usual arithmetic conversion applies and the compiler converts <code>i</code> and <code>c</code> into <code>float</code> and adds them yielding a <code>float</code> result.</p>
-<h4>Type casting</h4>
+<h4 id="type-casting">Type casting</h4>
 <p>To have custom type conversion that are not supported by default, we do type casting.</p>
 <p><strong>Syntax:</strong></p>
 <pre><code class="language-c">(type_name) expression
@@ -681,11 +714,11 @@ int main() {
 
     <div class="head-foot">
         
-        <a href="Intro_to_C(1).html" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Prev</a>
+        <a href="Intro_to_C(1).html" class="hf-elements">Prev</a>
         
-        <a href="./" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Home</a>
+        <a href="./" class="hf-elements">Home</a>
         
-        <a href=" Intro_to_C(3).html" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Next</a>
+        <a href=" Intro_to_C(3).html" class="hf-elements">Next</a>
         
         <br>
     </div>

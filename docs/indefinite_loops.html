@@ -46,18 +46,34 @@
 
     <div class="head-foot">
         
-        <a href="loops.html" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Prev</a>
+        <a href="loops.html" class="hf-elements">Prev</a>
         
-        <a href="./" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Home</a>
+        <a href="./" class="hf-elements">Home</a>
         
-        <a href=" functions.html" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Next</a>
+        <a href=" functions.html" class="hf-elements">Next</a>
         
         <br>
     </div>
     <hr>
     <div class="container">
-        <h1>Looping Statements</h1>
-<h3>2. <code>while</code> loop</h3>
+        <h1 id="looping-statements">Looping Statements</h1>
+<div class="toc">
+<ul>
+<li><a href="#looping-statements">Looping Statements</a><ul>
+<li><a href="#2-while-loop">2. while loop</a></li>
+<li><a href="#3-dowhile-loop">3. do&hellip;while loop</a><ul>
+<li><a href="#indefinite-looping-using-while">Indefinite looping using while</a></li>
+</ul>
+</li>
+<li><a href="#while-vs-dowhile-loops">while vs do&hellip;while loops</a></li>
+<li><a href="#nested-looping">Nested Looping</a></li>
+<li><a href="#the-infinite-loop">The Infinite Loop</a></li>
+<li><a href="#loop-control-statements">Loop Control Statements</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="2-while-loop">2. <code>while</code> loop</h3>
 <p><code>while</code> is most commonly used for indefinite looping. Preferred for variable conditions.</p>
 <p><strong>Syntax:</strong></p>
 <pre><code class="language-c">while (condition) {
@@ -81,7 +97,7 @@ int main() {
 <p>The <code>while</code> loop should definitely contain an expression that will cause the termination of loop sooner or later.</p>
 </blockquote>
 <hr>
-<h3>3. <code>do...while</code> loop</h3>
+<h3 id="3-dowhile-loop">3. <code>do...while</code> loop</h3>
 <p>The <code>do...while</code> looping is yet another looping statement that is used in indefinite cases. It works similar to the <code>while</code> loop where truthfulness of a conditional expression decides the flow.</p>
 <p><strong>Syntax:</strong></p>
 <pre><code class="language-c">do {
@@ -101,7 +117,7 @@ int main() {
 }
 </code></pre>
 <hr>
-<h4>Indefinite looping using <code>while</code></h4>
+<h4 id="indefinite-looping-using-while">Indefinite looping using <code>while</code></h4>
 <p>Consider the problem:</p>
 <pre><code class="language-txt">Given a number 'n', find the number of steps taken to reach 1 using the following function:
 </code></pre>
@@ -154,7 +170,7 @@ Path: $11 \rightarrow 34 \rightarrow 17 \rightarrow 52 \rightarrow 26 \rightarro
 </ol>
 
 <hr>
-<h3><code>while</code> vs <code>do...while</code> loops</h3>
+<h3 id="while-vs-dowhile-loops"><code>while</code> vs <code>do...while</code> loops</h3>
 <p>Both while and do&hellip;while loops are indefinite loops, working similar. But still they have differences.</p>
 <p>In <code>while</code> loop, the iteration starts with a condition check. If the result is <code>false</code>, the loop is not entered and execution is passed to after the loop.</p>
 <p>In <code>do...while</code> loop, the condition check is done after iteration. This means an iteration may execute even if condition is not satisfied.</p>
@@ -194,9 +210,9 @@ int main(){
 <pre><code class="language-txt">11 Outside Loop
 </code></pre>
 <hr>
-<h3>Nested Looping</h3>
+<h3 id="nested-looping">Nested Looping</h3>
 <p>You can use one or more loops inside any other <code>while</code>, <code>for</code>, or <code>do...while</code> loop.</p>
-<h2>The Infinite Loop</h2>
+<h2 id="the-infinite-loop">The Infinite Loop</h2>
 <p>A loop becomes an <code>infinite loop</code> if a condition never becomes false. The for loop is traditionally used for this purpose. Since none of the three expressions that form the &lsquo;for&rsquo; loop are required, you can make an endless loop by leaving the conditional expression empty.</p>
 <pre><code class="language-c">#include &lt;stdio.h&gt;
 
@@ -225,7 +241,7 @@ while(true){
 <p>Terminate an infinite loop (code execution) by pressing <code>Ctrl + C</code>.</p>
 </blockquote>
 <hr>
-<h2>Loop Control Statements</h2>
+<h2 id="loop-control-statements">Loop Control Statements</h2>
 <p><strong>Loop control Statements</strong> are statements that alter the flow of loop.
 C supports the following statements</p>
 <ol>
@@ -378,11 +394,11 @@ value of a: 19
 
     <div class="head-foot">
         
-        <a href="loops.html" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Prev</a>
+        <a href="loops.html" class="hf-elements">Prev</a>
         
-        <a href="./" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Home</a>
+        <a href="./" class="hf-elements">Home</a>
         
-        <a href=" functions.html" style="margin: 10%; margin-left: 15%; margin-right: 15%;">Next</a>
+        <a href=" functions.html" class="hf-elements">Next</a>
         
         <br>
     </div>

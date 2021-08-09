@@ -8,6 +8,8 @@ next: condition_statements.html
 
 # Introduction to C - Part 3
 
+[TOC]
+
 ## Limits and Memory for various Data Types
 
 | Data type              | Minimum              | Maximum                                        | Memory (in bytes) |
