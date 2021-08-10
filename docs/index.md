@@ -24,3 +24,11 @@ title: C Programming Basics
 5. Arrays and Strings
 6. Pointers
 7. Structures and Unions
+
+## Practice Questions
+
+1. [Introduction to C](Practice_code1.html)
+2. [Condition Statements](Practice_code2.html)
+3. [Looping Statements](Practice_code3.html)
+
+The solutions for the questions will be added Soon
