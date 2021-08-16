@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays in C Programming</title>
+    <meta name="description" content="Arrays in C Programming">
+    <link rel="shortcut icon" href="C.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./static/main.css" />
+    <script
+        src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autorun=false&amp;lang=llvm"></script>
+    <script>
+        window.onload = (function () {
+            let tags = document.getElementsByTagName("pre");
+            let br = document.createElement("br");
+            for (var i = 0; i < tags.length; ++i) {
+                tags[i].classList.add("prettyprint");
+            }
+            tags = document.getElementsByTagName("code");
+            console.log(tags);
+            for (var i = 0; i < tags.length; ++i) {
+                if (tags[i].classList.contains("language-c")) {
+                    tags[i].classList.add("lang-c");
+                    tags[i].classList.remove("language-c");
+                }
+            }
+            PR.prettyPrint();
+        })
+    </script>
+
+
+
+    <script>
+        MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+
+<body>
+
+    <div class="head-foot">
+        
+        <a href="arrays.html" class="hf-elements">Prev</a>
+        
+        <a href="./" class="hf-elements">Home</a>
+        
+        <a href="http://" target="_blank" rel="noopener noreferrer" class="hf-elements"></a>
+        
+        <br>
+    </div>
+    <hr>
+    <div class="container">
+        <h1 id="arrays-in-c-programming">Arrays in C Programming</h1>
+<div class="toc">
+<ul>
+<li><a href="#arrays-in-c-programming">Arrays in C Programming</a><ul>
+<li><a href="#passing-arrays-as-function-arguments">Passing arrays as Function Arguments</a><ul>
+<li><a href="#1-parameter-as-sized-array">1. Parameter as sized array</a></li>
+<li><a href="#2-parameter-as-sized-array">2. Parameter as sized array</a></li>
+</ul>
+</li>
+<li><a href="#multi-dimensional-arrays-and-matrices">Multi-dimensional Arrays and matrices</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="passing-arrays-as-function-arguments">Passing arrays as Function Arguments</h2>
+<p>Arrays can passed as arguments in following ways:</p>
+<ol>
+<li>As sized array</li>
+<li>As un-sized array</li>
+<li>As pointers (Discussed under <code>Pointers for arrays</code>)</li>
+</ol>
+<h3 id="1-parameter-as-sized-array">1. Parameter as sized array</h3>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-c">&lt;return_type&gt; functionName(parameters, ..., &lt;type&gt; paramName[size]) {
+    // body
+}
+</code></pre>
+<p>Eg:</p>
+<pre><code class="language-c">void myFunction(int param[10]) {
+   .
+   .
+   .
+}
+</code></pre>
+<h3 id="2-parameter-as-sized-array">2. Parameter as sized array</h3>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-c">&lt;return_type&gt; functionName(parameters, ..., &lt;type&gt; paramName[]) {
+    // body
+}
+</code></pre>
+<p>Eg:</p>
+<pre><code class="language-c">void myFunction(int param[]) {
+   .
+   .
+   .
+}
+</code></pre>
+<h2 id="multi-dimensional-arrays-and-matrices">Multi-dimensional Arrays and matrices</h2>
+    </div>
+
+    <div class="head-foot">
+        
+        <a href="arrays.html" class="hf-elements">Prev</a>
+        
+        <a href="./" class="hf-elements">Home</a>
+        
+        <a href="http://" target="_blank" rel="noopener noreferrer" class="hf-elements"></a>
+        
+        <br>
+    </div>
+    <hr>
+
+</body>
+
+</html>

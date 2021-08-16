@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays in C Programming</title>
+    <meta name="description" content="Arrays in C Programming">
+    <link rel="shortcut icon" href="C.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./static/main.css" />
+    <script
+        src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autorun=false&amp;lang=llvm"></script>
+    <script>
+        window.onload = (function () {
+            let tags = document.getElementsByTagName("pre");
+            let br = document.createElement("br");
+            for (var i = 0; i < tags.length; ++i) {
+                tags[i].classList.add("prettyprint");
+            }
+            tags = document.getElementsByTagName("code");
+            console.log(tags);
+            for (var i = 0; i < tags.length; ++i) {
+                if (tags[i].classList.contains("language-c")) {
+                    tags[i].classList.add("lang-c");
+                    tags[i].classList.remove("language-c");
+                }
+            }
+            PR.prettyPrint();
+        })
+    </script>
+
+
+
+    <script>
+        MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+
+<body>
+
+    <div class="head-foot">
+        
+        <a href="recursion.html" class="hf-elements">Prev</a>
+        
+        <a href="./" class="hf-elements">Home</a>
+        
+        <a href=" multi_dimensional_arrays.html" class="hf-elements">Next</a>
+        
+        <br>
+    </div>
+    <hr>
+    <div class="container">
+        <h1 id="arrays-in-c-programming">Arrays in C Programming</h1>
+<div class="toc">
+<ul>
+<li><a href="#arrays-in-c-programming">Arrays in C Programming</a><ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#declaring-and-initializing-arrays">Declaring and Initializing arrays</a><ul>
+<li><a href="#declaring-arrays">Declaring Arrays</a></li>
+<li><a href="#initializing-array">Initializing array</a></li>
+<li><a href="#assigning-and-getting-elements-using-index">Assigning and getting elements using index</a></li>
+</ul>
+</li>
+<li><a href="#input-and-output-in-arrays">Input and Output in arrays</a><ul>
+<li><a href="#output-printing-out-arrays">Output - Printing Out arrays</a></li>
+<li><a href="#input-of-arrays">Input of arrays</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="introduction">Introduction</h2>
+<p>A <strong>data structure</strong>, in general, is a data organization, management, and storage format that enables efficient access and modification.</p>
+<p>A <strong>data structure</strong> is a particular way of organizing data in a computer so that it can be used effectively. There are several data structures that can be implemented or used.</p>
+<p><strong>Arrays</strong> are the most basic of data structure that can store a fixed-size, sequential collection of value of the same type. Each value stored in an array is called an element. An array is used to store a collection of data, but it is often more useful to think of an array as a collection of variables of the same type.</p>
+<p>Instead of declaring individual variables, such as <code>number0</code>, <code>number1</code>, &hellip;, and <code>number99</code>, you declare one array variable such as numbers and use <code>numbers[0]</code>, <code>numbers[1]</code>, and &hellip;, <code>numbers[99]</code> to represent individual variables. This can save us time and also the effort to name and declare them.</p>
+<blockquote>
+<p>A specific element in an array is accessed by an index.</p>
+</blockquote>
+<p>All arrays consist of contiguous memory locations. The lowest address corresponds to the first element and the highest address to the last element.</p>
+<blockquote>
+<p>Details on memory allocation and access will be discussed under <code>pointers</code></p>
+</blockquote>
+<hr>
+<h2 id="declaring-and-initializing-arrays">Declaring and Initializing arrays</h2>
+<h3 id="declaring-arrays">Declaring Arrays</h3>
+<p>Arrays can be declared by providing type, name and size.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-c">&lt;type&gt; arrayName[size];
+</code></pre>
+<p><strong>Eg:</strong></p>
+<pre><code class="language-c">int myArr[10];
+</code></pre>
+<blockquote>
+<p><code>size</code> should be greater than 0</p>
+</blockquote>
+<hr>
+<h3 id="initializing-array">Initializing array</h3>
+<p>Arrays can be initialized using indices of element (discussed later) or direct assignment when declaring them.</p>
+<p><strong>1. Providing Size and elements:</strong></p>
+<pre><code class="language-c">double balance[5] = {1000.0, 2.0, 3.4, 7.0, 50.0};
+</code></pre>
+<p>The number of values between braces <code>{}</code> cannot be larger than the number of elements that we declare for the array between square brackets <code>[]</code>.</p>
+<p><strong>2. Providing only elements:</strong></p>
+<pre><code class="language-c">double balance[] = {1000.0, 2.0, 3.4, 7.0, 50.0};
+</code></pre>
+<p>If the size of the array is omitted, an array just big enough to hold the initialization is created.</p>
+<hr>
+<h3 id="assigning-and-getting-elements-using-index">Assigning and getting elements using index</h3>
+<p>Index marks the positions of elements in arrays.</p>
+<p>Consider the array <code>balance</code> as below:</p>
+<pre><code class="language-c">double balance[] = {1000.0, 2.0, 3.4, 7.0, 50.0};
+</code></pre>
+<p><img src="array.png"/></p>
+<p>The elements are indexed from <code>0</code> to <code>n - 1</code> where <code>n</code> is the number of elements in the array.</p>
+<p>To access $\rm{k}^{th}$ element, we can use index $ = \rm{k}-1$ to access them.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-c">arrayName[index]
+</code></pre>
+<p><strong>Eg:</strong> To get first element, $\rm{k} = 1$, $\rm{index} = 1-1$</p>
+<pre><code class="language-c">double val = balance[0];
+// val contains 1000.0
+</code></pre>
+<p>Using assignment operator <code>=</code>, the element can be modified.</p>
+<p><strong>Eg:</strong></p>
+<pre><code class="language-c">balance[1] = 10.0;
+</code></pre>
+<p>modifies balance to</p>
+<pre><code class="language-c">double balance[] = {1000.0, 10.0, 3.4, 7.0, 50.0};
+</code></pre>
+<hr>
+<h2 id="input-and-output-in-arrays">Input and Output in arrays</h2>
+<h3 id="output-printing-out-arrays">Output - Printing Out arrays</h3>
+<p>Arrays can be printed out by use of loops</p>
+<p><strong>Eg:</strong></p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main () {
+
+   int n[15]; /* n is an array of 10 integers */
+   int i, j;
+
+   for(i = 0; i &lt; 15; ++i) {
+      n[i] = i + 200; /* set element at location i to i + 200 */
+   }
+
+   /* output each array element's value */
+   for (j = 0; j &lt; 15; ++j) {
+      printf(&quot;Element[%d] = %d\n&quot;, j, n[j]);
+   }
+
+   return 0;
+}
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code class="language-txt">Element[0] = 200
+Element[1] = 201
+Element[2] = 202
+Element[3] = 203
+Element[4] = 204
+Element[5] = 205
+Element[6] = 206
+Element[7] = 207
+Element[8] = 208
+Element[9] = 209
+Element[10] = 210
+Element[11] = 211
+Element[12] = 212
+Element[13] = 213
+Element[14] = 214
+</code></pre>
+<hr>
+<h3 id="input-of-arrays">Input of arrays</h3>
+<p>Having known to assign values to arrays, it is easy to get input of arrays
+<strong>Syntax:</strong></p>
+<pre><code class="language-c">scanf(&quot;&lt;format specifier&gt;&quot;, &amp;arrayName[index]);
+</code></pre>
+<p><strong>Eg:</strong></p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main () {
+
+   int n[10]; /* n is an array of 10 integers */
+   int i, j;
+
+   /* input of array */
+   for ( i = 0; i &lt; 10; i++) {
+      scanf(&quot;%d&quot;, &amp;n[i]);
+   }
+
+   /* output each array element's value */
+   for (j = 0; j &lt; 10; j++) {
+      printf(&quot;Element[%d] = %d\n&quot;, j, n[j]);
+   }
+
+   return 0;
+}
+</code></pre>
+<p><strong>Input:</strong></p>
+<pre><code class="language-txt">10 20 30 40 50 60 70 80 90 100
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code class="language-txt">Element[0] = 10
+Element[1] = 20
+Element[2] = 30
+Element[3] = 40
+Element[4] = 50
+Element[5] = 60
+Element[6] = 70
+Element[7] = 80
+Element[8] = 90
+Element[9] = 100
+</code></pre>
+<hr>
+    </div>
+
+    <div class="head-foot">
+        
+        <a href="recursion.html" class="hf-elements">Prev</a>
+        
+        <a href="./" class="hf-elements">Home</a>
+        
+        <a href=" multi_dimensional_arrays.html" class="hf-elements">Next</a>
+        
+        <br>
+    </div>
+    <hr>
+
+</body>
+
+</html>

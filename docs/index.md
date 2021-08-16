@@ -36,7 +36,14 @@ title: C Programming Basics
    - [Recursion](recursion.html)  
      Introduction to recursion, recursive functions, examples, types of recursion
 
-5. Arrays and Strings
+5. [Arrays](arrays.html) and Strings
+
+   - [Basics of Arrays](arrays.html)  
+      Introduction, Declarations, Initialization, Index - assigning and getting values, Printing out array, Getting array input
+
+   - [Array Parameters and Multi-dimensional Arrays](multi_dimensional_arrays.html)  
+      Passing arrays as arguments - Sized parameter, un-sized parameter
+
 6. Pointers
 7. Structures and Unions
 
