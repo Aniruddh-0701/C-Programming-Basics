@@ -73,6 +73,7 @@
 </ul>
 </li>
 <li><a href="#accessing-elements">Accessing elements</a></li>
+<li><a href="#input-and-output-of-multi-dimensional-arrays">Input and output of multi-dimensional arrays</a></li>
 </ul>
 </li>
 </ul>
@@ -184,7 +185,7 @@ double getAverage(int arr[], int size) {
 <p><em>1. Nesting with curly braces:</em></p>
 <pre><code class="language-c">int a[][4] = {
    {0, 3, 6, 9},   /*  initializers for row indexed by 0 */
-   {1, 4, 7, 10},   /*  initializers for row indexed by 1 */
+   {1, 4, 7, 10},  /*  initializers for row indexed by 1 */
    {2, 5, 8, 11}   /*  initializers for row indexed by 2 */
 };
 </code></pre>
@@ -207,7 +208,7 @@ double getAverage(int arr[], int size) {
     {12, 13, 14, 15}
 };
 </code></pre>
-<p>Let&rsquo;s right it as a matrix for easy visualization</p>
+<p>Let&rsquo;s write it as a matrix for easy visualization</p>
 <p>$$
 b = \begin{bmatrix}
 0 &amp; 1 &amp; 2 &amp; 3\\
@@ -221,6 +222,52 @@ $$</p>
 // val is set to 10
 </code></pre>
 <p>In the same way, a specific element may be modified.</p>
+<hr>
+<h3 id="input-and-output-of-multi-dimensional-arrays">Input and output of multi-dimensional arrays</h3>
+<p>Nested loops allow us to do I/O in multi-dimensional array.</p>
+<p><strong>Eg:</strong></p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main () {
+   /* an array with 5 rows and 2 columns*/
+   int arr[5][2];
+   int i, j;
+
+   /* input each array */
+   for(i = 0; i &lt; 5; ++i) {
+       for(j = 0; j &lt; 2; ++j) {
+           scanf(&quot;%d&quot;, &amp;arr[i][j]);
+       }
+   }
+
+   /* output each array element's value */
+   for (i = 0; i &lt; 5; ++i) {
+      for (j = 0; j &lt; 2; ++j) {
+         printf(&quot;arr[%d][%d] = %d\n&quot;, i, j, arr[i][j]);
+      }
+   }
+   return 0;
+}
+</code></pre>
+<p><strong>Input:</strong></p>
+<pre><code class="language-txt">0 0
+1 2
+2 4
+3 6
+4 8
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code class="language-txt">arr[0][0]: 0
+arr[0][1]: 0
+arr[1][0]: 1
+arr[1][1]: 2
+arr[2][0]: 2
+arr[2][1]: 4
+arr[3][0]: 3
+arr[3][1]: 6
+arr[4][0]: 4
+arr[4][1]: 8
+</code></pre>
     </div>
 
     <div class="head-foot">

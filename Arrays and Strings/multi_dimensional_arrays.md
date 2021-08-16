@@ -153,7 +153,7 @@ _1. Nesting with curly braces:_
 ```c
 int a[][4] = {
    {0, 3, 6, 9},   /*  initializers for row indexed by 0 */
-   {1, 4, 7, 10},   /*  initializers for row indexed by 1 */
+   {1, 4, 7, 10},  /*  initializers for row indexed by 1 */
    {2, 5, 8, 11}   /*  initializers for row indexed by 2 */
 };
 ```
@@ -187,7 +187,7 @@ int b[4][4] = {
 };
 ```
 
-Let's right it as a matrix for easy visualization
+Let's write it as a matrix for easy visualization
 
 $$
 b = \begin{bmatrix}
@@ -206,3 +206,61 @@ int val = b[2][2];
 ```
 
 In the same way, a specific element may be modified.
+
+---
+
+### Input and output of multi-dimensional arrays
+
+Nested loops allow us to do I/O in multi-dimensional array.
+
+**Eg:**
+
+```c
+#include <stdio.h>
+
+int main () {
+   /* an array with 5 rows and 2 columns*/
+   int arr[5][2];
+   int i, j;
+
+   /* input each array */
+   for(i = 0; i < 5; ++i) {
+       for(j = 0; j < 2; ++j) {
+           scanf("%d", &arr[i][j]);
+       }
+   }
+
+   /* output each array element's value */
+   for (i = 0; i < 5; ++i) {
+      for (j = 0; j < 2; ++j) {
+         printf("arr[%d][%d] = %d\n", i, j, arr[i][j]);
+      }
+   }
+   return 0;
+}
+```
+
+**Input:**
+
+```txt
+0 0
+1 2
+2 4
+3 6
+4 8
+```
+
+**Output:**
+
+```txt
+arr[0][0]: 0
+arr[0][1]: 0
+arr[1][0]: 1
+arr[1][1]: 2
+arr[2][0]: 2
+arr[2][1]: 4
+arr[3][0]: 3
+arr[3][1]: 6
+arr[4][0]: 4
+arr[4][1]: 8
+```
