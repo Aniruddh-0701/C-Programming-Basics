@@ -65,7 +65,16 @@
 <li><a href="#2-parameter-as-un-sized-array">2. Parameter as un-sized array</a></li>
 </ul>
 </li>
-<li><a href="#multi-dimensional-arrays-and-matrices">Multi-dimensional Arrays and matrices</a></li>
+<li><a href="#multi-dimensional-arrays-and-matrices">Multi-dimensional Arrays and matrices</a><ul>
+<li><a href="#dimension">Dimension</a></li>
+<li><a href="#declaration-and-initialization">Declaration and Initialization</a><ul>
+<li><a href="#declaration">Declaration</a></li>
+<li><a href="#initialization">Initialization</a></li>
+</ul>
+</li>
+<li><a href="#accessing-elements">Accessing elements</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -90,6 +99,7 @@
    .
 }
 </code></pre>
+<hr>
 <h3 id="2-parameter-as-un-sized-array">2. Parameter as un-sized array</h3>
 <p><strong>Syntax:</strong></p>
 <pre><code class="language-c">&lt;return_type&gt; functionName(parameters, ..., &lt;type&gt; paramName[]) {
@@ -141,7 +151,76 @@ double getAverage(int arr[], int size) {
 <p><strong>Output:</strong></p>
 <pre><code class="language-txt">Average value is: 214.400000
 </code></pre>
+<hr>
 <h2 id="multi-dimensional-arrays-and-matrices">Multi-dimensional Arrays and matrices</h2>
+<p>Multi-dimensional arrays, in general, are arrays of arrays, can be visualized as tables.</p>
+<h3 id="dimension">Dimension</h3>
+<p>Dimension of a multi-dimensional array is the levels of arrays present in it.</p>
+<ol>
+<li><strong>One dimensional</strong> or <strong>Single dimensional</strong> array is an array of non-array elements.</li>
+<li><strong>Two dimensional</strong> array is an array of arrays.</li>
+<li><strong>Three dimensional</strong> array is an array of arrays of arrays.</li>
+</ol>
+<p>Only 1D and 2D are in common use while at some cases, Higher dimensions may be used.</p>
+<blockquote>
+<p>2D arrays are nothing but matrices, where each child array is a row</p>
+</blockquote>
+<hr>
+<h3 id="declaration-and-initialization">Declaration and Initialization</h3>
+<h4 id="declaration">Declaration</h4>
+<p>Arrays can be declared by defining the size of each dimension</p>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-c">// for N dimension
+&lt;type&gt; arrayName[size1][size2]...[sizeN];
+</code></pre>
+<hr>
+<h4 id="initialization">Initialization</h4>
+<p>Arrays can be declared in two ways:</p>
+<ol>
+<li>Nesting with curly braces</li>
+<li>Direct initialization</li>
+</ol>
+<p><strong>Eg:</strong> 2D arrays</p>
+<p><em>1. Nesting with curly braces:</em></p>
+<pre><code class="language-c">int a[][4] = {
+   {0, 3, 6, 9},   /*  initializers for row indexed by 0 */
+   {1, 4, 7, 10},   /*  initializers for row indexed by 1 */
+   {2, 5, 8, 11}   /*  initializers for row indexed by 2 */
+};
+</code></pre>
+<p><em>2. Direct initialization:</em></p>
+<pre><code class="language-c">int a[3][4] = {0,1,2,3,4,5,6,7,8,9,10,11};
+</code></pre>
+<p>The above initialization automatically assigns the values to child arrays as per given size.</p>
+<blockquote>
+<p>The sizes of <code>last</code> dimension is <strong>mandatory</strong>, other dimensions are optional</p>
+</blockquote>
+<hr>
+<h3 id="accessing-elements">Accessing elements</h3>
+<p>A specific child array/ element can be accessed by specifying the correct indices of values.</p>
+<p><strong>Eg:</strong></p>
+<p>Consider the array $b$,</p>
+<pre><code class="language-c">int b[4][4] = {
+    {0, 1, 2, 3},
+    {4, 5, 6, 7},
+    {8, 9, 10, 11},
+    {12, 13, 14, 15}
+};
+</code></pre>
+<p>Let&rsquo;s right it as a matrix for easy visualization</p>
+<p>$$
+b = \begin{bmatrix}
+0 &amp; 1 &amp; 2 &amp; 3\\
+4 &amp; 5 &amp; 5 &amp; 7\\
+8 &amp; 9 &amp; 10 &amp; 11\\
+12 &amp; 13 &amp; 14 &amp; 15\\
+\end{bmatrix}_{4 \times 4}
+$$</p>
+<p>To get <code>10</code>, the position is $(3, 3)$. The indices are obtained by subtracting each level by 1, giving $(2, 2)$.</p>
+<pre><code class="language-c">int val = b[2][2];
+// val is set to 10
+</code></pre>
+<p>In the same way, a specific element may be modified.</p>
     </div>
 
     <div class="head-foot">

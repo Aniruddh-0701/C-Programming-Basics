@@ -82,7 +82,49 @@ Consider the array `balance` as below:
 double balance[] = {1000.0, 2.0, 3.4, 7.0, 50.0};
 ```
 
-<img src="array.png"/>
+<style>
+   .img {
+      border: 0;
+      height: auto;
+      padding: 1%;
+      align-content: center;
+      text-align: center;
+      width: fit-content;
+   }
+   td.no-b{
+      border: 0;
+      height: auto;
+      align-content: center;
+      text-align: center;
+      width: 2%;
+   }
+   td.bordered{
+      height: auto;
+      text-align: center;
+      width: 2%;
+   }
+</style>
+
+<table style="border: 0; margin: 5%">
+<tr class="img">
+   <td class="no-b"></td>
+   <td class="no-b">0</td>
+   <td class="no-b">1</td>
+   <td class="no-b">2</td>
+   <td class="no-b">3</td>
+   <td class="no-b">4</td>
+</tr>
+<tr class="img">
+   <td class="no-b">
+      $\text{balance} =$
+   </td>
+   <td class="bordered">1000.0</td>
+   <td class="bordered">2.0</td>
+   <td class="bordered">3.4</td>
+   <td class="bordered">7.0</td>
+   <td class="bordered">50.0</td>
+</tr>
+</table>
 
 The elements are indexed from `0` to `n - 1` where `n` is the number of elements in the array.
 
@@ -94,7 +136,7 @@ To access $\rm{k}^{th}$ element, we can use index $ = \rm{k}-1$ to access them.
 arrayName[index]
 ```
 
-**Eg:** To get first element, $\rm{k} = 1$, $\rm{index} = 1-1$
+**Eg:** To get first element, $\rm{k} = 1$, $\rm{index} = 1 - 1 = 0$
 
 ```c
 double val = balance[0];

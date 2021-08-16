@@ -118,13 +118,56 @@
 <p>Consider the array <code>balance</code> as below:</p>
 <pre><code class="language-c">double balance[] = {1000.0, 2.0, 3.4, 7.0, 50.0};
 </code></pre>
-<p><img src="array.png"/></p>
+<style>
+   .img {
+      border: 0;
+      height: auto;
+      padding: 1%;
+      align-content: center;
+      text-align: center;
+      width: fit-content;
+   }
+   td.no-b{
+      border: 0;
+      height: auto;
+      align-content: center;
+      text-align: center;
+      width: 2%;
+   }
+   td.bordered{
+      height: auto;
+      text-align: center;
+      width: 2%;
+   }
+</style>
+
+<table style="border: 0; margin: 5%">
+<tr class="img">
+   <td class="no-b"></td>
+   <td class="no-b">0</td>
+   <td class="no-b">1</td>
+   <td class="no-b">2</td>
+   <td class="no-b">3</td>
+   <td class="no-b">4</td>
+</tr>
+<tr class="img">
+   <td class="no-b">
+      $\text{balance} =$
+   </td>
+   <td class="bordered">1000.0</td>
+   <td class="bordered">2.0</td>
+   <td class="bordered">3.4</td>
+   <td class="bordered">7.0</td>
+   <td class="bordered">50.0</td>
+</tr>
+</table>
+
 <p>The elements are indexed from <code>0</code> to <code>n - 1</code> where <code>n</code> is the number of elements in the array.</p>
 <p>To access $\rm{k}^{th}$ element, we can use index $ = \rm{k}-1$ to access them.</p>
 <p><strong>Syntax:</strong></p>
 <pre><code class="language-c">arrayName[index]
 </code></pre>
-<p><strong>Eg:</strong> To get first element, $\rm{k} = 1$, $\rm{index} = 1-1$</p>
+<p><strong>Eg:</strong> To get first element, $\rm{k} = 1$, $\rm{index} = 1 - 1 = 0$</p>
 <pre><code class="language-c">double val = balance[0];
 // val contains 1000.0
 </code></pre>

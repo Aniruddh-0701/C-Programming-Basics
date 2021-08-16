@@ -42,7 +42,7 @@ title: C Programming Basics
       Introduction, Declarations, Initialization, Index - assigning and getting values, Printing out array, Getting array input
 
    - [Array Parameters and Multi-dimensional Arrays](multi_dimensional_arrays.html)  
-      Passing arrays as arguments - Sized parameter, un-sized parameter
+      Passing arrays as arguments - Sized parameter, un-sized parameter, Multi-dimensional arrays - introduction, dimension, declaration, initialization, accessing and assigning elements
 
 6. Pointers
 7. Structures and Unions
