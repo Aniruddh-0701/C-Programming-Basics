@@ -3,7 +3,7 @@ title: Functions in C Programming
 subtitle: Functions in C Programming
 image: ../C.png
 prev: indefinite_loops.html
-next: ""
+next: recursion.html
 ---
 
 # Functions in C Programming

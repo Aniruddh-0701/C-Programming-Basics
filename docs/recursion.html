@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursion in C Programming</title>
+    <meta name="description" content="Recursive Functions in C Programming">
+    <link rel="shortcut icon" href="C.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./static/main.css" />
+    <script
+        src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autorun=false&amp;lang=llvm"></script>
+    <script>
+        window.onload = (function () {
+            let tags = document.getElementsByTagName("pre");
+            let br = document.createElement("br");
+            for (var i = 0; i < tags.length; ++i) {
+                tags[i].classList.add("prettyprint");
+            }
+            tags = document.getElementsByTagName("code");
+            console.log(tags);
+            for (var i = 0; i < tags.length; ++i) {
+                if (tags[i].classList.contains("language-c")) {
+                    tags[i].classList.add("lang-c");
+                    tags[i].classList.remove("language-c");
+                }
+            }
+            PR.prettyPrint();
+        })
+    </script>
+
+
+
+    <script>
+        MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+
+<body>
+
+    <div class="head-foot">
+        
+        <a href="functions.html" class="hf-elements">Prev</a>
+        
+        <a href="./" class="hf-elements">Home</a>
+        
+        <a href=" arrays.html" class="hf-elements">Next</a>
+        
+        <br>
+    </div>
+    <hr>
+    <div class="container">
+        <h1 id="functions-in-c-programming">Functions in C Programming</h1>
+<div class="toc">
+<ul>
+<li><a href="#functions-in-c-programming">Functions in C Programming</a><ul>
+<li><a href="#introduction-to-recursion">Introduction to Recursion</a><ul>
+<li><a href="#recursive-function">Recursive function</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="introduction-to-recursion">Introduction to Recursion</h2>
+<p><strong>Recursion</strong> is a method of solving a problem where the solution depends on solutions to smaller instances of the same problem.</p>
+<hr>
+<h3 id="recursive-function">Recursive function</h3>
+<p>A function that performs recursion.</p>
+<p>A recursive function calls itself repeatedly by dividing the problem into sub problems until the solution is obtainable for the smallest sub-problem.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-c">&lt;return_type&gt; functionName(&lt;type&gt; parameter1, &lt;type&gt; parameter2, ...) {
+    if (condition) {
+        // statements - base case (end of recursion)
+        return ...;
+    } else {
+        functionName(parameter_list); // recursive call
+        return ...;
+    }
+}
+</code></pre>
+<p>The <strong>base case</strong> the condition at which recursion stops breaking down the problem. The <strong>recursive case</strong> defines what to be done for recursion.</p>
+<blockquote>
+<p>The <strong>base case</strong> is mandatory. If not provided, recursion may continue indefinitely.</p>
+</blockquote>
+<p><strong>Eg:</strong></p>
+<p>The most common example is a recursive function to find factorial of a number</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int factorial(int n) {
+    if (n == 1) {
+        return n; // base case
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+
+int main() {
+    int n = 6;
+    printf(&quot;Factorial of %d is %d&quot;, n, factorial(n));
+}
+</code></pre>
+<p>The program works on the concept: $n! = n(n-1)!$</p>
+<p><strong>Output:</strong></p>
+<pre><code class="language-txt">Factorial of 6 is 720
+</code></pre>
+<p>Explanation</p>
+<pre><code class="language-txt">n = 6
+n == 1 false
+6 * factorial(5)
+
+n = 5
+n == 1 false
+5 * factorial(4)
+
+n = 4
+n == 1 false
+4 * factorial(3)
+
+n = 3
+n == 1 false
+3 * factorial(2)
+
+n = 2
+n == 1 false
+2 * factorial(1)
+
+n = 1
+n == 1 True
+1
+
+Building up:
+
+1
+2 * 1
+3 * 2 * 1
+4 * 3 * 2 * 1
+5 * 4 * 3 * 2 * 1
+6 * 5 * 4 * 3 * 2 * 1
+
+720
+</code></pre>
+<hr>
+<p>A visual explanation is provided by modifying the above program as below:</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int factorial(int n, char indent[]) {
+    printf(&quot;%s%d\n&quot;, indent, n);
+    if (n == 1)
+        return 1;
+    else {
+        char s1[100];
+        strcpy(s1, indent);
+        strcat(s1, &quot;|\t&quot;);
+        int fac = n * factorial(n - 1, s1);
+        printf(&quot;%s%d\n&quot;, indent, fac);
+        return fac;
+    }
+}
+
+int main() {
+    int n = 6;
+    char s[100] = {'\0'};
+    factorial(n, s);
+}
+</code></pre>
+<p><strong>Output:</strong>
+The <code>|</code> line indicates the same level of recursive call</p>
+<pre><code class="language-txt">6
+|    5
+|    |    4
+|    |    |    3
+|    |    |    |    2
+|    |    |    |    |    1
+|    |    |    |    2
+|    |    |    6
+|    |    24
+|    120
+720
+</code></pre>
+<blockquote>
+<p>The usage of string in indentation part shall be discussed later</p>
+</blockquote>
+<hr>
+<p><strong>Types of Recursion:</strong></p>
+<ol>
+<li>Head recursion</li>
+<li>Tail recursion</li>
+<li>Tree recursion</li>
+<li>Nested recursion</li>
+<li>Indirect recursion</li>
+</ol>
+<hr>
+    </div>
+
+    <div class="head-foot">
+        
+        <a href="functions.html" class="hf-elements">Prev</a>
+        
+        <a href="./" class="hf-elements">Home</a>
+        
+        <a href=" arrays.html" class="hf-elements">Next</a>
+        
+        <br>
+    </div>
+    <hr>
+
+</body>
+
+</html>
