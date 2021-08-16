@@ -62,7 +62,7 @@
 <li><a href="#arrays-in-c-programming">Arrays in C Programming</a><ul>
 <li><a href="#passing-arrays-as-function-arguments">Passing arrays as Function Arguments</a><ul>
 <li><a href="#1-parameter-as-sized-array">1. Parameter as sized array</a></li>
-<li><a href="#2-parameter-as-sized-array">2. Parameter as sized array</a></li>
+<li><a href="#2-parameter-as-un-sized-array">2. Parameter as un-sized array</a></li>
 </ul>
 </li>
 <li><a href="#multi-dimensional-arrays-and-matrices">Multi-dimensional Arrays and matrices</a></li>
@@ -90,7 +90,7 @@
    .
 }
 </code></pre>
-<h3 id="2-parameter-as-sized-array">2. Parameter as sized array</h3>
+<h3 id="2-parameter-as-un-sized-array">2. Parameter as un-sized array</h3>
 <p><strong>Syntax:</strong></p>
 <pre><code class="language-c">&lt;return_type&gt; functionName(parameters, ..., &lt;type&gt; paramName[]) {
     // body
@@ -102,6 +102,44 @@
    .
    .
 }
+</code></pre>
+<p>Consider the function <code>getAverage</code>, which takes an array as an argument along with another argument. Based on the passed arguments, it returns the average of the numbers passed through the array.</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+double getAverage(int arr[], int size);
+
+int main() {
+
+    /* an int array with 5 elements */
+    int balance[5] = {1000, 2, 3, 17, 50};
+    double avg;
+
+    /* Passing array parameter */
+    avg = getAverage(balance, 5);
+
+    /* output the returned value */
+    printf(&quot;Average value is: %lf\n&quot;, avg);
+
+    return 0;
+}
+
+double getAverage(int arr[], int size) {
+
+    int i;
+    double avg;
+    double sum = 0;
+
+    for (i = 0; i &lt; size; ++i)
+        sum += arr[i];
+
+    avg = sum / size;
+
+    return avg;
+}
+
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code class="language-txt">Average value is: 214.400000
 </code></pre>
 <h2 id="multi-dimensional-arrays-and-matrices">Multi-dimensional Arrays and matrices</h2>
     </div>

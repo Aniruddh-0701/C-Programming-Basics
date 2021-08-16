@@ -38,7 +38,7 @@ void myFunction(int param[10]) {
 }
 ```
 
-### 2. Parameter as sized array
+### 2. Parameter as un-sized array
 
 **Syntax:**
 
@@ -56,6 +56,50 @@ void myFunction(int param[]) {
    .
    .
 }
+```
+
+Consider the function `getAverage`, which takes an array as an argument along with another argument. Based on the passed arguments, it returns the average of the numbers passed through the array.
+
+```c
+#include <stdio.h>
+
+double getAverage(int arr[], int size);
+
+int main() {
+
+    /* an int array with 5 elements */
+    int balance[5] = {1000, 2, 3, 17, 50};
+    double avg;
+
+    /* Passing array parameter */
+    avg = getAverage(balance, 5);
+
+    /* output the returned value */
+    printf("Average value is: %lf\n", avg);
+
+    return 0;
+}
+
+double getAverage(int arr[], int size) {
+
+    int i;
+    double avg;
+    double sum = 0;
+
+    for (i = 0; i < size; ++i)
+        sum += arr[i];
+
+    avg = sum / size;
+
+    return avg;
+}
+
+```
+
+**Output:**
+
+```txt
+Average value is: 214.400000
 ```
 
 ## Multi-dimensional Arrays and matrices
