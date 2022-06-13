@@ -1,7 +1,9 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; /*"Times New Roman", Times, serif;*/
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  /*"Times New Roman", Times, serif;*/
 }
+
 p {
   text-indent: 4%;
   padding-left: 5%;
@@ -30,20 +32,26 @@ ul {
   margin-left: 5%;
 }
 
-.toc > ol,
+.toc>ol,
 ul {
   margin-left: auto;
 }
 
 li {
   margin-left: 5%;
-  padding-left: -5%;
+  padding-left: -15%;
 }
 
-ol > p,
-ul > p {
+ol>p,
+ul>p {
   text-indent: 0%;
 }
+
+li>p {
+  text-indent: 0%;
+  padding: 0;
+}
+
 .outer {
   list-style-type: decimal;
   padding: 5%;
@@ -53,57 +61,80 @@ ul > p {
   list-style-type: lower-alpha;
   padding: 10%;
 }
-h1,
+
+h3 {
+  margin-left: 2%;
+}
+
+h4 {
+  margin-left: 6%;
+}
+
+h5 {
+  margin-left: 10%;
+}
+
 h6 {
+  margin-left: 14%;
+}
+
+h1 {
   color: #000080;
   align-self: center;
   align-items: center;
   text-align: center;
   padding: 1% 1% 1% 1%;
 }
+
 h2,
 h4 {
   color: #ff9933;
 }
+
 h3,
 h5 {
-  margin-left: 2%;
   color: #138808;
 }
-th,
+
 thead {
   border: 1px solid black;
-  padding: 1%;
-  /* width: max-content; */
+  /* padding: auto; */
+  /* min-width: max-content; */
   height: auto;
   text-align: center;
   border-collapse: collapse;
   background-color: #ffcd94;
 }
 
-td {
-  padding: 1%;
+td,
+th {
+  padding: auto;
+  padding-left: 0.5%;
+  padding-top: 1%;
+  padding-bottom: 1%;
   margin: 5%;
-  width: max-content;
-  max-width: 75%;
+  width: auto;
   overflow: auto;
   text-align: center;
   border: 1px solid black;
   border-collapse: collapse;
+  white-space: nowrap;
 }
 
 table {
   max-width: 100%;
-  /* width: max-content; */
+  min-width: 85%;
+  width: auto;
   table-layout: auto;
   border: 1px solid black;
   border-collapse: collapse;
   text-align: center;
   align-self: center;
-  padding: 5%;
+  /* padding: 5%; */
   margin-left: auto;
   margin-right: auto;
 }
+
 blockquote {
   padding: 10px 20px;
   margin: 2%;
@@ -112,7 +143,7 @@ blockquote {
   font-size: 17.5px;
 }
 
-blockquote > p {
+blockquote>p {
   text-indent: 0%;
   margin-bottom: 0;
   font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
@@ -129,6 +160,7 @@ img {
   padding: 2%;
   margin: 2%;
   align-self: center;
+  text-align: center;
   width: max-content;
   max-width: 75%;
   border-radius: 1%;
@@ -142,7 +174,7 @@ pre {
   background-color: #dddddd;
 }
 
-pre > code > span.pln {
+pre>code>span.pln {
   color: #01579b;
 }
 
@@ -159,54 +191,77 @@ code {
     background: #fff;
     color: #333;
   }
+
   blockquote {
     border-left: 7.5px solid #e83e8c;
     background-color: #dddddd;
   }
+
   pre,
   .toc {
     box-shadow: 4px 4px 7px 5px #777;
   }
 }
+
 @media (prefers-color-scheme: dark) {
   body {
-    background: #2e3331; /*#424b4b; #17202a; #1c2536;*/
+    background: #2e3331;
+    /*#424b4b; #17202a; #1c2536;*/
     color: #ffffff;
   }
+
   img {
     background: #a0d0a0;
   }
+
   table {
     border-color: #dddddd;
   }
+
   td {
     border-color: #dddddd;
   }
+
   th,
   thead {
     background-color: #aac7a6;
     border-color: #dddddd;
     color: #333;
   }
+
   h1,
   a,
   a:hover {
     color: #c3eaff;
   }
+
   hr {
     background-color: #a0d0a0;
   }
+
   code {
     color: #baf7a6;
   }
+
   pre,
   .toc {
     box-shadow: 4px 4px 7px 5px #222;
   }
+
   blockquote {
     border-left: 7.5px solid #baf7a6;
     background-color: #424b4b;
   }
+}
+
+.prettyprinted,
+.prettyprint {
+  padding-left: 2.5% !important;
+  border-radius: 2.5%;
+}
+
+pre>code>span {
+  margin: top 2.5%, bottom 2.5%;
 }
 
 @media screen and (max-width: 1200px) {
@@ -216,6 +271,7 @@ code {
     margin-right: 12.5%;
   }
 }
+
 @media screen and (max-width: 600px) {
   .hf-elements {
     margin: 2%;
