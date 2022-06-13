@@ -12,17 +12,15 @@ next: Intro_to_C(2).html
 
 ## Introduction
 
-### Program
+#### Program
 
 A program is a set of instructions written on a computer to perform a specific task.
 
-### Programming Language
+#### Programming Language
 
 Simply said, it is a language used to write a program.
 
 It is a well defined medium to instruct the computer.
-
----
 
 ### Types of Programming Languages
 
@@ -72,7 +70,7 @@ It is generally used to learn basic programming concepts. C language is being us
 * It is the documentation section
 */
 
-#include<stdio.h>
+#include <stdio.h>
 
 // definition and global declarations
 
@@ -83,11 +81,13 @@ int main(){
 }
 ```
 
-- The first few lines define what is called a documentation. This section contains a multi line comment describing the code. The details on comments are discussed below.
+- The first few lines define what is called a _documentation_. This section contains a multi line comment describing the code. The details on comments are discussed below.
 
-- Next is the link for the compiler to indicate header files that are being used from the library. **Header files** are documents that define the symbols that are used in the program. Here `stdio.h` header file is linked.
+- The next is the list of _preprocessor directives_ (indicated by # symbol).
+The preprocessor directives are set of commands that are executed before the start of the actual program execution.
+They are usually commands that define data required for program execution or are the link for the compiler to indicate header files that are being used from the library. **Header files** are documents that define the symbols that are used in the program. Here `stdio.h` header file is linked.
 
-- The next section is the area of definition of constants and Global variables
+- The next section is the area of definition of Constants and Global variables
 
 - Below this is the area of code.
 
@@ -101,21 +101,27 @@ Data can be defined as a representation of facts, concepts, or instructions in a
 
 Data type is an attribute which tells the compiler or interpreter how the programmer intends to use the data.
 
-Basic Types:
+**Basic Types:**
+
+The following are the basic or primitive data types supported by C language.
 
 1. Numeric:
    - Integer - 0, 2, 30
-   - Float - 3.0, -0.0005 (single precision)
-   - Double - 3.0, -0.00003 (double precision)
+   - Float - 3.0, -0.0005 (single precision = n / 2 bits)
+   - Double - 3.0, -0.00003 (double precision = n bits)
 2. Boolean - `true` and `false`
 3. Character - all symbols defined by ASCII
 4. Null
+
+(n = number of bits supported by the system)
 
 **ASCII** - American Standard Code for Information Interchange
 
 ![ASCII charset](ASCII_chart.png)
 
 **Derived Data Types:**
+
+These are the data types which are derived or are formed by combination of two or more primitive data types.
 
 1. Array
 2. Strings
@@ -135,16 +141,40 @@ Additional types in integers (Base):
 
 ---
 
-## Literals
+## Tokens
 
-Literals are data that are directly used or processed in a program. If your program contains direct values like `10`, `3.14159`, `'a'` or `"str"`, they are known as literals
+A token is the smallest element of a program that is meaningful to the compiler. Tokens can be classified as follows:  
 
-### Types of Identifiers
+1. Keywords
+2. Literals
+3. Identifiers
+4. Operators
+5. Special Symbols
 
-1. Constant - Values that do not change during the execution
-2. Variable - Values that change
+### Keywords or Reserved words
 
-There are certain rules to be followed while naming an identifier:
+Words used for a special purpose in program. Since they have a special function, they must not be used as identifiers. If used, they may cause issues while execution of the program.
+
+E.g: `scanf`, `printf`, `int`, `if`, `for`, `try`, etc.
+
+### Literals
+
+Literals are data that are directly used or processed in a program. If your program contains direct values like `10`, `3.14159`, `'a'` or `"str"`, they are known as literals.
+
+### Identifiers
+
+An identifier is a symbol used for any variable, function, data definition, labels in your program, etc.
+
+Before starting any language, you must at least know how you name an identifier in that language.
+
+In C, an identifier is a combination of alphanumeric characters, i.e. first begin with a letter of the alphabet or an underscore, and the remaining are alphabets, numeric digit, underscores.
+
+#### Types of Identifiers
+
+1. Constant - Identifier whose value does not change during the execution of the program.
+2. Variable - Identifier whose value changes during the execution of the program.
+
+There are certain rules to be followed while constructing an identifier name:
 
 1. Should start only with an alphabet or underscore (`'_'`) like a1, a2, \_name not 1a, 24c
 2. Can contain characters defined in ASCII (alphabets and numbers) except ( &#36;, \\, /, etc.)
@@ -152,7 +182,9 @@ There are certain rules to be followed while naming an identifier:
 4. No spaces
 5. Generally, uppercase alphabets are not used in the beginning of a variable name.
 
-Naming Conventions: [Naming Convention - Wikipedia article](<https://en.wikipedia.org/wiki/Naming_convention_(programming)>)
+Naming Convention is the general practice in a programming language followed by majority of the programmers around the globe
+for convenience in reading. The list of naming conventions in several languages are listed in the article
+[Naming Convention - Wikipedia article](<https://en.wikipedia.org/wiki/Naming_convention_(programming)>)
 
 For Easy readability:
 
@@ -189,19 +221,9 @@ Not this way:
 user name, number_to_find_prime
 ```
 
-[Variables (data type), Naming Convention](variable_name.c)
+Example file - [Variables (data type), Naming Convention](variable_name.c)
 
----
-
-## Keywords or Reserved words
-
-Words used for a special purpose in program.
-
-E.g: `scanf`, `printf`, `int`, `if`, `for`, `try`, etc.
-
----
-
-### Declaration vs Initialization of variables
+#### Declaration vs Initialization of variables
 
 **Declaration** is the process of defining the variables' or constants' names to be used in the program.
 
@@ -220,7 +242,7 @@ int age, num1;
 char ch;
 ```
 
-**Initialization** is the process of assigning values to the variables declared. It is done using assignment operator `=`. (For Details, check Assignment operators in [Part 2](<Intro_to_C(2).md>))
+**Initialization** is the process of assigning values to the variables declared. It is done using assignment operator `=`. (For Details, check Assignment operators)
 
 Eg:
 
@@ -238,7 +260,7 @@ char ch = 'z';
 
 ---
 
-### Declaration of constants
+#### Declaration of constants
 
 In `C`, constants are declared and initialized in a single line using the `const` keyword. It is advised to have the constants' name in Uppercase.
 
@@ -256,128 +278,259 @@ const int MY_CONSTANT = 10;
 
 ---
 
-## Output handling or Printing out statements/Values to user
+### Operators
+
+Used to perform arithmetic and logical operations.
+
+#### Types
+
+1. Arithmetic
+2. Relational
+3. Logical
+4. Bitwise
+5. Assignment
+6. Miscellaneous Operators
+
+#### 1. Arithmetic
+
+Arithmetic operators are used to perform arithmetic operations.
+
+| Operator | Description                 | Example        |
+| -------- | --------------------------- | -------------- |
+| `+`      | Addition                    | 2 `+` 3 `=` 5  |
+| `-`      | Subtraction                 | 2 `-` 3 `=` -1 |
+| `*`      | Multiplication              | 2 `*` 3 `=` 6  |
+| `/`      | Division (returns quotient) | 2 `/` 3 `=` 0  |
+| `%`      | Modulo (returns remainder)  | 2 `%` 3 `=` 2  |
+| `++`     | Increment operator          | `++2` or `2++` |
+| `--`     | Decrement operator          | `--3` or `3--` |
+
+#### 2. Relational
+
+They define the relations between two variables. They result `true` if the relation is as defined by the operator and `false` otherwise.
+
+| Operator | Name             | Usage    | Example        |
+| -------- | ---------------- | -------- | -------------- |
+| `==`     | Equal            | a `==` b | 2 == 3 (false) |
+| `!=`     | Not Equal        | a `!=` b | 2 != 3 (true)  |
+| `>`      | Greater          | a `>` b  | 2 > 3 (false)  |
+| `>=`     | Greater or Equal | a `>=` b | 2 >= 3 (false) |
+| `<`      | Lesser           | a `<` b  | 2 < 3 (true)   |
+| `<=`     | Lesser or Equal  | a `<=` b | 2 <= 3 (true)  |
+
+#### 3. Logical
+
+They are used to perform Logical operations on two variables / expressions. They offer boolean results based on logical table of the respective operator.
+
+| Operator     | Description            |
+| ------------ | ---------------------- |
+| `&&`         | Logical Operator `AND` |
+| &#124;&#124; | Logical Operator `OR`  |
+| `!`          | Logical operator `NOT` |
+
+#### 4. Bitwise
+
+Perform bitwise operations. This class of operators takes the binary form of each integer, and applies the operator of respective bits.
+
+The binary forms are padded by `0` on the left to compensate the differences in number of bits to represent each value.
+
+| Operator | Description                                            | Syntax     | Example    |
+| -------- | ------------------------------------------------------ | ---------- | ---------- |
+| `&`      | Bitwise AND                                            | x `&` y    | 5 `&` 2    |
+| &#124;   | Bitwise OR                                             | x &#124; y | 5 &#124; 3 |
+| `~`      | Bitwise NOT                                            | `~x`       | `~1`       |
+| `^`      | Bitwise XOR                                            | x `^` y    | 6 `^` 1    |
+| `<<`     | Shifts y bits in x to the left (Left shift operator)   | x `<<` y   | 10 `<<` 2  |
+| `>>`     | Shifts y bits in x to the right (Right Shift Operator) | x `>>` y   | 15 `>>` 2  |
+
+**1. Bitwise AND (`&`):**
+
+It applies Binary `AND` operation to every bit.
+
+Eg:
+
+```c
+5 & 2 = 0
+
+   5  = 101
+   2  = 010 // Padding zeroes on left
+5 & 2 = 000 = 0
+```
+
+**2. Bitwise OR (`|`):**
+
+It applies the Bitwise `OR` operation to every bit
+
+Eg:
+
+```c
+5 | 3 = 7
+
+   5  = 101
+   3  = 011 // Padding zeroes on left
+5 | 3 = 111 = 7
+```
+
+**3. Bitwise NOT (`~`):**
+
+It applies the negation/complement/ `NOT` operation. Additional to flipping the bits, it changes sign.
+
+Eg:
+
+```c
+~5 = 2
+
+   5  = 101
+   ~5 = 010 = 2
+```
+
+**Anomaly in `C`:**
+
+The bitwise complement operator acts differently in `C`.
+
+Instead of flipping the bits, it provides 2's complement of the number.
+
+Two's complement is an operation on binary numbers. The 2's complement of a number is equal to the negative of the number plus 1, i.e.,
+
+```txt
+~N = -(N + 1)
+```
+
+So,
+
+```c
+~5 = -(5 + 1) = -6
+```
+
+**4. Bitwise XOR (`^`):**
+
+It applies the `Exclusive OR` (`XOR`) operation for each bit.
+
+Eg:
+
+```c
+6 ^ 2 = 4
+
+   6  = 110
+   2  = 010 // Padding zeroes on left
+6 ^ 1 = 100 = 4
+```
+
+**5. Left Shift Operator (`<<`):**
+
+Shifts the bits to the left by adding trailing zeros and removing start bits (MSB) which overflows.
+
+Eg:
+
+```c
+5 << 2 = 20
+5  = 101
+5 << 2 = 10100 = 20
+
+```
+
+**6. Right Shift Operator (`>>`):**
+
+Shifts the bits to the right by adding leading zeroes and removing End bits (LSB).
+
+Eg:
+
+```c
+15 >> 2 = 0
+15  = 1111
+15 >> 2 = 0011 = 3
+```
+
+#### 5. Assignment
+
+Assigns value (literal or result of an expression) to a variable.
+
+| Operator | Description              | Example   |
+| -------- | ------------------------ | --------- |
+| `=`      | Assign                   | c `=` 30  |
+| `+=`     | Add and assign           | a `+=` b  |
+| `-=`     | Subtract and assign      | a `-=` b  |
+| `*=`     | Multiply and assign      | a `*=` b  |
+| `/=`     | Divide and assign        | a `/=` b  |
+| `%=`     | Get remainder and assign | a `%=` b  |
+| `<<=`    | Left Shift and assign    | a `<<=` b |
+| `>>=`    | Right Shift and assign   | a `>>=` b |
+| `&=`     | Bitwise AND and assign   | a `&=` b  |
+| &#124;=  | Bitwise OR and assign    | a \| = b  |
+| `^=`     | Bitwise XOR and assign   | a `^=` b  |
+
+#### 6. Miscellaneous Operators
+
+Besides the operators discussed above, there are a few other important operators supported by C language
+
+| Operator | Description                                        | Example               |
+| -------- | -------------------------------------------------- | --------------------- |
+| `&`      | Address Operator (returns Address of a identifier) | `&a`                  |
+| `*`      | Pointer to a variable / Dereferencing operator     | `*a`                  |
+| `?`      | Ternary Operator                                   | `condition? a: b`     |
+| `.`      | dot operator                                       | `var1.var2`           |
+| `->`     | Arrow or Member access operator                    | `(pointer)->(member)` |
+| `,`      | Comma operator                                     | `a, b`                |
+
+> Check pointers topic for more details on dereferencing operator and address operator
+
+##### Dot operator
+
+The dot ( `.` ) operator is used for direct member selection via object name. In other words, it is used to access the child object/variable.
 
 **Syntax:**
 
 ```c
-printf("format specifier", identifier);
-printf("statement");
+<variable_name>.<member_name>
 ```
 
-### Format Specifiers
+> The dot and arrow operator will be addressed in structures and unions.
 
-1. `%d` - integer (int)
-2. `%f` - float
-3. `%c` - character (char)
-4. `%s` - string (str)
-5. `%lf` - double
+##### Comma operator
 
-**Identifiers** - variables or expressions
+The comma token (`,`) acts as both a separator and an operator.
 
-[Writing your first Program - printing "Hello World"](Hello_world.c)
+The comma operator is used to evaluate multiple expressions in the same statement.
+
+**Syntax:**
+
+```c
+(expression1, expression2, expression3, ...)
+```
+
+When used inside a parenthesis, the expressions separated by comma are evaluated sequentially, the result being the result of last expression.
+
+Eg:
+
+```c
+#include<stdio.h>
+
+int main() {
+   int x = 10, y = 20;
+   int a = (x--, y + 2);
+
+   printf("x = %d, y = %d, a = %d", x, y, a);
+}
+```
+
+Output:
+
+```txt
+x = 9, y = 20, a = 22
+```
+
+##### `sizeof()` operation
+
+The `sizeof` function is a builtin function available in `stdio.h` header file. It returns an integer indicating the size of memory in bytes, allocated to the specific variable.
+
+**Syntax:**
+
+```c
+sizeof(<variable_name>);
+// or
+sizeof(<type>);
+```
 
 ---
-
-### Modifiers
-
-Modifiers are key words that modify the default state of `int` and `char` data types. There are 4 modifiers in `C`:
-
-1. short
-2. long
-3. signed
-4. unsigned
-
-**1. `short`:**
-
-It limits user to store small integer values from `-32768` to `32767`. It can be used only on `int` data type.
-
-```c
-short int myShortInt = 10;
-```
-
-**2. `long`:**
-
-It allows storage of large value than default limit for `int`. Tt can be use once or twice to mention the limits.
-
-```c
-long int myLongInt;
-long myLongerInt;
-long long myLongLongInt;
-```
-
-**3. `signed`:**
-
-It is default modifier of `int` and `char` data type if no modifier is specified. It says that user can store negative and positive values.
-
-```c
-int myValue = -289;
-signed int myValues = -544;
-```
-
-**4. `unsigned`:**
-
-When user intends to store only positive values in the given data type (`int` and `char`).
-
-```c
-unsigned int myVal = 10;
-```
-
-To check the limitations of the modifiers, check [Part 3](<Intro_to_c(3).md>)
-
----
-
-### List of Format specifiers
-
-Having understood the modifiers in C, we can look at the complete list of format specifiers.
-
-| Format Specifier       | Type                          |
-| ---------------------- | ----------------------------- |
-| `%c`                   | Character                     |
-| `%d`                   | Signed integer                |
-| `%e` or `%E`           | Scientific notation of floats |
-| `%f`                   | Float values                  |
-| `%g` or `%G`           | Similar as `%e` or `%E`       |
-| `%hi`                  | Signed integer (`short`)      |
-| `%hu`                  | Unsigned Integer (`short`)    |
-| `%i`                   | Unsigned integer              |
-| `%l` or `%ld` or `%li` | Long or `long int`            |
-| `%lf`                  | Double                        |
-| `%Lf`                  | Long double                   |
-| `%lu`                  | Unsigned int or unsigned long |
-| `%lli` or `%lld`       | Long long                     |
-| `%llu`                 | Unsigned long long            |
-| `%o`                   | Octal representation          |
-| `%p`                   | Pointer                       |
-| `%s`                   | String                        |
-| `%u`                   | Unsigned int                  |
-| `%x` or `%X`           | Hexadecimal representation    |
-| `%n`                   | Prints nothing                |
-| `%%`                   | Prints `%` character          |
-
-These are the basic format specifiers. We can add some other parts with the format specifiers. These are like below −
-
-- A minus symbol (`-`) sign tells left alignment
-
-- A number after `%` specifies the minimum field width. If string is less than the width, it will be filled with spaces
-
-- A period (`.`) is used to separate field width and precision
-
----
-
-## Comments
-
-Lines that are not executed. It used only for understanding by the programmers or users.
-
-`//` is used to comment a single line
-
-`/**/` - comment multiple lines
-
-```c
-// single line comment
-/*
-This is used to comment multiple lines
-*/
-```
 
 [Next](<Intro_to_C(2).md>)

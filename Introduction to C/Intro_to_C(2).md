@@ -10,272 +10,11 @@ prev: Intro_to_C(1).html
 
 [TOC]
 
-## Input
+## Tokens - Continued
 
-```c
-scanf("format specifier", &identifier);
-```
+For details on tokens, check [part 1](<Intro_to_C(1).md>)
 
-The format specifiers are as listed for `printf`. It is to be noted that for all format specifiers except `%c`, the input is taken till the next character < space (in terms ASCII value), mostly `\n` or space (`' '`)
-
----
-
-## Operators
-
-Used to perform arithmetic and logical operations.
-
-### Types
-
-1. Arithmetic
-2. Relational
-3. Logical
-4. Bitwise
-5. Assignment
-6. Miscellaneous Operators
-
-#### 1. Arithmetic
-
-Perform arithmetic operations
-
-| Operator | Description                 | Example        |
-| -------- | --------------------------- | -------------- |
-| `+`      | Addition                    | 2 `+` 3 `=` 5  |
-| `-`      | Subtraction                 | 2 `-` 3 `=` -1 |
-| `*`      | Multiplication              | 2 `*` 3 `=` 6  |
-| `/`      | Division (returns quotient) | 2 `/` 3 `=` 0  |
-| `%`      | Modulo (returns remainder)  | 2 `%` 3 `=` 2  |
-| `++`     | Increment operator          | `++2` or `2++` |
-| `--`     | Decrement operator          | `--3` or `3--` |
-
-#### 2. Relational
-
-Relations between two variables
-
-| Operator | Description      | Example  |
-| -------- | ---------------- | -------- |
-| `==`     | Equal            | a `==` b |
-| `!=`     | Not Equal        | a `!=` b |
-| `>`      | Greater          | a `>` b  |
-| `>=`     | Greater or Equal | a `>=` b |
-| `<`      | Lesser           | a `<` b  |
-| `<=`     | Lesser or Equal  | a `<=` b |
-
-#### 3. Logical
-
-Perform Logical operations
-
-| Operator     | Description            |
-| ------------ | ---------------------- |
-| `&&`         | Logical Operator `AND` |
-| &#124;&#124; | Logical Operator `OR`  |
-| `!`          | Logical operator `NOT` |
-
-#### 4. Bitwise
-
-Perform bitwise operations. This class of operators takes the binary form of each integer, and applies the operator of respective bits.
-
-The binary forms are padded by `0` on the left to compensate the differences in number of bits to represent each value.
-
-| Operator | Description                                            | Syntax     | Example    |
-| -------- | ------------------------------------------------------ | ---------- | ---------- |
-| `&`      | Bitwise AND                                            | x `&` y    | 5 `&` 2    |
-| &#124;   | Bitwise OR                                             | x &#124; y | 5 &#124; 3 |
-| `~`      | Bitwise NOT                                            | `~x`       | `~1`       |
-| `^`      | Bitwise XOR                                            | x `^` y    | 6 `^` 1    |
-| `<<`     | Shifts y bits in x to the left (Left shift operator)   | x `<<` y   | 10 `<<` 2  |
-| `>>`     | Shifts y bits in x to the right (Right Shift Operator) | x `>>` y   | 15 `>>` 2  |
-
-**1. Bitwise AND (`&`):**
-
-It applies Binary `AND` operation to every bit.
-
-Eg:
-
-```c
-5 & 2 = 0
-
-   5  = 101
-   2  = 010 // Padding zeroes on left
-5 & 2 = 000 = 0
-```
-
-**2. Bitwise OR (`|`):**
-
-It applies the Bitwise `OR` operation to every bit
-
-Eg:
-
-```c
-5 | 3 = 7
-
-   5  = 101
-   3  = 011 // Padding zeroes on left
-5 | 3 = 111 = 7
-```
-
-**3. Bitwise NOT (`~`):**
-
-It applies the negation/complement/ `NOT` operation. Additional to flipping the bits, it changes sign.
-
-Eg:
-
-```c
-~5 = 2
-
-   5  = 101
-   ~5 = 010 = 2
-```
-
-**Anomaly in `C`:**
-
-The bitwise complement operator acts differently in `C`.
-
-Instead of flipping the bits, it provides 2's complement of the number.
-
-Two's complement is an operation on binary numbers. The 2's complement of a number is equal to the negative of the number plus 1, i.e.,
-
-```txt
-~N = -(N + 1)
-```
-
-So,
-
-```c
-~5 = -(5 + 1) = -6
-```
-
-**4. Bitwise XOR (`^`):**
-
-It applies the `Exclusive OR` (`XOR`) operation for each bit.
-
-Eg:
-
-```c
-6 ^ 2 = 4
-
-   6  = 110
-   2  = 010 // Padding zeroes on left
-6 ^ 1 = 100 = 4
-```
-
-**5. Left Shift Operator (`<<`):**
-
-Shifts the bits to the left by adding trailing zeros and removing start bits (MSB) which overflows.
-
-Eg:
-
-```c
-5 << 2 = 20
-5  = 101
-5 << 2 = 10100 = 20
-
-```
-
-**6. Right Shift Operator (`>>`):**
-
-Shifts the bits to the right by adding leading zeroes and removing End bits (LSB).
-
-Eg:
-
-```c
-15 >> 2 = 0
-15  = 1111
-15 >> 2 = 0011 = 3
-```
-
-#### 5. Assignment
-
-Assigns value to a variable
-
-| Operator | Description              | Example   |
-| -------- | ------------------------ | --------- |
-| `=`      | Assign                   | c `=` 30  |
-| `+=`     | Add and assign           | a `+=` b  |
-| `-=`     | Subtract and assign      | a `-=` b  |
-| `*=`     | Multiply and assign      | a `*=` b  |
-| `/=`     | Divide and assign        | a `/=` b  |
-| `%=`     | Get remainder and assign | a `%=` b  |
-| `<<=`    | Left Shift and assign    | a `<<=` b |
-| `>>=`    | Right Shift and assign   | a `>>=` b |
-| `&=`     | Bitwise AND and assign   | a `&=` b  |
-| &#124;=  | Bitwise OR and assign    | a \| = b  |
-| `^=`     | Bitwise XOR and assign   | a `^=` b  |
-
-#### 6. Miscellaneous Operators
-
-Besides the operators discussed above, there are a few other important operators supported by C language
-
-| Operator | Description                                        | Example               |
-| -------- | -------------------------------------------------- | --------------------- |
-| `&`      | Address Operator (returns Address of a identifier) | `&a`                  |
-| `*`      | Pointer to a variable / Dereferencing operator     | `*a`                  |
-| `?`      | Ternary Operator                                   | `condition? a: b`     |
-| `.`      | dot operator                                       | `var1.var2`           |
-| `->`     | Arrow or Member access operator                    | `(pointer)->(member)` |
-| `,`      | Comma operator                                     | `a, b`                |
-
-> Check pointers topic for more details on dereferencing operator and address operator
-
-#### Dot operator
-
-The dot ( `.` ) operator is used for direct member selection via object name. In other words, it is used to access the child object/variable.
-
-**Syntax:**
-
-```c
-<variable_name>.<member_name>
-```
-
-> The dot and arrow operator will be addressed in structures and unions.
-
-#### Comma operator
-
-The comma token (`,`) acts as both a separator and an operator.
-
-The comma operator is used to evaluate multiple expressions in the same statement.
-
-**Syntax:**
-
-```c
-(expression1, expression2, expression3, ...)
-```
-
-When used inside a parenthesis, the expressions separated by comma are evaluated sequentially, the result being the result of last expression.
-
-Eg:
-
-```c
-#include<stdio.h>
-
-int main() {
-   int x = 10, y = 20;
-   int a = (x--, y + 2);
-
-   printf("x = %d, y = %d, a = %d", x, y, a);
-}
-```
-
-Output:
-
-```txt
-x = 9, y = 20, a = 22
-```
-
-### `sizeof()` operation
-
-The `sizeof` function is a builtin function available in `stdio.h` header file. It returns an integer indicating the size of memory in bytes, allocated to the specific variable.
-
-**Syntax:**
-
-```c
-sizeof(<variable_name>);
-// or
-sizeof(<type>);
-```
-
----
-
-## Operator Precedence
+### Operator Precedence
 
 Operator precedence determines the grouping of terms in an expression and decides how an expression is evaluated. Certain operators have higher precedence than others; for example, the multiplication operator has a higher precedence than the addition operator.
 
@@ -301,6 +40,24 @@ Operator precedence determines the grouping of terms in an expression and decide
 
 ---
 
+### Special Symbols
+
+The following special symbols are used in C having some special meaning and thus, cannot be used for some other purpose.
+
+`[] () {} , ; * = #`
+
+1. **Brackets `[]`:** Opening and closing brackets are used as array element reference. These indicate single and multidimensional subscripts
+2. **Parentheses `()`:** These special symbols are used to indicate function calls and function parameters.
+3. **Braces `{}`:** These opening and ending curly braces mark the start and end of a block of code containing more than one executable statement.
+4. **Comma (`,`):** It is used to separate more than one statements like for separating parameters in function calls.
+5. **Colon (`:`):** It is an operator that essentially invokes something called an initialization list.
+6. **Semicolon (`;`):** It is known as a statement terminator.  It indicates the end of one logical entity. That’s why each individual statement must be ended with a semicolon.
+7. **Asterisk (`*`):** It is used to create a pointer variable and  for the multiplication of variables.
+8. **Assignment operator (`=`):** It is used to assign values and for the logical operation validation.
+9. **Pre-processor (`#`):** The preprocessor is a macro processor that is used automatically by the compiler to transform your program before actual compilation.
+
+---
+
 ## Expressions
 
 A statement that gives a finite value.
@@ -313,6 +70,154 @@ Types:
    Example: + 12 23
 3. Postfix expressions:  
    Example: 12 23 +
+
+---
+
+## Output handling or Printing out statements/Values to user
+
+In most cases, we made need to show values or status of the program during the program execution.
+
+### `printf` statement
+
+It is usually done by using the `printf` statement.
+
+**Syntax:**
+
+```c
+printf("format specifier", identifier or expression);
+printf("statement");
+```
+
+#### Format Specifiers
+
+1. `%d` - integer (int)
+2. `%f` - float
+3. `%c` - character (char)
+4. `%s` - string (str)
+5. `%lf` - double
+
+[Writing your first Program - printing "Hello World"](Hello_world.c)
+
+Printing out values by functions like `putc`, `puts`, `fputc`, `fputs`, etc. will be dealt with later.
+
+---
+
+### Modifiers
+
+Modifiers are key words that modify the default state of `int` and `char` data types. There are 4 modifiers in `C`:
+
+1. short
+2. long
+3. signed
+4. unsigned
+
+**1. `short`:**
+
+It limits user to store small integer values from `-32768` to `32767`. It can be used only on `int` data type.
+
+```c
+short int myShortInt = 10;
+```
+
+**2. `long`:**
+
+It allows storage of large value than default limit for `int`. Tt can be use once or twice to mention the limits.
+
+```c
+long int myLongInt;
+long myLongerInt;
+long long myLongLongInt;
+```
+
+**3. `signed`:**
+
+It is default modifier of `int` and `char` data type if no modifier is specified. It says that user can store negative and positive values.
+
+```c
+int myValue = -289;
+signed int myValues = -544;
+```
+
+**4. `unsigned`:**
+
+When user intends to store only positive values in the given data type (`int` and `char`).
+
+```c
+unsigned int myVal = 10;
+```
+
+To check the limitations of the modifiers, check [Part 3](<Intro_to_c(3).md>)
+
+---
+
+### List of Format specifiers
+
+Having understood the modifiers in C, we can look at the complete list of format specifiers.
+
+| Format Specifier       | Type                          |
+| ---------------------- | ----------------------------- |
+| `%c`                   | Character                     |
+| `%d`                   | Signed integer                |
+| `%e` or `%E`           | Scientific notation of floats |
+| `%f`                   | Float values                  |
+| `%g` or `%G`           | Similar as `%e` or `%E`       |
+| `%hi`                  | Signed integer (`short`)      |
+| `%hu`                  | Unsigned Integer (`short`)    |
+| `%i`                   | Unsigned integer              |
+| `%l` or `%ld` or `%li` | Long or `long int`            |
+| `%lf`                  | Double                        |
+| `%Lf`                  | Long double                   |
+| `%lu`                  | Unsigned int or unsigned long |
+| `%lli` or `%lld`       | Long long                     |
+| `%llu`                 | Unsigned long long            |
+| `%o`                   | Octal representation          |
+| `%p`                   | Pointer                       |
+| `%s`                   | String                        |
+| `%u`                   | Unsigned int                  |
+| `%x` or `%X`           | Hexadecimal representation    |
+| `%n`                   | Prints nothing                |
+| `%%`                   | Prints `%` character          |
+
+The above are the basic format specifiers. We can add some other parts with the format specifiers for custom formatting. These are like below:
+
+- A minus symbol (`-`) sign tells left alignment
+
+- A number after `%` specifies the minimum field width. If string is less than the width, it will be filled with spaces
+
+- A period (`.`) is used to separate field width and precision
+
+---
+
+## Comments
+
+Lines that are not executed. It used only for understanding by the programmers or users.
+
+`//` is used to comment a single line
+
+`/**/` - comment multiple lines
+
+`/***/` - Documentation
+
+```c
+// single line comment
+/*
+This is used to comment multiple lines
+*/
+
+/**
+ * Documentation String
+ */
+```
+
+---
+
+## Input handling / Getting input from user
+
+```c
+scanf("format specifier", &identifier);
+```
+
+The format specifiers are as listed for `printf` [part 1](<Intro_to_C(1).md>). It is to be noted that for all format specifiers except `%c`, the input is taken till the next character < space (in terms ASCII value), mostly `\n` or space (`' '`)
 
 ---
 
@@ -333,7 +238,7 @@ Few special characters defined under ASCII for formatting strings/output. The `\
 | \a       | bell                        |
 | \v       | vertical tab                |
 
-### Type casting and conversion
+## Type casting and conversion
 
 Converting one datatype into another is known as **type casting** or, **type-conversion**. For example, if you want to store a 'long' value into a simple integer then you can type cast `long` to `int`.
 
@@ -342,7 +247,7 @@ It happens in two ways:
 1. Automatic type conversion
 2. Forced type conversion / type casting
 
-#### Type Conversion (Automatic)
+### Type Conversion (Automatic)
 
 At points, we use some operation that needs values in different type than defined. The compiler, by default, converts the data type automatically to support the expression.
 
@@ -383,7 +288,7 @@ int main() {
    float sum;
 
    sum = i + c;
-   printf("Value of sum : %f\n", sum );
+   printf("Value of sum : %f\n", sum);
    return 0;
 }
 ```
@@ -396,14 +301,14 @@ Value of sum : 116.000000
 
 Here, it is simple to understand that first c gets converted to integer, but as the final value is `float`, usual arithmetic conversion applies and the compiler converts `i` and `c` into `float` and adds them yielding a `float` result.
 
-#### Type casting
+### Type casting
 
 To have custom type conversion that are not supported by default, we do type casting.
 
 **Syntax:**
 
 ```c
-(type_name) expression
+(typeName) expression
 ```
 
 Eg:

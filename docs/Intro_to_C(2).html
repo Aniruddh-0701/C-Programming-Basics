@@ -43,7 +43,6 @@
 </head>
 
 <body>
-
     <div class="head-foot">
         
         <a href="Intro_to_C(1).html" class="hf-elements">Prev</a>
@@ -60,25 +59,24 @@
 <div class="toc">
 <ul>
 <li><a href="#introduction-to-c-part-2">Introduction to C - Part 2</a><ul>
-<li><a href="#input">Input</a></li>
-<li><a href="#operators">Operators</a><ul>
-<li><a href="#types">Types</a><ul>
-<li><a href="#1-arithmetic">1. Arithmetic</a></li>
-<li><a href="#2-relational">2. Relational</a></li>
-<li><a href="#3-logical">3. Logical</a></li>
-<li><a href="#4-bitwise">4. Bitwise</a></li>
-<li><a href="#5-assignment">5. Assignment</a></li>
-<li><a href="#6-miscellaneous-operators">6. Miscellaneous Operators</a></li>
-<li><a href="#dot-operator">Dot operator</a></li>
-<li><a href="#comma-operator">Comma operator</a></li>
-</ul>
-</li>
-<li><a href="#sizeof-operation">sizeof() operation</a></li>
-</ul>
-</li>
+<li><a href="#tokens-continued">Tokens - Continued</a><ul>
 <li><a href="#operator-precedence">Operator Precedence</a></li>
+<li><a href="#special-symbols">Special Symbols</a></li>
+</ul>
+</li>
 <li><a href="#expressions">Expressions</a></li>
-<li><a href="#escape-sequences">Escape Sequences</a><ul>
+<li><a href="#output-handling-or-printing-out-statementsvalues-to-user">Output handling or Printing out statements/Values to user</a><ul>
+<li><a href="#printf-statement">printf statement</a><ul>
+<li><a href="#format-specifiers">Format Specifiers</a></li>
+</ul>
+</li>
+<li><a href="#modifiers">Modifiers</a></li>
+<li><a href="#list-of-format-specifiers">List of Format specifiers</a></li>
+</ul>
+</li>
+<li><a href="#comments">Comments</a></li>
+<li><a href="#input-handling-getting-input-from-user">Input handling / Getting input from user</a></li>
+<li><a href="#escape-sequences">Escape Sequences</a></li>
 <li><a href="#type-casting-and-conversion">Type casting and conversion</a><ul>
 <li><a href="#type-conversion-automatic">Type Conversion (Automatic)</a></li>
 <li><a href="#type-casting">Type casting</a></li>
@@ -87,401 +85,10 @@
 </ul>
 </li>
 </ul>
-</li>
-</ul>
 </div>
-<h2 id="input">Input</h2>
-<pre><code class="language-c">scanf(&quot;format specifier&quot;, &amp;identifier);
-</code></pre>
-<p>The format specifiers are as listed for <code>printf</code>. It is to be noted that for all format specifiers except <code>%c</code>, the input is taken till the next character &lt; space (in terms ASCII value), mostly <code>\n</code> or space (<code>' '</code>)</p>
-<hr>
-<h2 id="operators">Operators</h2>
-<p>Used to perform arithmetic and logical operations.</p>
-<h3 id="types">Types</h3>
-<ol>
-<li>Arithmetic</li>
-<li>Relational</li>
-<li>Logical</li>
-<li>Bitwise</li>
-<li>Assignment</li>
-<li>Miscellaneous Operators</li>
-</ol>
-<h4 id="1-arithmetic">1. Arithmetic</h4>
-<p>Perform arithmetic operations</p>
-<table>
-<thead>
-<tr>
-<th>Operator</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>+</code></td>
-<td>Addition</td>
-<td>2 <code>+</code> 3 <code>=</code> 5</td>
-</tr>
-<tr>
-<td><code>-</code></td>
-<td>Subtraction</td>
-<td>2 <code>-</code> 3 <code>=</code> -1</td>
-</tr>
-<tr>
-<td><code>*</code></td>
-<td>Multiplication</td>
-<td>2 <code>*</code> 3 <code>=</code> 6</td>
-</tr>
-<tr>
-<td><code>/</code></td>
-<td>Division (returns quotient)</td>
-<td>2 <code>/</code> 3 <code>=</code> 0</td>
-</tr>
-<tr>
-<td><code>%</code></td>
-<td>Modulo (returns remainder)</td>
-<td>2 <code>%</code> 3 <code>=</code> 2</td>
-</tr>
-<tr>
-<td><code>++</code></td>
-<td>Increment operator</td>
-<td><code>++2</code> or <code>2++</code></td>
-</tr>
-<tr>
-<td><code>--</code></td>
-<td>Decrement operator</td>
-<td><code>--3</code> or <code>3--</code></td>
-</tr>
-</tbody>
-</table>
-<h4 id="2-relational">2. Relational</h4>
-<p>Relations between two variables</p>
-<table>
-<thead>
-<tr>
-<th>Operator</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>==</code></td>
-<td>Equal</td>
-<td>a <code>==</code> b</td>
-</tr>
-<tr>
-<td><code>!=</code></td>
-<td>Not Equal</td>
-<td>a <code>!=</code> b</td>
-</tr>
-<tr>
-<td><code>&gt;</code></td>
-<td>Greater</td>
-<td>a <code>&gt;</code> b</td>
-</tr>
-<tr>
-<td><code>&gt;=</code></td>
-<td>Greater or Equal</td>
-<td>a <code>&gt;=</code> b</td>
-</tr>
-<tr>
-<td><code>&lt;</code></td>
-<td>Lesser</td>
-<td>a <code>&lt;</code> b</td>
-</tr>
-<tr>
-<td><code>&lt;=</code></td>
-<td>Lesser or Equal</td>
-<td>a <code>&lt;=</code> b</td>
-</tr>
-</tbody>
-</table>
-<h4 id="3-logical">3. Logical</h4>
-<p>Perform Logical operations</p>
-<table>
-<thead>
-<tr>
-<th>Operator</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>&amp;&amp;</code></td>
-<td>Logical Operator <code>AND</code></td>
-</tr>
-<tr>
-<td>&#124;&#124;</td>
-<td>Logical Operator <code>OR</code></td>
-</tr>
-<tr>
-<td><code>!</code></td>
-<td>Logical operator <code>NOT</code></td>
-</tr>
-</tbody>
-</table>
-<h4 id="4-bitwise">4. Bitwise</h4>
-<p>Perform bitwise operations. This class of operators takes the binary form of each integer, and applies the operator of respective bits.</p>
-<p>The binary forms are padded by <code>0</code> on the left to compensate the differences in number of bits to represent each value.</p>
-<table>
-<thead>
-<tr>
-<th>Operator</th>
-<th>Description</th>
-<th>Syntax</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>&amp;</code></td>
-<td>Bitwise AND</td>
-<td>x <code>&amp;</code> y</td>
-<td>5 <code>&amp;</code> 2</td>
-</tr>
-<tr>
-<td>&#124;</td>
-<td>Bitwise OR</td>
-<td>x &#124; y</td>
-<td>5 &#124; 3</td>
-</tr>
-<tr>
-<td><code>~</code></td>
-<td>Bitwise NOT</td>
-<td><code>~x</code></td>
-<td><code>~1</code></td>
-</tr>
-<tr>
-<td><code>^</code></td>
-<td>Bitwise XOR</td>
-<td>x <code>^</code> y</td>
-<td>6 <code>^</code> 1</td>
-</tr>
-<tr>
-<td><code>&lt;&lt;</code></td>
-<td>Shifts y bits in x to the left (Left shift operator)</td>
-<td>x <code>&lt;&lt;</code> y</td>
-<td>10 <code>&lt;&lt;</code> 2</td>
-</tr>
-<tr>
-<td><code>&gt;&gt;</code></td>
-<td>Shifts y bits in x to the right (Right Shift Operator)</td>
-<td>x <code>&gt;&gt;</code> y</td>
-<td>15 <code>&gt;&gt;</code> 2</td>
-</tr>
-</tbody>
-</table>
-<p><strong>1. Bitwise AND (<code>&amp;</code>):</strong></p>
-<p>It applies Binary <code>AND</code> operation to every bit.</p>
-<p>Eg:</p>
-<pre><code class="language-c">5 &amp; 2 = 0
-
-   5  = 101
-   2  = 010 // Padding zeroes on left
-5 &amp; 2 = 000 = 0
-</code></pre>
-<p><strong>2. Bitwise OR (<code>|</code>):</strong></p>
-<p>It applies the Bitwise <code>OR</code> operation to every bit</p>
-<p>Eg:</p>
-<pre><code class="language-c">5 | 3 = 7
-
-   5  = 101
-   3  = 011 // Padding zeroes on left
-5 | 3 = 111 = 7
-</code></pre>
-<p><strong>3. Bitwise NOT (<code>~</code>):</strong></p>
-<p>It applies the negation/complement/ <code>NOT</code> operation. Additional to flipping the bits, it changes sign.</p>
-<p>Eg:</p>
-<pre><code class="language-c">~5 = 2
-
-   5  = 101
-   ~5 = 010 = 2
-</code></pre>
-<p><strong>Anomaly in <code>C</code>:</strong></p>
-<p>The bitwise complement operator acts differently in <code>C</code>.</p>
-<p>Instead of flipping the bits, it provides 2&rsquo;s complement of the number.</p>
-<p>Two&rsquo;s complement is an operation on binary numbers. The 2&rsquo;s complement of a number is equal to the negative of the number plus 1, i.e.,</p>
-<pre><code class="language-txt">~N = -(N + 1)
-</code></pre>
-<p>So,</p>
-<pre><code class="language-c">~5 = -(5 + 1) = -6
-</code></pre>
-<p><strong>4. Bitwise XOR (<code>^</code>):</strong></p>
-<p>It applies the <code>Exclusive OR</code> (<code>XOR</code>) operation for each bit.</p>
-<p>Eg:</p>
-<pre><code class="language-c">6 ^ 2 = 4
-
-   6  = 110
-   2  = 010 // Padding zeroes on left
-6 ^ 1 = 100 = 4
-</code></pre>
-<p><strong>5. Left Shift Operator (<code>&lt;&lt;</code>):</strong></p>
-<p>Shifts the bits to the left by adding trailing zeros and removing start bits (MSB) which overflows.</p>
-<p>Eg:</p>
-<pre><code class="language-c">5 &lt;&lt; 2 = 20
-5  = 101
-5 &lt;&lt; 2 = 10100 = 20
-
-</code></pre>
-<p><strong>6. Right Shift Operator (<code>&gt;&gt;</code>):</strong></p>
-<p>Shifts the bits to the right by adding leading zeroes and removing End bits (LSB).</p>
-<p>Eg:</p>
-<pre><code class="language-c">15 &gt;&gt; 2 = 0
-15  = 1111
-15 &gt;&gt; 2 = 0011 = 3
-</code></pre>
-<h4 id="5-assignment">5. Assignment</h4>
-<p>Assigns value to a variable</p>
-<table>
-<thead>
-<tr>
-<th>Operator</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>=</code></td>
-<td>Assign</td>
-<td>c <code>=</code> 30</td>
-</tr>
-<tr>
-<td><code>+=</code></td>
-<td>Add and assign</td>
-<td>a <code>+=</code> b</td>
-</tr>
-<tr>
-<td><code>-=</code></td>
-<td>Subtract and assign</td>
-<td>a <code>-=</code> b</td>
-</tr>
-<tr>
-<td><code>*=</code></td>
-<td>Multiply and assign</td>
-<td>a <code>*=</code> b</td>
-</tr>
-<tr>
-<td><code>/=</code></td>
-<td>Divide and assign</td>
-<td>a <code>/=</code> b</td>
-</tr>
-<tr>
-<td><code>%=</code></td>
-<td>Get remainder and assign</td>
-<td>a <code>%=</code> b</td>
-</tr>
-<tr>
-<td><code>&lt;&lt;=</code></td>
-<td>Left Shift and assign</td>
-<td>a <code>&lt;&lt;=</code> b</td>
-</tr>
-<tr>
-<td><code>&gt;&gt;=</code></td>
-<td>Right Shift and assign</td>
-<td>a <code>&gt;&gt;=</code> b</td>
-</tr>
-<tr>
-<td><code>&amp;=</code></td>
-<td>Bitwise AND and assign</td>
-<td>a <code>&amp;=</code> b</td>
-</tr>
-<tr>
-<td>&#124;=</td>
-<td>Bitwise OR and assign</td>
-<td>a | = b</td>
-</tr>
-<tr>
-<td><code>^=</code></td>
-<td>Bitwise XOR and assign</td>
-<td>a <code>^=</code> b</td>
-</tr>
-</tbody>
-</table>
-<h4 id="6-miscellaneous-operators">6. Miscellaneous Operators</h4>
-<p>Besides the operators discussed above, there are a few other important operators supported by C language</p>
-<table>
-<thead>
-<tr>
-<th>Operator</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>&amp;</code></td>
-<td>Address Operator (returns Address of a identifier)</td>
-<td><code>&amp;a</code></td>
-</tr>
-<tr>
-<td><code>*</code></td>
-<td>Pointer to a variable / Dereferencing operator</td>
-<td><code>*a</code></td>
-</tr>
-<tr>
-<td><code>?</code></td>
-<td>Ternary Operator</td>
-<td><code>condition? a: b</code></td>
-</tr>
-<tr>
-<td><code>.</code></td>
-<td>dot operator</td>
-<td><code>var1.var2</code></td>
-</tr>
-<tr>
-<td><code>-&gt;</code></td>
-<td>Arrow or Member access operator</td>
-<td><code>(pointer)-&gt;(member)</code></td>
-</tr>
-<tr>
-<td><code>,</code></td>
-<td>Comma operator</td>
-<td><code>a, b</code></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>Check pointers topic for more details on dereferencing operator and address operator</p>
-</blockquote>
-<h4 id="dot-operator">Dot operator</h4>
-<p>The dot ( <code>.</code> ) operator is used for direct member selection via object name. In other words, it is used to access the child object/variable.</p>
-<p><strong>Syntax:</strong></p>
-<pre><code class="language-c">&lt;variable_name&gt;.&lt;member_name&gt;
-</code></pre>
-<blockquote>
-<p>The dot and arrow operator will be addressed in structures and unions.</p>
-</blockquote>
-<h4 id="comma-operator">Comma operator</h4>
-<p>The comma token (<code>,</code>) acts as both a separator and an operator.</p>
-<p>The comma operator is used to evaluate multiple expressions in the same statement.</p>
-<p><strong>Syntax:</strong></p>
-<pre><code class="language-c">(expression1, expression2, expression3, ...)
-</code></pre>
-<p>When used inside a parenthesis, the expressions separated by comma are evaluated sequentially, the result being the result of last expression.</p>
-<p>Eg:</p>
-<pre><code class="language-c">#include&lt;stdio.h&gt;
-
-int main() {
-   int x = 10, y = 20;
-   int a = (x--, y + 2);
-
-   printf(&quot;x = %d, y = %d, a = %d&quot;, x, y, a);
-}
-</code></pre>
-<p>Output:</p>
-<pre><code class="language-txt">x = 9, y = 20, a = 22
-</code></pre>
-<h3 id="sizeof-operation"><code>sizeof()</code> operation</h3>
-<p>The <code>sizeof</code> function is a builtin function available in <code>stdio.h</code> header file. It returns an integer indicating the size of memory in bytes, allocated to the specific variable.</p>
-<p><strong>Syntax:</strong></p>
-<pre><code class="language-c">sizeof(&lt;variable_name&gt;);
-// or
-sizeof(&lt;type&gt;);
-</code></pre>
-<hr>
-<h2 id="operator-precedence">Operator Precedence</h2>
+<h2 id="tokens-continued">Tokens - Continued</h2>
+<p>For details on tokens, check <a href="Intro_to_C(1).html">part 1</a></p>
+<h3 id="operator-precedence">Operator Precedence</h3>
 <p>Operator precedence determines the grouping of terms in an expression and decides how an expression is evaluated. Certain operators have higher precedence than others; for example, the multiplication operator has a higher precedence than the addition operator.</p>
 <table>
 <thead>
@@ -573,6 +180,21 @@ sizeof(&lt;type&gt;);
 <p><code>(type)</code> means type casting operation</p>
 </blockquote>
 <hr>
+<h3 id="special-symbols">Special Symbols</h3>
+<p>The following special symbols are used in C having some special meaning and thus, cannot be used for some other purpose.</p>
+<p><code>[] () {} , ; * = #</code></p>
+<ol>
+<li><strong>Brackets <code>[]</code>:</strong> Opening and closing brackets are used as array element reference. These indicate single and multidimensional subscripts</li>
+<li><strong>Parentheses <code>()</code>:</strong> These special symbols are used to indicate function calls and function parameters.</li>
+<li><strong>Braces <code>{}</code>:</strong> These opening and ending curly braces mark the start and end of a block of code containing more than one executable statement.</li>
+<li><strong>Comma (<code>,</code>):</strong> It is used to separate more than one statements like for separating parameters in function calls.</li>
+<li><strong>Colon (<code>:</code>):</strong> It is an operator that essentially invokes something called an initialization list.</li>
+<li><strong>Semicolon (<code>;</code>):</strong> It is known as a statement terminator.  It indicates the end of one logical entity. That’s why each individual statement must be ended with a semicolon.</li>
+<li><strong>Asterisk (<code>*</code>):</strong> It is used to create a pointer variable and  for the multiplication of variables.</li>
+<li><strong>Assignment operator (<code>=</code>):</strong> It is used to assign values and for the logical operation validation.</li>
+<li><strong>Pre-processor (<code>#</code>):</strong> The preprocessor is a macro processor that is used automatically by the compiler to transform your program before actual compilation.</li>
+</ol>
+<hr>
 <h2 id="expressions">Expressions</h2>
 <p>A statement that gives a finite value.</p>
 <p>Types:</p>
@@ -584,6 +206,183 @@ sizeof(&lt;type&gt;);
 <li>Postfix expressions:<br>
    Example: 12 23 +</li>
 </ol>
+<hr>
+<h2 id="output-handling-or-printing-out-statementsvalues-to-user">Output handling or Printing out statements/Values to user</h2>
+<p>In most cases, we made need to show values or status of the program during the program execution.</p>
+<h3 id="printf-statement"><code>printf</code> statement</h3>
+<p>It is usually done by using the <code>printf</code> statement.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-c">printf(&quot;format specifier&quot;, identifier or expression);
+printf(&quot;statement&quot;);
+</code></pre>
+<h4 id="format-specifiers">Format Specifiers</h4>
+<ol>
+<li><code>%d</code> - integer (int)</li>
+<li><code>%f</code> - float</li>
+<li><code>%c</code> - character (char)</li>
+<li><code>%s</code> - string (str)</li>
+<li><code>%lf</code> - double</li>
+</ol>
+<p><a href="Hello_world.c">Writing your first Program - printing &ldquo;Hello World&rdquo;</a></p>
+<p>Printing out values by functions like <code>putc</code>, <code>puts</code>, <code>fputc</code>, <code>fputs</code>, etc. will be dealt with later.</p>
+<hr>
+<h3 id="modifiers">Modifiers</h3>
+<p>Modifiers are key words that modify the default state of <code>int</code> and <code>char</code> data types. There are 4 modifiers in <code>C</code>:</p>
+<ol>
+<li>short</li>
+<li>long</li>
+<li>signed</li>
+<li>unsigned</li>
+</ol>
+<p><strong>1. <code>short</code>:</strong></p>
+<p>It limits user to store small integer values from <code>-32768</code> to <code>32767</code>. It can be used only on <code>int</code> data type.</p>
+<pre><code class="language-c">short int myShortInt = 10;
+</code></pre>
+<p><strong>2. <code>long</code>:</strong></p>
+<p>It allows storage of large value than default limit for <code>int</code>. Tt can be use once or twice to mention the limits.</p>
+<pre><code class="language-c">long int myLongInt;
+long myLongerInt;
+long long myLongLongInt;
+</code></pre>
+<p><strong>3. <code>signed</code>:</strong></p>
+<p>It is default modifier of <code>int</code> and <code>char</code> data type if no modifier is specified. It says that user can store negative and positive values.</p>
+<pre><code class="language-c">int myValue = -289;
+signed int myValues = -544;
+</code></pre>
+<p><strong>4. <code>unsigned</code>:</strong></p>
+<p>When user intends to store only positive values in the given data type (<code>int</code> and <code>char</code>).</p>
+<pre><code class="language-c">unsigned int myVal = 10;
+</code></pre>
+<p>To check the limitations of the modifiers, check <a href="Intro_to_c(3).html">Part 3</a></p>
+<hr>
+<h3 id="list-of-format-specifiers">List of Format specifiers</h3>
+<p>Having understood the modifiers in C, we can look at the complete list of format specifiers.</p>
+<table>
+<thead>
+<tr>
+<th>Format Specifier</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>%c</code></td>
+<td>Character</td>
+</tr>
+<tr>
+<td><code>%d</code></td>
+<td>Signed integer</td>
+</tr>
+<tr>
+<td><code>%e</code> or <code>%E</code></td>
+<td>Scientific notation of floats</td>
+</tr>
+<tr>
+<td><code>%f</code></td>
+<td>Float values</td>
+</tr>
+<tr>
+<td><code>%g</code> or <code>%G</code></td>
+<td>Similar as <code>%e</code> or <code>%E</code></td>
+</tr>
+<tr>
+<td><code>%hi</code></td>
+<td>Signed integer (<code>short</code>)</td>
+</tr>
+<tr>
+<td><code>%hu</code></td>
+<td>Unsigned Integer (<code>short</code>)</td>
+</tr>
+<tr>
+<td><code>%i</code></td>
+<td>Unsigned integer</td>
+</tr>
+<tr>
+<td><code>%l</code> or <code>%ld</code> or <code>%li</code></td>
+<td>Long or <code>long int</code></td>
+</tr>
+<tr>
+<td><code>%lf</code></td>
+<td>Double</td>
+</tr>
+<tr>
+<td><code>%Lf</code></td>
+<td>Long double</td>
+</tr>
+<tr>
+<td><code>%lu</code></td>
+<td>Unsigned int or unsigned long</td>
+</tr>
+<tr>
+<td><code>%lli</code> or <code>%lld</code></td>
+<td>Long long</td>
+</tr>
+<tr>
+<td><code>%llu</code></td>
+<td>Unsigned long long</td>
+</tr>
+<tr>
+<td><code>%o</code></td>
+<td>Octal representation</td>
+</tr>
+<tr>
+<td><code>%p</code></td>
+<td>Pointer</td>
+</tr>
+<tr>
+<td><code>%s</code></td>
+<td>String</td>
+</tr>
+<tr>
+<td><code>%u</code></td>
+<td>Unsigned int</td>
+</tr>
+<tr>
+<td><code>%x</code> or <code>%X</code></td>
+<td>Hexadecimal representation</td>
+</tr>
+<tr>
+<td><code>%n</code></td>
+<td>Prints nothing</td>
+</tr>
+<tr>
+<td><code>%%</code></td>
+<td>Prints <code>%</code> character</td>
+</tr>
+</tbody>
+</table>
+<p>The above are the basic format specifiers. We can add some other parts with the format specifiers for custom formatting. These are like below:</p>
+<ul>
+<li>
+<p>A minus symbol (<code>-</code>) sign tells left alignment</p>
+</li>
+<li>
+<p>A number after <code>%</code> specifies the minimum field width. If string is less than the width, it will be filled with spaces</p>
+</li>
+<li>
+<p>A period (<code>.</code>) is used to separate field width and precision</p>
+</li>
+</ul>
+<hr>
+<h2 id="comments">Comments</h2>
+<p>Lines that are not executed. It used only for understanding by the programmers or users.</p>
+<p><code>//</code> is used to comment a single line</p>
+<p><code>/**/</code> - comment multiple lines</p>
+<p><code>/***/</code> - Documentation</p>
+<pre><code class="language-c">// single line comment
+/*
+This is used to comment multiple lines
+*/
+
+/**
+ * Documentation String
+ */
+</code></pre>
+<hr>
+<h2 id="input-handling-getting-input-from-user">Input handling / Getting input from user</h2>
+<pre><code class="language-c">scanf(&quot;format specifier&quot;, &amp;identifier);
+</code></pre>
+<p>The format specifiers are as listed for <code>printf</code> <a href="Intro_to_C(1).html">part 1</a>. It is to be noted that for all format specifiers except <code>%c</code>, the input is taken till the next character &lt; space (in terms ASCII value), mostly <code>\n</code> or space (<code>' '</code>)</p>
 <hr>
 <h2 id="escape-sequences">Escape Sequences</h2>
 <p>Few special characters defined under ASCII for formatting strings/output. The <code>\</code> is used to escape the original use of a character.</p>
@@ -637,14 +436,14 @@ sizeof(&lt;type&gt;);
 </tr>
 </tbody>
 </table>
-<h3 id="type-casting-and-conversion">Type casting and conversion</h3>
+<h2 id="type-casting-and-conversion">Type casting and conversion</h2>
 <p>Converting one datatype into another is known as <strong>type casting</strong> or, <strong>type-conversion</strong>. For example, if you want to store a &lsquo;long&rsquo; value into a simple integer then you can type cast <code>long</code> to <code>int</code>.</p>
 <p>It happens in two ways:</p>
 <ol>
 <li>Automatic type conversion</li>
 <li>Forced type conversion / type casting</li>
 </ol>
-<h4 id="type-conversion-automatic">Type Conversion (Automatic)</h4>
+<h3 id="type-conversion-automatic">Type Conversion (Automatic)</h3>
 <p>At points, we use some operation that needs values in different type than defined. The compiler, by default, converts the data type automatically to support the expression.</p>
 <ol>
 <li>char $\rightarrow$ int</li>
@@ -680,7 +479,7 @@ int main() {
    float sum;
 
    sum = i + c;
-   printf(&quot;Value of sum : %f\n&quot;, sum );
+   printf(&quot;Value of sum : %f\n&quot;, sum);
    return 0;
 }
 </code></pre>
@@ -688,10 +487,10 @@ int main() {
 <pre><code class="language-c">Value of sum : 116.000000
 </code></pre>
 <p>Here, it is simple to understand that first c gets converted to integer, but as the final value is <code>float</code>, usual arithmetic conversion applies and the compiler converts <code>i</code> and <code>c</code> into <code>float</code> and adds them yielding a <code>float</code> result.</p>
-<h4 id="type-casting">Type casting</h4>
+<h3 id="type-casting">Type casting</h3>
 <p>To have custom type conversion that are not supported by default, we do type casting.</p>
 <p><strong>Syntax:</strong></p>
-<pre><code class="language-c">(type_name) expression
+<pre><code class="language-c">(typeName) expression
 </code></pre>
 <p>Eg:</p>
 <pre><code class="language-c">#include &lt;stdio.h&gt;
