@@ -13,7 +13,7 @@ title: C Programming Basics
   - Introduction
     - Program
     - Programming Language
-    - types of programming language
+    - Types of programming language
   - Parts in programming
   - Types of programming languages
   - Introduction to C
